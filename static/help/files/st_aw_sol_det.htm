@@ -1,0 +1,93 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Modifying Solution Details (Solution Details Panel)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="prev" href="st_aw_root.htm" title="Defining Roots for Solutions (Create Solutions Tool)"><link rel="next" href="st_aw_prof_det.htm" title="Modifying Profile Details (Profile Details Panel)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=st_aw_sol_det.htm" id="showframe">Show - Help Frame</a><a href="st_aw_sol_det.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="st_aw_sol_det"></a><h2 class="title">Modifying Solution Details (Solution Details Panel)</h2></div></div></div><p>Use the Solution Details panel to view (and modify, if necessary)
+details for a specific Solution, including the Solution name and the
+Profiles within the Solution.</p><p class="blocklabel">Viewing and Modifying a Solution</p><p>To
+view the Solution Details panel and modify the details of a Solution,
+do the following:</p><div class="orderedlist"><ol type="1"><li><p>From the map, select a Solution. A Solution has a
+blue background if it is Stealth-enabled and a white background if
+it is not Stealth-enabled.</p><p>The Solution expands (if it
+was not already expanded), and the Solution Details panel appears.</p></li><li><p>If necessary, in the <span class="bold"><strong>Solution
+Name</strong></span> field, modify the name of the Solution. This name
+can be a maximum length of 28 characters and must meet the requirements
+that are described in <a class="xref" href="section-000005615.htm" title="Supported Characters and Length Restrictions in Enterprise Manager and Stealth(aware)">Supported Characters and Length Restrictions in Enterprise
+Manager and Stealth(aware)</a>.</p><div><p class="note"><b><i>Note:
+                  </i></b>You cannot change the names of the Standard Solutions (Enterprise
+Manager, Infrastructure, Internet, and Intranet).</p></div></li><li><p>Review the list of Profiles in the <span class="bold"><strong>Profiles</strong></span> list. </p><p>If you want to view the details
+of a Profile, click the Profile name. See <a class="xref" href="st_aw_prof_det.htm" title="Modifying Profile Details (Profile Details Panel)">Modifying Profile Details (Profile Details Panel)</a> for more information.<a class="xref" href="st_aw_node_det.htm" title="Modifying Node Details (Node Details Panel)">Modifying Node Details (Node Details Panel)</a></p><p>If you want to remove a Profile from the Solution, drag-and-drop
+the Profile onto the map.</p><div><p class="note"><b><i>Note:
+                  </i></b>The <span class="bold"><strong>Channels</strong></span> field appears
+below the Profiles field and specifies the number of Inter-Solution
+Channels (that is, channels which both originate and terminate within
+the Solution). You cannot modify or expand the Channels field. To
+view the details about a Channel, click the Channel on the map.</p></div></li><li><p>If necessary, change the <span class="bold"><strong>Stealth
+Enabled Added Profiles</strong></span> setting, which is the default setting
+for the Solution and its associated Profiles and Nodes. Stealth Enabled
+Added Profiles is set to <span class="bold"><strong>On</strong></span> for all
+newly created Solutions. </p><p>If you change this value, you
+change the default setting for the Solution. However, you can override
+this setting for individual Profiles within the Solution. (For example,
+you might have a Solution with Stealth Enabled Added Profiles set
+to On that includes multiple Stealth-enabled Profiles and one non-Stealth-enabled
+Profile.)</p><p>Note the following:</p><div class="itemizedlist"><ul class="disc"><li><p>If Stealth Enabled Added Profiles is set to On and
+you add a non-Stealth-enabled Profile to the Solution, that Profile
+will automatically become Stealth enabled.</p></li><li><p>If Stealth Enabled Added Profiles is set to Off and
+you add a Stealth-enabled Profile, that Profile will remain Stealth-enabled.
+This is because the default value for Profiles is non-Stealth-enabled,
+and you must have previously changed the Profile to Stealth Enabled;
+therefore, the value will not change automatically.</p></li></ul></div></li><li><p>Click the <span class="bold"><strong>X</strong></span> in the
+upper-right corner to close the Solution Details panel.</p><div><p class="note"><b><i>Note:
+                  </i></b>When you make a change to the Solution Details panel, the change
+is automatically saved.</p></div></li></ol></div><p class="blocklabel">Deleting a Solution</p><p>To delete a Solution,
+do the following: </p><div class="orderedlist"><ol type="1"><li><p>Select the Menu icon in the upper-right corner of
+the Solution Details panel.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinemediaobject"><img src="images/Stealth_ContextualMenu.jpg"></span></p></li><li><p>Click <span class="bold"><strong>Delete Solution</strong></span>. </p></li><li><p>When prompted, click <span class="bold"><strong>Yes, Delete</strong></span>.</p></li></ol></div><p>If the Solution you are deleting includes any Profiles, those
+Profiles are returned to the map.</p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

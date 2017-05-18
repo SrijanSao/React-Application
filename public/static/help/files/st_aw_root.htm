@@ -1,0 +1,133 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Defining Roots for Solutions (Create Solutions Tool)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="prev" href="st_aw_use_palette.htm" title="Manually Creating Objects (Add Objects Tool)"><link rel="next" href="st_aw_sol_det.htm" title="Modifying Solution Details (Solution Details Panel)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=st_aw_root.htm" id="showframe">Show - Help Frame</a><a href="st_aw_root.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="st_aw_root"></a><h2 class="title">Defining Roots for Solutions (Create Solutions Tool)</h2></div></div></div><p>The Create Solutions tool enables you to select the Profiles
+to be used as the basis&#8212;or root&#8212;of Solutions. A new
+Solution is created for every root selected.</p><p>For example, if you choose Automated&#8212;which automatically
+selects all Profiles classified as Database Servers to be used as
+roots&#8212;and if your Model includes seven Database Server Profiles,
+then seven Solutions are created.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you set the Affinity Level to Off, you cannot use this tool.</p></div><p class="blocklabel">Classifying and Organizing Profiles and Nodes</p><p>Before you begin using the Create Solutions tool, you should
+ensure that your Profiles and Nodes have been classified appropriately
+by Stealth(aware). Classification plays an important part in modeling.
+Nodes are classified based on their role in the environment using
+a known set of characteristics. For example, Nodes can be identified
+as Database Servers, Web Servers, Application Servers, or Workstations
+based on the known differences in the way applications running on
+Nodes communicate. Profiles are classified based on the Nodes that
+they include.</p><p>Stealth(aware) uses the IANA Allocation Guidelines for TCP and
+UDP port number assignments for classification. If your environment
+does not use the standard IANA port assignments, you have the flexibility
+to manually reclassify the Nodes based on their function in your environment.
+For example, you should reclassify your Database Server Nodes if they
+do not use the standard IANA port assignments for Database Servers.</p><p>You can change the classification assigned by Stealth(aware)
+by doing the following: </p><div class="orderedlist"><ol type="1"><li><p>Select a Profile whose classification you want to
+change, or that includes a Node whose classification you want to change.</p></li><li><p>In the Profile Details panel, do one of the following:</p><div class="itemizedlist"><ul class="disc"><li><p>If you want to change the Profile classification,
+select a new classification from the list at the top of the Profile
+Details panel.</p><p>See <a class="xref" href="st_aw_prof_det.htm" title="Modifying Profile Details (Profile Details Panel)">Modifying Profile Details (Profile Details Panel)</a> for
+more information.</p></li><li><p>If you want to change a Node&#8217;s classification,
+select that Node from the <span class="bold"><strong>Nodes</strong></span> list,
+and then update the Node classification using the list at the top
+of the Node Details panel.</p><p>See <a class="xref" href="st_aw_node_det.htm" title="Modifying Node Details (Node Details Panel)">Modifying Node Details (Node Details Panel)</a> for more information.</p></li></ul></div></li></ol></div><p>If all of the Nodes in a Profile have the same classification,
+the Profile will have the same classification as the Nodes. If Nodes
+in the same Profile have different classifications, the Profile uses
+the Mixed classification. However, you can manually update the Profile
+classification as required. </p><p>In addition, from the Profile Details panel, you can move Nodes
+into and out of Profiles. Each discovered IP address is displayed
+as an individual Node. (For systems that include multiple NICs with
+different IP addresses, each individual NIC is displayed as its own
+Node.) Therefore, you might want to combine these Nodes into one Profile,
+if they are not already grouped.</p><p class="blocklabel">Using the Create Solutions Tool</p><p>Modeling
+uses the consumer and provider relationships of the Profiles to create
+Solutions. To model your environment using the Create Solutions tool,
+do the following:</p><div class="orderedlist"><ol type="1"><li><p>Click the <span class="bold"><strong>Create Solutions</strong></span> tool.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinemediaobject"><img src="images/Stealth_02.jpg"></span></p><p>The Create Solutions panel appears.</p></li><li><p>From the Create Solutions panel, under <span class="bold"><strong>Rooting method</strong></span>, select one of the following:</p><div class="itemizedlist"><ul class="disc"><li><p><span class="bold"><strong>Automated (recommended)</strong></span> &#8211; Automatically creates Solutions based on all Profiles that
+are classified as Database Servers.</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>If you select Automated but no Profiles have been classified
+as Database Servers, then no Solutions will be created.</p></td></tr></table></div></li><li><p><span class="bold"><strong>Manual</strong></span> &#8211; Enables
+you to manually select Profiles that you want to use as the root of
+your Solutions, either because no Database Servers have been identified
+or because you want to select Profiles manually. </p></li></ul></div></li><li><p>Under <span class="bold"><strong>Profile Roots (used to
+create Solutions)</strong></span>, do the following based on whether you
+selected Automated or Manual:</p><div class="itemizedlist"><ul class="disc"><li><p>If you selected Automated, review the list of Database
+Server Profiles, which are automatically used as the root of your
+Solutions.</p><p>The Database Server Profiles are also highlighted
+on the Stealth(aware) map.</p></li><li><p>If you selected Manual, select the Profiles you want
+to use from the map. </p><p>The Profiles you select are also
+highlighted on the Stealth(aware) map.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you select Manual, it is a best practice to select Profiles
+that are classified as either Database Servers, Application Servers,
+or Web Servers as roots in order to generate stable Solutions. Selecting
+these types of servers as roots increases the likelihood that the
+Solutions will not require manual changes before deployment.</p></div><p>You can remove a Profile from the list by clicking the <span class="bold"><strong>X</strong></span> associated with the Profile, or you can remove
+all Profiles by clicking <span class="bold"><strong>Clear All Profiles</strong></span>.</p></li></ul></div></li><li><p>If you selected Automated, under <span class="bold"><strong>Automatically create new Solutions</strong></span>, determine the setting
+you want to use, as follows. </p><div><p class="note"><b><i>Note:
+                  </i></b>This setting does not appear if you selected Manual.</p></div><div class="itemizedlist"><ul class="disc"><li><p>If you set this value to <span class="bold"><strong>Off</strong></span>, when new traffic data is imported, no changes are made to existing
+Solutions, and new Solutions are not automatically created. (However,
+new Nodes are affinitized into existing Profiles and Solutions on
+the map. See <a class="xref" href="st_aw_affin.htm" title="Setting the Affinity Level (Set Affinity Level Tool)">Setting the Affinity Level (Set Affinity Level Tool)</a> for more information on
+affinitization.)</p><div><p class="note"><b><i>Note:
+                  </i></b>The Automatically create new Solutions function is Off by default.</p></div></li><li><p>If you set this value to <span class="bold"><strong>On</strong></span> and import new traffic data, any new Profiles classified as Database
+Server are automatically used to create Solutions, and any profiles
+that Stealth(aware) has not moved into existing Solutions are automatically
+moved into the Internet or Intranet Solutions. (You do not see Profiles
+on the map before they are added to a Solution, unless they are classified
+as User Profiles.)</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>If you set this value to On, any empty Solutions in the model
+are deleted. To avoid this, add at least one Profile to the empty
+Solution.In addition, any Profiles and Solutions that you manually modified
+or created are ignored. For example, if you turn Automatically create
+new Solutions on, it will <span class="bold"><strong>not</strong></span> do
+the following:</p><div class="itemizedlist"><ul class="disc"><li><p>Move a Profile into a Solution that you modified or
+created</p></li><li><p>Move a Profile out of a Solution that you modified
+or created</p></li><li><p>Delete a Solution that you modified or created (if
+it includes any Profiles)</p></li></ul></div></div></li><li><p>Click <span class="bold"><strong>Proceed</strong></span>. </p></li></ol></div><p>Profiles that are related to the Solutions you selected as roots
+are sorted into Solutions based on the roots you selected. Any remaining
+Profiles are automatically moved into the Internet or Intranet Solutions.</p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

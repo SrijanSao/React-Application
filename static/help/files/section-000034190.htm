@@ -1,0 +1,118 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Configuration Requirements</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000005813.htm" title="Management Server Requirements"><link rel="prev" href="section-000027368.htm" title="Domain Name Resolution"><link rel="next" href="section-000027365.htm" title="Certificate Requirements"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000034190.htm" id="showframe">Show - Help Frame</a><a href="section-000034190.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000034190"></a><h3 class="title">Configuration Requirements</h3></div></div></div><p>The Management Server has the following configuration requirements:</p><div class="itemizedlist"><ul class="disc"><li><p>Create a new user or configure an existing user as
+an Administrator user for the Stealth Enterprise Manager services
+to run under.</p><p><span class="bold"><strong>Best Practice: </strong></span>It is a best practice to use a local user rather than a domain user.</p><p>This user <span class="bold"><strong>must</strong></span> be included
+in the Local Administrator Group for the Management Server and assigned
+user rights to Log on as a service. </p><p>To configure (or verify) the user account you want to use for
+this purpose has the appropriate user rights, do the following:</p><div class="orderedlist"><ol type="1"><li><p>Log on to the system you want to use as the Management
+Server using any administrator credentials. </p></li><li><p>Ensure that you have created a user that you want
+Stealth Enterprise Manager services to run under. If you have not
+yet done so, use the standard Windows method to add a user.</p><div><p class="note"><b><i>Note:
+                  </i></b>Do not use the user name &#8220;Administrator&#8221; or &#8220;portaladministrator&#8221;
+for this user; those names are reserved for use by internal Enterprise
+Manager functions. </p></div></li><li><p>If your Management Server is part of a domain, ensure
+that the user you want the Stealth Enterprise Management services
+to run under is configured as a user in that domain.</p></li><li><p>Access Windows Local Security Policy. </p><p>To do so, from the Start menu, enter <span class="bold"><strong>Local
+Security Policy </strong></span>in the Search box.</p></li><li><p>In the Local Security Policy window, expand <span class="bold"><strong>Local Policies</strong></span>.</p></li><li><p>Select <span class="bold"><strong>User Rights Assignment</strong></span>. </p></li><li><p>Right-click <span class="bold"><strong>Log on as a service</strong></span>, and then select <span class="bold"><strong>Properties</strong></span>.</p></li><li><p>In the Log on as a service Properties dialog box,
+select <span class="bold"><strong>Add User or Group</strong></span> to add the
+user that you want the Stealth Enterprise Manager services to run
+under.</p></li><li><p>In the dialog box that appears, ensure that the <span class="bold"><strong>From this location</strong></span> box displays either the
+domain that the user belongs to or the local computer name, depending
+on whether you want the Enterprise Manager services to run under a
+domain user name or a local user name. (It is a best practice to use
+a local user rather than a domain user.)</p><p>If needed, click <span class="bold"><strong>Locations</strong></span> and update the location.</p></li><li><p>In the <span class="bold"><strong>Enter the object names
+to select</strong></span> box, enter the user name, and then click<span class="bold"><strong> Check Names</strong></span>.</p></li><li><p>Click <span class="bold"><strong>OK</strong></span> to close
+the open dialog boxes. </p></li><li><p>Ensure that the local or domain user you added is
+also included in the Local Administrator Group for the Management
+Server.</p><p>(Do not close the Local Security Policy window.)</p></li></ol></div></li><li><p>Ensure that endpoint users you plan to authorize from
+the Management Server can Access this computer from the network.</p><p>Do the following: </p><div class="orderedlist"><ol type="1"><li><p>On the Local Security Policy window, select <span class="bold"><strong>User Rights Assignment</strong></span>. </p></li><li><p>Click <span class="bold"><strong>Access this computer from
+the network</strong></span>, and ensure that the endpoint users you plan
+to authorize from the Management Server have access. For example,
+ensure that this field reads Everyone. </p></li><li><p>Close the Local Policy Security window.</p></li></ol></div></li><li><p>Ensure that only one network adapter is enabled.</p><p>The Stealth software cannot be installed successfully if more
+than one network adapter is enabled. Do the following to disable additional
+network adapters: </p><div class="orderedlist"><ol type="1"><li><p>From Control Panel, select <span class="bold"><strong>Network
+and Internet</strong></span>.</p></li><li><p>Select <span class="bold"><strong>Network and Sharing Center</strong></span>. </p></li><li><p>In the left pane, click <span class="bold"><strong>Change
+adapter settings</strong></span>.</p></li><li><p>Disable all network adapters&#8212;except the one
+you want to use for Stealth communications&#8212;by right-clicking
+the network adapter and selecting <span class="bold"><strong>Disable</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>You can reenable additional network adapters after you complete
+the installation.</p></div></li><li><p>Close the Network and Sharing Center window.</p></li></ol></div></li><li><p>Enable HTTP Activation and Microsoft Message Queueing
+Server (MSMQ).</p><p>Do the following to enable HTTP Activation
+and MSMQ (or verify that it is enabled):</p><div class="itemizedlist"><ul class="circle"><li><p>For Windows Server 2012 R2, do the following: </p><div class="orderedlist"><ol type="1"><li><p>Access the Server Manager Dashboard, select the <span class="bold"><strong>Manage</strong></span> tab, and then select <span class="bold"><strong>Add Roles and Features</strong></span>.</p></li><li><p>If you see the Before you begin screen, click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>If you see the Select installation type screen, select <span class="bold"><strong>Role-based or feature-based installation</strong></span>, and
+then click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>In the left menu, select <span class="bold"><strong>Features</strong></span>.</p></li><li><p>In the center pane, expand <span class="bold"><strong>.NET
+Framework 4.<span class="italic"><i>x</i></span> Features</strong></span>. </p></li><li><p>Expand <span class="bold"><strong>WCF Services</strong></span>, and then select <span class="bold"><strong>HTTP Activation</strong></span> (if it is not already installed).</p><p>If this software is
+already installed, skip to the next step.</p><p>If this software is not already installed, in the Add Roles
+and Features dialog box, click <span class="bold"><strong>Add Features</strong></span>.</p></li><li><p>In the Add Roles and Features wizard, in the center
+pane, expand <span class="bold"><strong>Message Queuing</strong></span>, expand <span class="bold"><strong>Message Queueing Services</strong></span>, and then select <span class="bold"><strong>Message Queuing Server</strong></span> (if it is not already
+installed).</p><p>If this software is already installed, skip
+to the next step. If this software is not already installed, click <span class="bold"><strong>Next</strong></span>, and then follow the prompts to install
+the software. </p><div><p class="note"><b><i>Note:
+                  </i></b>If you are prompted to close the wizard after installing the
+software, perform the first three steps to reopen the Add Roles and
+Features Wizard, Server Roles page.</p></div></li><li><p>In the left pane, select <span class="bold"><strong>Server
+Roles</strong></span> (if it is not already selected).</p></li><li><p>In the center pane, under <span class="bold"><strong>Web
+Server (IIS)</strong></span>, under <span class="bold"><strong>Web Server</strong></span>, select <span class="bold"><strong>Common HTTP Features</strong></span> (if
+it is not already selected).</p></li><li><p>Click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>If you selected any software to install, select <span class="bold"><strong>Confirmation</strong></span> in the left pane, and then proceed
+to the next step.</p><p>If you did not select any software to
+install, close the window and proceed to the next procedure.</p></li><li><p>On the Confirmation screen, click <span class="bold"><strong>Install</strong></span> to install any additional software.</p></li><li><p>When the installation is complete, click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>If you previously installed the Stealth software, you must access
+Server Manager&nbsp;and restart the <span class="bold"><strong>Unisys Stealth
+Authorization Service&nbsp;</strong></span>to complete the HTTP activation.</p></div></li><li><p>Set the Microsoft Message Queueing Server (MSMQ) service
+to restart if it encounters a failure.</p><p>Do the following: </p><div class="orderedlist"><ol type="1"><li><p>Access Services. To do so, from the Start menu, enter <span class="bold"><strong>services.msc </strong></span>in the Search box.</p></li><li><p>Locate the Message Queuing service in the list of
+services, right-click, and then select <span class="bold"><strong>Properties</strong></span>.</p></li><li><p>On the Properties dialog box, click the <span class="bold"><strong>Recovery</strong></span> tab.</p></li><li><p>In the <span class="bold"><strong>First failure</strong></span>, <span class="bold"><strong>Second failure</strong></span>, and <span class="bold"><strong>Subsequent failures </strong></span>lists, select <span class="bold"><strong>Restart the Service</strong></span>.</p></li><li><p>Click <span class="bold"><strong>OK</strong></span> to close
+the Properties dialog box.</p></li><li><p>Close the Services window.</p></li></ol></div></li><li><p>Manually set the correct date and time on the Management
+Server, or connect the Management Server to a Network Time Protocol
+(NTP) server.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you change the date or time on the Management Server after
+the Enterprise Manager software is installed, you must reboot the
+Management Server. </p></div></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

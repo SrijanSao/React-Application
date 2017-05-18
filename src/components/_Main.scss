@@ -1,0 +1,58 @@
+.home-page{
+    position: abolute;
+    z-index: $zindex-upper;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 102px;
+    background: grey
+    ;
+}
+ .curtain {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $white;
+        opacity: 1;
+        visibility: visible;
+        transition: all 500ms ease;
+        max-height: 99999px;
+
+        &.hide {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+.banner{
+    padding: 200px 0 0;
+    height: 50%;
+    background-image: url('../../static/images/computer-networking.jpg');
+    background-size: cover;
+    text-align: center;
+    text-shadow: 0 0 7px $white;
+    .logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            img {
+                width: 308px;
+            }
+    }
+    h1 {
+            margin: 0 auto 20px;
+            width: 800px;
+            font-size: $xxxlarge;
+            color: $blue;
+            padding: 0 130px;
+        }
+        h2 {
+            font-size: $xxxlarge;
+            margin: 0 auto;
+            width: 800px;
+        }
+}

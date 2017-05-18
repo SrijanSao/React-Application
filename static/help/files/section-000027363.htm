@@ -1,0 +1,74 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Resolution and Browser Requirements</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000005813.htm" title="Management Server Requirements"><link rel="prev" href="section-000027364.htm" title="Security Requirements"><link rel="next" href="section-000027362.htm" title="Software Installed During the Installation Process"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000027363.htm" id="showframe">Show - Help Frame</a><a href="section-000027363.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000027363"></a><h3 class="title">Resolution and Browser Requirements</h3></div></div></div><p>Enterprise Manager was tested using a resolution in the following
+range, and you should configure the Management Server with a screen
+resolution in this range: </p><div class="itemizedlist"><ul class="disc"><li><p>Minimum resolution: 1152&times;864</p></li><li><p>Maximum resolution: 1440&times;900</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>If you are running Stealth(aware) on the Management Server,
+the recommended resolution is different than the recommended resolution
+for Enterprise Manager. You should use the recommended Stealth(aware)
+resolution. If this causes problems when using Enterprise Manager,
+you might need to temporarily change your resolution.</p></div><p>Ensure that one of the following browsers is installed on the
+Management Server:</p><div class="itemizedlist"><ul class="disc"><li><p>Internet Explorer 11.<span class="italic"><i>x</i></span></p></li><li><p>Firefox 35 or later</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>Stealth Enterprise Manager was qualified using Internet Explorer
+11.<span class="italic"><i>x</i></span> and Firefox 35. Because Mozilla
+regularly releases new versions of Firefox, if you experience any
+problems with a later version of Firefox, it is recommended that you
+use Internet Explorer 11.<span class="italic"><i>x</i></span>.</p></div><p>In addition, you must configure the following browser settings: </p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that the pop-up blocker is disabled. </p></li><li><p>Set the browser zoom level to 100%.</p></li><li><p>Enable cookies, as follows:</p><div class="itemizedlist"><ul class="circle"><li><p>If you are using Internet Explorer, it is recommended
+(but not required) that you configure the Internet Options <span class="bold"><strong>Privacy</strong></span> setting to <span class="bold"><strong>Accept
+All Cookies</strong></span>, which provides the optimal performance when
+accessing Enterprise Manager.</p></li><li><p>If you are using Firefox, it is <span class="italic"><i>required</i></span> that you set the browser to accept cookies. To
+do so, configure the Options <span class="bold"><strong>Privacy</strong></span> setting to <span class="bold"><strong>Accept cookies from sites</strong></span>, and set <span class="bold"><strong>Accept third-party cookies</strong></span> to <span class="bold"><strong>Always</strong></span>. Alternatively, click <span class="bold"><strong>Exceptions</strong></span> and set an exception for the Enterprise
+Manager URL (by default, https://&lt;<span class="italic"><i>computer
+name</i></span>&gt;:29080/).</p></li></ul></div></li><li><p>If you are using Firefox, also do the following: </p><div class="itemizedlist"><ul class="circle"><li><p>Set the browser cache to 15 MB or higher.</p><p>Do the following:</p><div class="orderedlist"><ol type="1"><li><p>Open Firefox, and enter <span class="bold"><strong>about:config</strong></span> into the address bar.</p></li><li><p>If you see a warning, click <span class="bold"><strong>I&#8217;ll be careful, I promise</strong></span>.</p></li><li><p>In the Search box, enter <span class="bold"><strong>browser.cache.disk.capacity</strong></span>.</p></li><li><p>Ensure that the value is at least 15360. </p><p>If the value is less than 15360, double-click browser.cache.disk.capacity,
+and enter a new value that is at least 15360.</p></li></ol></div></li><li><p>Ensure that JavaScript is enabled.</p><p>Do
+the following:</p><div class="orderedlist"><ol type="1"><li><p>In the Firefox about:config Search box, enter <span class="bold"><strong>javascript.enabled</strong></span>.</p></li><li><p>Verify that javascript.enabled is set to <span class="bold"><strong>true</strong></span>.</p><p>If it is set to false, right-click
+it, and click <span class="bold"><strong>Toggle</strong></span>.</p></li><li><p>Close the Firefox window.</p></li></ol></div></li></ul></div></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

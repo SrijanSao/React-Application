@@ -1,0 +1,94 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Linux Endpoint Requirements</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029822.htm" title="Configuring Linux Endpoints to Use Stealth"><link rel="prev" href="section-000029822.htm" title="Configuring Linux Endpoints to Use Stealth"><link rel="next" href="section-000014178.htm" title="Importing the Trust Chain for the Endpoint Package Signing Certificate on Linux Endpoints"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000014080.htm" id="showframe">Show - Help Frame</a><a href="section-000014080.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000014080"></a><h3 class="title">Linux Endpoint Requirements</h3></div></div></div><p>This topic describes the Linux endpoint requirements.</p><p class="blocklabel">Supported Operating Systems</p><p>The following
+are supported Linux operating systems:</p><div class="itemizedlist"><ul class="disc"><li><p>Red Hat Enterprise Linux (RHEL) </p><div class="itemizedlist"><ul class="circle"><li><p>RHEL 6.<span class="italic"><i>x</i></span>, 32-bit
+and 64-bit</p></li><li><p>RHEL 7.<span class="italic"><i>x</i></span>, 64-bit </p></li></ul></div><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="circle"><li><p>For RHEL 6.<span class="normal">x</span> operating
+systems, Kernel level 2.6.32-431&nbsp;or later is required.
+For RHEL 7.<span class="normal">x</span> operating systems, Kernel level 3.10.0-229&nbsp;or later is required. </p></li><li><p>For RHEL 7.<span class="normal">x</span> operating
+systems, note that the Linux endpoint does not integrate with systemd.
+The /etc/init.d/<span>stealthd</span> service script is installed,
+and you should use the standard service commands to start, stop, or
+restart the <span>stealthd</span> service.</p></li></ul></div></div></li><li><p>SUSE Linux Enterprise Server (SLES)</p><div class="itemizedlist"><ul class="circle"><li><p>SLES 11.<span class="italic"><i>x</i></span>, 32-bit
+and 64-bit</p><div><p class="note"><b><i>Note:
+                  </i></b>For SLES 11, you must run Service Pack 4 or higher.</p></div></li><li><p>SLES 12.<span class="italic"><i>x</i></span>, 64-bit</p></li></ul></div><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="circle"><li><p>For Stealth to operate, the SLES firewall must be
+disabled. To temporarily disable the firewall (for example, during
+testing), enter the following command:</p><pre class="programlisting">sudo rcSuSEfirewall2 stop</pre><p>To disable the firewall permanently (for a production environment),
+enter the following commands as root, and then reboot your system:</p><pre class="programlisting">chkconfig SuSEfirewall2_setup off
+chkconfig SuSEfirewall2_init off</pre></li><li><p>For SUSE Linux Enterprise Server 11.<span class="normal">x</span> endpoints, you must compile and install
+a required Kernel crypto module. Directions on how to do so are included
+in <a class="xref" href="section-000011284.htm" title="Linux Endpoint Initial Installation and Authorization Configuration">Linux Endpoint Initial Installation and Authorization Configuration</a>.</p></li><li><p>For SUSE Linux Enterprise Server 12.<span class="normal">x</span> endpoints, Kernel level 3.12.39&#8211;47
+or later is required.</p></li></ul></div></div></li><li><p>Ubuntu </p><div class="itemizedlist"><ul class="circle"><li><p>Ubuntu 12.04 LTS, 32-bit and 64-bit</p></li><li><p>Ubuntu 14.04 LTS, 64-bit</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>For 64-bit Ubuntu operating systems to operate with Stealth,
+the AES-NI Kernel module must be disabled. During the endpoint software
+installation on 64-bit Ubuntu operating systems, the Stealth installer
+automatically creates the /etc/modprobe.d/blacklist-stealth.conf&nbsp;file,
+which includes the line &#8220;blacklist aesni_intel&#8221; to disable
+AES-NI Kernel module. </p></div></li></ul></div><p class="blocklabel">Memory Requirements</p><p>You must meet the memory requirements for the specific Linux operating
+system. </p><p class="blocklabel">Software Package Requirements</p><p>Depending on the Linux operating system,
+you must install the following software packages (any version): </p><div class="wide"><a name="table-000003175"></a><p class="title"><b>Table&nbsp;7.&nbsp;Required Software Packages for Linux Endpoints</b></p><div class="wide-contents"><table summary="Required Software Packages for Linux Endpoints" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col><col><col><col><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">&nbsp;</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Red Hat Enterprise Linux 6.<span class="italic"><i>x</i></span></p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Red Hat Enterprise Linux 7.<span class="italic"><i>x</i></span></p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>SUSE Linux Enterprise Server 11.<span class="italic"><i>x</i></span></p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>SUSE Linux Enterprise Server 12.<span class="italic"><i>x</i></span></p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Ubuntu 12.04 LTS</p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Ubuntu 14.04 LTS</p></th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Common Packages</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; " align="left">&nbsp;</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">&nbsp;</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>unzip</p></li><li><p>libxml2</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">&nbsp;</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">&nbsp;</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">&nbsp;</td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Operating System-Specific Packages</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; " colspan="2"><div class="itemizedlist"><ul class="disc"><li><p>glib2</p></li><li><p>libnfnetlink</p></li><li><p>libnetfilter_queue</p></li><li><p>iptables 1.4.7-16 or later</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; " colspan="2"><div class="itemizedlist"><ul class="disc"><li><p>libglib-2_0-0</p></li><li><p>libgthread-2_0-0</p></li><li><p>libnfnetlink0</p></li><li><p>libnetfilter_queue1</p></li><li><p>iptables 1.4.16.3-1.37 or later</p></li><li><p>libiptc0</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; " colspan="2"><div class="itemizedlist"><ul class="disc"><li><p>binutils</p></li><li><p>libglib2.0-0</p></li><li><p>libnetfilter-queue1</p></li><li><p>iptables</p></li></ul></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Release-Specific Packages</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>kernel 2.6.32-431 or later</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>kernel 3.10.0-229 or later</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>libxtables9</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>libxtables10</p></li><li><p>libatomic1</p></li><li><p>kernel 3.12.39-47 or later</p></li></ul></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>(none)</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="itemizedlist"><ul class="disc"><li><p>libxtables10</p></li></ul></div></td></tr></tbody></table></div></div><p><br class="wide-break"></p><p>For example, to verify that these software packages are installed
+or to install the required packages, you can enter the following commands,
+based on your endpoint operating system: </p><div class="itemizedlist"><ul class="disc"><li><p>Red Hat Enterprise Linux</p><div class="itemizedlist"><ul class="circle"><li><p>To verify that the software package is installed,
+enter </p><pre class="programlisting"> yum list installed &lt;<span class="italic"><i>package name</i></span>&gt; </pre></li><li><p>To install a missing software package, enter </p><pre class="programlisting">yum install &lt;<span class="italic"><i>package name</i></span>&gt;</pre></li></ul></div></li><li><p>SUSE Linux Enterprise Server</p><div class="itemizedlist"><ul class="circle"><li><p>To verify that the software package is installed,
+enter </p><pre class="programlisting"> zypper search -i &lt;<span class="italic"><i>package name</i></span>&gt; </pre></li><li><p>To install a missing software package, enter </p><pre class="programlisting">zypper install &lt;<span class="italic"><i>package name</i></span>&gt;</pre></li></ul></div></li><li><p>Ubuntu</p><div class="itemizedlist"><ul class="circle"><li><p>To verify that the software package is installed,
+enter </p><pre class="programlisting"> dpkg -l | grep &lt;<span class="italic"><i>package name</i></span>&gt; </pre></li><li><p>To install a missing software package, enter </p><pre class="programlisting">apt-get install &lt;<span class="italic"><i>package name</i></span>&gt;</pre></li></ul></div></li></ul></div><p class="blocklabel">Removing Existing strongSwan, openswan, and libreswan
+Packages</p><p>Finally, before installation, you must ensure that you <span class="bold"><strong>remove</strong></span> the following from your Linux systems:</p><div class="itemizedlist"><ul class="disc"><li><p>Any preexisting strongSwan, openswan, or libreswan
+software packages</p></li><li><p>Any related strongSwan, openswan, or libreswan configuration
+files</p></li></ul></div><p>Stealth uses a custom version of the strongSwan software, and
+existing strongSwan, openswan, or libreswan software installations
+can cause conflicts with the version used by Stealth. To remove strongSwan,
+openswan, or libreswan from Linux endpoints, enter one of the following
+commands, depending on the endpoint operating system:</p><div class="itemizedlist"><ul class="disc"><li><p>For Red Hat Enterprise Linux, enter one of the following
+commands (depending on whether the system is running version 5.<span class="italic"><i>x</i></span> or 6.<span class="italic"><i>x</i></span> with openswan or running version 7.<span class="italic"><i>x</i></span> with libreswan)</p><div class="itemizedlist"><ul class="circle"><li><pre class="programlisting">sudo yum remove openswan</pre></li><li><pre class="programlisting">sudo yum remove libreswan</pre></li></ul></div></li><li><p>For SUSE Linux Enterprise Server, enter one of the
+following commands (depending on whether the system is running strongSwan
+or openswan):</p><div class="itemizedlist"><ul class="circle"><li><pre class="programlisting">sudo zypper remove strongswan</pre></li><li><pre class="programlisting">sudo zypper remove openswan</pre></li></ul></div></li><li><p>For Ubuntu, enter the following command:</p><pre class="programlisting">sudo apt-get remove strongswan</pre></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

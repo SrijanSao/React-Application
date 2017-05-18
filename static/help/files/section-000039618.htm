@@ -1,0 +1,62 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Backing Up the Stealth(aware) Database</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002212.htm" title="Administering and Troubleshooting the Environment"><link rel="prev" href="section-000026949.htm" title="Launching Stealth(aware)"><link rel="next" href="section-000031368.htm" title="Updating and Redeploying the Stealth(aware) Model"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000039618.htm" id="showframe">Show - Help Frame</a><a href="section-000039618.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000039618"></a><h2 class="title">Backing Up the Stealth(aware) Database</h2></div></div></div><p>It is recommended that you back up the Stealth(aware) database
+on a weekly basis or before making any significant changes to the
+database (for example, before importing new traffic data files or
+before using the Create Solutions tool). To back up the database,
+do the following:</p><div class="orderedlist"><ol type="1"><li><p>Navigate to C:\Users\&lt;<span class="italic"><i>user
+name</i></span>&gt;\AppData\Roaming\Stealth folder.</p></li><li><p>Copy the <span class="bold"><strong>insight.db </strong></span>file to a secure location.</p><p>It is a best practice to rename
+this file in the secure location to append the date and time.</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Do <span class="bold"><strong>not</strong></span> change the name of the
+insight.db file in the C:\Users\&lt;<span class="italic"><i>user name</i></span>&gt;\AppData\Roaming\Stealth folder.</p></td></tr></table></div></li></ol></div><p>If you need to restore this file, do the following: </p><div class="orderedlist"><ol type="1"><li><p>Ensure that Stealth(aware) is closed.</p></li><li><p>Copy the file from the secure location in which you
+saved it, and paste it in C:\Users\&lt;<span class="italic"><i>user
+name</i></span>&gt;\AppData\Roaming\Stealth. </p></li><li><p>Rename the file as <span class="bold"><strong>insight.db</strong></span>.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

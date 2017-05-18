@@ -1,0 +1,136 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Stealth(aware) Map and Components</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000024670.htm" title="Understanding Stealth(aware)"><link rel="prev" href="section-000029333.htm" title="Stealth(aware) Overview"><link rel="next" href="section-000031367.htm" title="Mapping Stealth(aware) Objects to Stealth(core)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000026947.htm" id="showframe">Show - Help Frame</a><a href="section-000026947.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000026947"></a><h3 class="title">Stealth(aware) Map and Components</h3></div></div></div><p>A Stealth(aware) map for an existing project might look like
+the following:</p><div class="figure"><a name="figure-000002988"></a><p class="title"><b>Figure&nbsp;1.&nbsp;Example Stealth(aware) Map</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/008257.jpg" alt="Example Stealth(aware) Map"></div></div></div><p><br class="figure-break"></p><p class="blocklabel">Modeling Tools</p><p>The vertical bar of
+icons in the upper-left of the map are called the Modeling Tools.
+These include the following:</p><div class="itemizedlist"><ul class="disc"><li><p>Import Traffic Data tool</p></li><li><p>Set Affinity Level tool</p></li><li><p>Add Objects tool</p></li><li><p>Create Solutions tool</p></li><li><p>Deploy tool</p></li></ul></div><p>See <a class="xref" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model">Using Stealth(aware) to Create a Model</a> for more information.</p><p class="blocklabel">Stealth(aware) Model Objects </p><p>The
+Stealth(aware) Model can include the following objects:</p><div class="itemizedlist"><ul class="disc"><li><p>Solution &#8211; A <span class="italic"><i>Solution</i></span> is an application stack; for example, an order processing, ERP,
+or HR application. </p><p>The Stealth(aware) Affinitization
+and auto modeling process identifies those devices and user identities
+(Nodes) in the network that have frequent communications with each
+other, and are therefore likely to represent a single application
+stack. A Solution is comprised of Profiles and their connecting Channels.</p></li><li><p>Profile &#8211; A <span class="italic"><i>Profile</i></span> is a container for devices that perform a similar function; for
+example, Web Servers, Application Servers, and Database Servers. Profiles
+are defined on the Stealth(aware) Map through the automated Affinitization
+of the network traffic flows recorded during Stealth Discovery and
+using the auto modeling process.</p><p>Affinitization identifies
+those devices that include similar traffic flows to other devices,
+which enables Stealth(aware) to create Profiles that combine similar
+devices into a single object. During the process of creating Profiles,
+individual devices (for example, Web Servers) are also auto-classified
+using a heuristics analysis of the traffic data to and from each device. </p><p>That is, affinitization helps simplify the modeling process
+by combining similar devices together and representing them as a single
+object on the map. </p></li><li><p>Channel &#8211; A <span class="italic"><i>Channel</i></span> contains the set of individual device traffic flows either between
+Profiles (External Channels) or among members of the same Profile
+(Internal Channels).</p><p>Each traffic flow is defined by the
+source and destination of the IPv4 address and port, by the direction
+of the traffic, as well as by the TCP or UDP communications protocol. </p><p>Communication Policies can be set for Channels on individual
+Profiles or traffic flows while building the Stealth(aware) Model.</p></li><li><p>Node &#8211; A <span class="italic"><i>Node</i></span> is any device or user identity in the computing environment.</p><p>When Affinitization is set to Off, Nodes appear on the map.
+When Affinitization is set to Low, Medium, or High, Nodes with the
+same classification are affinitized into Profiles, with Channels drawn
+between each of the Profiles containing the Nodes. </p><p>In this release, each discovered IP address is displayed as
+an individual Node. (For systems that include multiple NICs with different
+IP addresses, each individual NIC is displayed as its own Node.)</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>If the name of a Solution, Profile, or Node is too long, it
+will be appear concatenated on the map.</p></div><p class="blocklabel">Standard Solutions</p><p>The top of the
+map displays the following standard solutions that are automatically
+created and always displayed on the map. After the Auto Modeling process
+finishes, the following Solutions are populated:</p><div class="itemizedlist"><ul class="disc"><li><p>Intranet Solution &#8211; A Solution that contains
+Profiles (and their Nodes) that were not added to an existing Solution
+during the Auto Modeling process. This includes Profiles that are
+classified as Workstations.</p><p>The <span class="italic"><i>address space</i></span> (that is, the range of IP addresses in the
+private range) is predefined and cannot be modified.</p></li><li><p>Infrastructure Solution &#8211; A Solution to which
+you add Profiles (and their Nodes) that were not added to an existing
+Solution during the Auto Modeling process. You should drag-and-drop
+Profiles for infrastructure servers (such as DNS, AD, Domain Controllers,
+and routers) that will never be Stealth-enabled into this Solution.</p></li><li><p>Enterprise Manager Solution &#8211; A Solution that
+contains the Profile for the Management Server. The Management Server
+Profile is the root of the Enterprise Manager Solution. If you classify
+a Profile as a Management Server, you can manually drag-and-drop this
+Profile into the Enterprise Manager Solution.  </p></li><li><p>Internet Solution &#8211; A Solution that contains
+Profiles (and their Nodes) that were not added to an existing Solution
+during the Auto Modeling process. This Solution contains Profiles
+that will never be Stealth-enabled. </p><p>The address space
+in the public range is predefined and cannot be modified.</p></li></ul></div><p class="blocklabel">Model Details</p><p>In a Stealth(aware)
+Model, a <span class="italic"><i>Profile Chain</i></span> defines
+the relationship between service providers and service consumers.
+Each consumer of the network traffic data is located below the provider
+of that service. The Create Solutions tool is used to define Profiles
+as the basis, or root, to create a Solution. The default root is Database
+Profiles. Each vertical stack of Profile Chains begins at the Database
+Server (by default) and ends at the Mixed Profile (if it exists).
+In a Solution, Profiles are arranged based on the classification order
+as follows: </p><div class="itemizedlist"><ul class="disc"><li><p>Database Server</p></li><li><p>Database Proxy</p></li><li><p>Application Server</p></li><li><p>Application Proxy</p></li><li><p>Web Server</p></li><li><p>Web Proxy</p></li><li><p>Admin Users</p></li><li><p>Admin Workstations</p></li><li><p>Users (non-admin)</p></li><li><p>Workstations (non-admin)</p></li><li><p>Mixed</p></li></ul></div><p>Profiles include Nodes and Internal or External Channels that
+encompasses all members of the Profile.</p><p>Channels are the lines on the map that connect Profiles containing
+Nodes to one another. If Channels connect two Profiles that are Stealth-enabled,
+you can apply Stealth policies to flows within the Channel. Those
+Channels are a composite of all of the traffic flows that have been
+observed between those two objects. </p><p>Note the following: </p><div class="itemizedlist"><ul class="disc"><li><p>Any Profiles that are classified as Workstations (even
+Workstations that were previously in the Profile Chains), but are
+not yet Stealth-enabled, are automatically moved into the Intranet
+Solution during the auto modeling process. </p><p>This includes
+the Profiles that Stealth(aware) has classified as Workstations or
+that you have manually classified as Workstations. </p></li><li><p>Any Profiles that are classified as Users&#8212;whether
+classified by Stealth(aware) or manually classified by you&#8212;remain
+at the bottom of the model. These profiles can be manually Stealth-enabled. </p><p>If you want to deploy these Profiles, you must manually drag-and-drop
+a new Solution onto the map using the Add Objects tool, and then move
+those Profiles into that Solution. It is recommended that you name
+that Solution &#8220;Stealth Users.&#8221;</p></li><li><p>Any profiles that are not modeled into Solutions are
+added to the Intranet or Internet Solutions, based on the IP addresses
+of the Nodes in the Profile. If the Profile contains Nodes that fall
+into both ranges of IP addresses (Internet and Intranet), the Profile
+are divided and moved into the appropriate solution.</p></li></ul></div><p>Clicking on a Solution expands the Solution to display the Profiles
+and their connecting Channels within that Solution. Profiles that
+have a blue background are designated to be Stealth-enabled. </p><p>After using the Create Solutions tool, each new Solution contains
+the Profiles that were modeled into each Solution. The user can manually
+select the profiles used as roots, or the Stealth(aware) algorithms
+can automatically select them for the user. </p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

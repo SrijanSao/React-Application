@@ -1,0 +1,113 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Installing the Discovery Agent on Nodes Running Linux</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002214.htm" title="Importing Existing Data and Installing the Discovery Agent on Nodes"><link rel="prev" href="section-000027611.htm" title="Installing the Discovery Agent on Nodes Running Windows"><link rel="next" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000024672.htm" id="showframe">Show - Help Frame</a><a href="section-000024672.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000024672"></a><h2 class="title">Installing the Discovery Agent on Nodes Running Linux</h2></div></div></div><p>You can install the Discovery Agent on a Node running one of
+the Linux operating systems listed in <a class="xref" href="section-000027613.htm" title="Discovery Agent Supported Operating Systems">Discovery Agent Supported Operating Systems</a>.</p><p>As part of the installation process, the following software
+is installed on the Linux Node, if it is not already installed: </p><div class="itemizedlist"><ul class="disc"><li><p>libpcap</p></li><li><p>libxml2</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>If you need additional information about the Discovery Agent
+for Linux, access the Man page by entering <span class="normal">man nodediscoveryd</span> or entering <span class="normal">man nodediscoveryd-conf</span>.</p></div><p>Do the following to install the Discovery Agent on Nodes running
+Linux:</p><div class="orderedlist"><ol type="1"><li><p>Log on to the system as root, and then open a terminal
+window.</p></li><li><p>Do the following to mount the remote file share you
+configured in <a class="xref" href="section-000027612.htm" title="Configuring a Windows File Share for the Discovery Agent Network Traffic Data Files">Configuring a Windows File Share for the Discovery Agent Network
+Traffic Data Files</a>:</p><div class="orderedlist"><ol type="a"><li><p>Make a new directory on the system. </p><p>For
+example, enter the following command:</p><pre class="programlisting">mkdir /mnt/nodediscovery </pre></li><li><p>Configure the mount point in /etc/fstab. </p><p>For example, to open /etc/fstab using vi, enter the following command:</p><pre class="programlisting">vi /etc/fstab</pre></li><li><p>Insert a new line for the mount point using the following
+format: &lt;<span class="italic"><i>remote file share</i></span>&gt;
+&lt;<span class="italic"><i>local mount point</i></span>&gt; &lt;<span class="italic"><i>file system type</i></span>&gt; &lt;<span class="italic"><i>mount options, including user name and password, if required</i></span>&gt;</p><p>For example, insert the following new line:</p><pre class="programlisting">//192.168.1.1/share  /mnt/nodediscovery  cifs  
+     username=user,password=pwd  0 0</pre><p>Save and close the file.</p></li><li><p>Mount the file share. </p><p>For example, enter
+the following command:</p><pre class="programlisting">mount /mnt/nodediscovery</pre></li></ol></div></li><li><p>Save the Discovery Agent package file in a location
+that is accessible from your Linux Nodes. This file is named nodediscoveryd-&lt;<span class="italic"><i>version</i></span>&gt;.&lt;<span class="italic"><i>distribution</i></span>&gt; and is included with the Stealth(aware) ISO file in the discovery/linux
+folder.</p><p>An RPM file is available for Red Hat Enterprise
+Linux and SUSE Linux Enterprise Server, and a DEB file is available
+for Ubuntu. </p></li><li><p>Change to the directory where you saved the Discovery
+Agent package file.</p></li><li><p>Enter one of the following commands to install the
+software, based on your operating system:</p><div class="itemizedlist"><ul class="disc"><li><p>For Red Hat Enterprise Linux, enter the following
+command:</p><pre class="programlisting">yum install nodediscoveryd-&lt;<span class="italic"><i>version</i></span>&gt;.&lt;<span class="italic"><i>distribution</i></span>&gt;.rpm</pre></li><li><p>For SUSE Linux Enterprise Server, enter the following
+command:</p><pre class="programlisting">zypper install nodediscoveryd-&lt;<span class="italic"><i>version</i></span>&gt;.&lt;<span class="italic"><i>distribution</i></span>&gt;.rpm</pre></li><li><p>For Ubuntu, enter the following command:</p><pre class="programlisting">dpkg &#8211;i nodediscoveryd_&lt;<span class="italic"><i>version</i></span>&gt;_&lt;<span class="italic"><i>distribution</i></span>&gt;.deb</pre><div><p class="note"><b><i>Note:
+                  </i></b>On Ubuntu systems, you see an error that the job failed to start
+and that there were errors encountered when processing nodediscovery-d.
+Ignore these errors. </p></div></li></ul></div><p>For Red Hat Enterprise Linux and SUSE
+Linux Enterprise Server, if prompted, enter <span class="bold"><strong>Y</strong></span> to install the software. You see a message that instructs
+you to run nodedisoveryd-conf as root and follow the prompts.</p></li><li><p>Do the following to either manually configure the
+settings or to silently pass all parameters required for configuration:</p><div class="itemizedlist"><ul class="disc"><li><p>To manually configure the settings, do the following:</p><div class="orderedlist"><ol type="a"><li><p>For all operating systems, enter the following command
+to configure the software:</p><pre class="programlisting">nodediscoveryd-conf</pre></li><li><p>When you are asked where you want to move capture
+files, enter the location of the mount point you created at the beginning
+of this procedure. Press <span class="bold"><strong>Enter</strong></span> to
+retain the default value of /mnt/nodediscovery. </p><p>Alternatively,
+enter a new value.</p></li><li><p>When you are asked how often (in seconds) you would
+like to start a capture, press <span class="bold"><strong>Enter</strong></span> to retain the default value of 840 seconds (14 minutes). </p><p>Alternatively, enter a new value. </p></li><li><p>When you are asked how long (in seconds) you would
+like each capture to last, press <span class="bold"><strong>Enter</strong></span> to retain the default value of 65 seconds (1 minute, 5 seconds). </p><p>Alternatively, enter a new value. </p><div><p class="note"><b><i>Note:
+                  </i></b>The value for how long (in seconds) you would like each capture
+to last should be equal to or less than the value for how often (in
+seconds) you would like to start a capture. If these values are the
+same, this means that data is continuously captured.</p></div></li><li><p>When you are asked how often (in seconds) you would
+like to move completed capture files to the remote share, press <span class="bold"><strong>Enter</strong></span> to retain the default value of 1800 seconds
+(30 minutes). </p><p>Alternatively, enter a new value. </p></li></ol></div></li><li><p>To silently pass all parameters required for configuration,
+enter the following command:</p><pre class="programlisting">nodediscoveryd-conf &#8211;r &lt;<span class="italic"><i>mount point</i></span>&gt; 
+     &#8211;s &lt;<span class="italic"><i>seconds to start a capture</i></span>&gt; 
+     &#8211;l &lt;<span class="italic"><i>seconds for a capture to last</i></span>&gt; 
+     &#8211;m &lt;<span class="italic"><i>seconds to move capture to remote share</i></span>&gt;</pre><p>Where</p><div class="itemizedlist"><ul class="circle"><li><p>&lt;<span class="italic"><i>mount point</i></span>&gt; is the mount point where you want to move capture files, which
+you entered at the beginning of this procedure (by default, /mnt/nodediscovery)</p></li><li><p>&lt;<span class="italic"><i>seconds to start a capture</i></span>&gt; is how often (in seconds) you would like to start a capture, by
+default 840 seconds (14 minutes)</p></li><li><p>&lt;<span class="italic"><i>seconds for a capture
+to last</i></span>&gt; is how long (in seconds) you would like a capture
+to last, by default 65 seconds (1 minute, 5 seconds)</p></li><li><p>&lt;<span class="italic"><i>seconds to move capture
+to remote share</i></span>&gt; is how often (in seconds) you would like
+to move completed capture files to the remote share, by default 1800
+seconds (30 minutes)</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>The value for how long (in seconds) you would like each capture
+to last should be equal to or less than the value for how often (in
+seconds) you would like to start a capture. If these values are the
+same, this means that data is continuously captured.</p></div><p>For example, enter </p><pre class="programlisting">nodediscoveryd-conf &#8211;r /mnt/nodediscovery 
+     &#8211;s 840 &#8211;l 65 &#8211;m 1800</pre></li></ul></div><p>The settings you enter become the new default values, and these
+values are written to /etc/nodediscoveryd/settings.xml.</p></li><li><p>Enter one of the following commands to start the Discovery
+service, based on your operating system:</p><div class="itemizedlist"><ul class="disc"><li><p>For Red Hat Enterprise Linux 6.<span class="italic"><i>x</i></span> and SUSE Linux Enterprise Server 11.<span class="italic"><i>x</i></span>, enter the following command:</p><pre class="programlisting">service nodediscoveryd start</pre></li><li><p>For Red Hat Enterprise Linux 7.<span class="italic"><i>x</i></span> and SUSE Linux Enterprise Server 12.<span class="italic"><i>x</i></span>, enter the following command:</p><pre class="programlisting">systemctl start nodediscoveryd</pre></li><li><p>For Ubuntu, enter the following command:</p><pre class="programlisting">apt-get install &#8211;f</pre></li></ul></div></li></ol></div><p>The process of discovering data begins.</p><p>If you want to stop the discovery process, do the following
+to stop the Unisys Stealth Discovery service:</p><div class="orderedlist"><ol type="1"><li><p>Log on to the system as root, and then open a terminal
+window.</p></li><li><p>Enter one of the following commands to stop the Discovery
+service, based on your operating system:</p><div class="itemizedlist"><ul class="disc"><li><p>For Red Hat Enterprise Linux 6.<span class="italic"><i>x</i></span> and SUSE Linux Enterprise Server 11.<span class="italic"><i>x</i></span>, enter the following command:</p><pre class="programlisting">service nodediscoveryd stop</pre></li><li><p>For Red Hat Enterprise Linux 7.<span class="italic"><i>x</i></span> and SUSE Linux Enterprise Server 12.<span class="italic"><i>x</i></span>, enter the following command:</p><pre class="programlisting">systemctl stop nodediscoveryd</pre></li><li><p>For Ubuntu, enter the following command:</p><pre class="programlisting">stop nodediscoveryd</pre></li></ul></div></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

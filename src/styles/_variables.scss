@@ -1,0 +1,74 @@
+// Colors
+$white: #fff; // Modal/window backgrounds, text on dark backgrounds, icons
+$black: #000; // Text
+$gray-light: #EAECEE; // Background
+$gray: #979797; // Text, titles, strokes, icons
+$gray-dark: #313233; // Text color
+$blue: #1E74AA; // Profiles, links, strokes, icons, buttons (mouse over and mouse down)
+$green: #3DB75E; // Everything is ok / Stealth Traffic
+$orange: #DE9631; // Caution
+$red: #C94346; // Alert
+$red-stealth: #CD1543; // Only used in logo
+$blue-light: #3a89bb;
+
+// Font Families
+$open-sans: 'OpenSans-Regular', sans-serif;
+$open-sans-semibold: 'OpenSans-Semibold', sans-serif;
+
+// Font Sizes
+$xsmall: 12px;
+$small: 14px;
+$medium: 16px;
+$large: 18px;
+$xlarge: 20px;
+$xxlarge: 22px;
+$xxxlarge: 24px;
+
+// Z-Indexing
+$zindex-backstage: -1;
+$zindex-base: 0;
+$zindex-base-low: 1;
+$zindex-base-mid: 2;
+$zindex-base-high: 3;
+$zindex-upper: 4;
+$zindex-upper-low: 5;
+$zindex-upper-mid: 6;
+$zindex-upper-high: 7;
+$zindex-upper-so-high: 8;
+
+// Generic control with Box shadow
+%control {
+    background: white;
+    border: 1px solid $gray;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+}
+
+%top-toast {
+    &.show {
+        top: 0;
+    }
+    font-size: 14px;
+    width: 230px;
+    height: 24px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    padding: 2px 8px 1px 8px;
+    z-index: 1;
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top .5s ease;
+    svg {
+        display: inline-block;
+        vertical-align: top;
+        margin: 2px 5px 0 0;
+    }
+}
+
+// Clear Floats
+.clear {
+    clear: both;
+}

@@ -1,0 +1,71 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Domain Participation</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000005813.htm" title="Management Server Requirements"><link rel="prev" href="section-000029336.htm" title="System and ISO Requirements"><link rel="next" href="section-000027368.htm" title="Domain Name Resolution"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000027369.htm" id="showframe">Show - Help Frame</a><a href="section-000027369.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000027369"></a><h3 class="title">Domain Participation</h3></div></div></div><p>It is a requirement for the Management
+Server to be part of a domain; make sure that it is part of the appropriate
+domain before proceeding. Your endpoint users must be included in
+Active Directory groups in order to be authorized. This means that
+the Management Server must belong to an Active Directory domain. In
+addition, the Active Directory server must either be Stealth-enabled,
+or the Management Server and endpoints must include clear text filters
+to the Active Directory server. (For endpoint authorization, local
+users and Active Directory users are not supported for this release;
+only Active Directory groups are supported.)</p><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>It is critical that you determine what resources are required
+for Stealth endpoints (including the Management Server) to function
+within the domain, and identify whether those resources should be
+Stealth-enabled or clear text. For example, if your Domain Controller,
+Active Directory, and Domain Name System (DNS) servers are <span class="bold"><strong>not</strong></span> Stealth-enabled, you must assign a filter
+to roles so that the Stealth endpoints can communicate in clear text
+to those servers. If your Domain Controller, Active Directory, and
+DNS servers are Stealth-enabled, they must share a Service COI and
+a workgroup COI with the roles they authorize. </p><p>Information about creating filters or Stealth-enabling servers
+is available later in this document.</p></td></tr></table></p></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

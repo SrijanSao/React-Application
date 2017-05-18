@@ -1,0 +1,123 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Glossary</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="GarbageFile.htm" title="Hidden Context Help Container"><link rel="prev" href="feedback.htm" title="Provide Feedback to Unisys"><link rel="next" href="chapter-000002080.htm" title="Introduction"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=glossary.htm" id="showframe">Show - Help Frame</a><a href="glossary.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="glossary"><div class="titlepage"><div><div><h1 class="title" id="GarbageFile">Glossary</h1></div></div></div><div class="glossdiv"><div class="glosstoc"><a href="#A">A</a> |
+    <a href="#C">C</a> |
+    <a href="#E">E</a> |
+    <a href="#N">N</a> |
+    <a href="#P">P</a> |
+    <a href="#R">R</a> |
+    <a href="#S">S</a> |
+    <a href="#T">T</a> |
+    </div><dl><div class="glosslist"><a name="A"></a><h3 class="title">A</h3><dl><dt><a name="d0e198"></a>Authorization Service</dt><dd><p>The Authorization Service runs on the Management Server. </p><p>The Authorization Service authorizes accounts based on the LDAP
+groups or individual users added to Enterprise Manager, and it enables
+users and accounts to access the appropriate COIs, based on the Enterprise
+Manager configuration.</p></dd><dt><a name="d0e206"></a>Administrator</dt><dd><p>Enterprise Manager Administrators manage the overall configuration
+of the environment. There are five types of administrators. Each administrator
+type has different access rights to different pages in Enterprise
+Manager.</p><div class="itemizedlist"><ul class="disc"><li><p>Audit Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages logs and monitors the systems
+added to Enterprise Manager (Management Server, standalone Authorization
+Servers, Stealth Appliances, SRA Gateways, and Secure Virtual Gateways)</p></li><li><p>Access &#8211; Monitoring page and Logs page only</p></li></ul></div></li><li><p>Cryptographic Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages Stealth roles, COIs, and
+filters</p></li><li><p>Access &#8211; All pages except the Administration
+page; however, users in this role are restricted from the following: </p><div class="itemizedlist"><ul class="square"><li><p>Users have read-only access to the Monitoring page
+and all subtabs</p></li><li><p>Users cannot view the License subtab on the Manage
+page, and cannot install or delete license files</p></li></ul></div></li></ul></div></li><li><p>Portal Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Performs all administration functions
+in Enterprise Manager</p></li><li><p>Access &#8211; All pages and functions</p></li></ul></div></li><li><p>Portal Operator </p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Monitors systems</p></li><li><p>Access &#8211; Monitoring page only</p></li></ul></div></li><li><p>Service Administration</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Provides for automatic updates performed
+by services in the environment</p></li><li><p>Access &#8211; All pages and functions</p></li></ul></div></li><li><p>Stealth Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages the settings for systems
+in the Stealth network </p></li><li><p>Access &#8211; Full access to the Monitoring and
+Logs pages and the System subtab on the Configure page</p><p>Read-only access to the Provision page and all other subtabs (except
+System) on the Configure page</p></li></ul></div></li></ul></div></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="C"></a><h3 class="title">C</h3><dl><dt><a name="d0e285"></a>Channel</dt><dd><p>Channels define the set of individual device traffic flows either
+between Profiles (External Channels) or among members of the same
+Profile (Internal Channels).</p><p>Each traffic flow is defined by the source and destination of
+the IPv4 address and port, by the direction of the traffic, as well
+as by the TCP or UDP communications protocol. </p><p>Communications Policies can be set on traffic flows while building
+the Stealth(aware) Model, as follows:</p><div class="itemizedlist"><ul class="disc"><li><p>By defaults defined at the Project or Profile level</p></li><li><p>By the user manually on individual Profiles or traffic
+flows</p></li></ul></div></dd><dt><a name="d0e303"></a>Community of Interest (COI)</dt><dd><p>A group of Stealth endpoints that can communicate securely.
+You create COIs using Enterprise Manager, and then assign them for
+use by users and groups.</p></dd><dt><a name="d0e309"></a>Configuration</dt><dd><p>Configurations represent Stealth communication based on the
+roles, COIs, filters, users, and groups that you define. You can set
+up one or more configurations in your environment.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="E"></a><h3 class="title">E</h3><dl><dt><a name="d0e318"></a>Enclave</dt><dd><p>The group of computers that communicate over a Stealth-enabled
+network.</p></dd><dt><a name="d0e324"></a>Endpoint</dt><dd><p>A computer (workstation or server) that participates in a Stealth-enabled
+network. This can be a virtual machine or physical server. An endpoint
+runs the Stealth endpoint software.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="N"></a><h3 class="title">N</h3><dl><dt><a name="d0e333"></a>Network Address Translation (NAT)</dt><dd><p>An Internet standard that enables a local-area network (LAN)
+to use one group of IP addresses for internal traffic and a different
+group of IP addresses for external traffic.</p></dd><dt><a name="d0e339"></a>Node</dt><dd><p>Any device or user identity in the computing environment.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="P"></a><h3 class="title">P</h3><dl><dt><a name="d0e349"></a>Policy</dt><dd><p>The rule for communications over individual traffic flows. There
+are three available policies: to allow clear text traffic, to allow
+Stealth traffic, or to block all traffic.</p></dd><dt><a name="d0e356"></a>Profile</dt><dd><p>A container for devices that perform a similar function; for
+example, Web Servers, Application Servers, and Database Servers. Profiles
+are defined on the Stealth(aware) Map through an automated Affinitization
+of the network traffic flows recorded during Stealth Discovery and
+then sorted into Profiles using the auto modeling process. You can
+also manually create a Profile. </p><p>Affinitization identifies those devices that include similar
+traffic flows to other devices, which enables Stealth(aware) to create
+Profiles that combine similar devices into a single object. During
+the process of creating Profiles, individual devices (for example,
+Web Servers) are also auto-classified using a Heuristics Analysis
+of the traffic data to and from each device. </p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="R"></a><h3 class="title">R</h3><dl><dt><a name="d0e368"></a>Root</dt><dd><p>A Profile that is the basis, or root, of a Stealth(aware) Solution.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="S"></a><h3 class="title">S</h3><dl><dt><a name="d0e377"></a>SCIP/IPsec</dt><dd><p>A combination of the Unisys proprietary Secure Community of
+Interest Protocol combined with a standard Internet Protocol Security,
+which is used to encrypt and authenticate each IP packet of a communication
+session. </p></dd><dt><a name="d0e383"></a>Solution</dt><dd><p>An application stack; for example, an order processing, ERP,
+or HR application.</p><p>The Stealth(aware) Affinitization and auto modeling process
+identifies those devices and user identities (Nodes) in the network
+that have frequent communications with each other, and are therefore
+likely to represent a single application stack. A Solution is comprised
+of Profiles and their connecting Channels.</p></dd><dt><a name="d0e392"></a>Stealth-enabled Network</dt><dd><p>A network over which data is encrypted using the Unisys proprietary
+Secure Community of Interest Protocol combined with a standard Internet
+Protocol Security to encrypt and authenticate each IP packet of a
+communication session. (This combination of protocols is known as
+SCIP/IPsec.)</p></dd><dt><a name="d0e398"></a>System</dt><dd><p>A computer that is monitored by Enterprise Manager. This could
+be a Management Server, standalone Authorization Server, Secure Remote
+Access (SRA) Gateway, Secure Virtual Gateway, or Stealth 2.8 Appliance.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div><div class="glosslist"><a name="T"></a><h3 class="title">T</h3><dl><dt><a name="d0e407"></a>Tunnel</dt><dd><p>A Stealth endpoint communication path in the environment. There
+are two types of tunnels: unicast and multicast. A unicast tunnel
+is a point-to-point communication path between a unique pair of nodes.
+A multicast tunnel is a multipoint communication path among a set
+of member endpoints.</p></dd><dt><a name="d0e413"></a>Tuples</dt><dd><p>For Stealth endpoints, a set of COIs, their associated filter
+sets, and any clear text filters for which the user is authorized.</p></dd></dl><a href="#" target="_top" class="link_top">Top</a></div></dl></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

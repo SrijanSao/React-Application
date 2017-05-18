@@ -1,0 +1,128 @@
+.window {
+    position: absolute;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.20);
+    border: 1px solid $gray;
+    background: $white;
+    transition: opacity 100ms ease, visibility 100ms ease;
+
+    .close, .help, .menu {
+        cursor: pointer;
+        float: right;
+        margin: 0 0 0 10px;
+        line-height: $medium;
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            svg path {
+                fill: $blue;
+            }
+        }
+    }
+    .visibility {
+        float: right;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+        &:hover {
+            svg path {
+                fill: $blue;
+            }
+        }
+    }
+}
+.window-modal-alert {
+    position: absolute;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.20);
+    border: 2px solid $gray;
+    padding: 20px 20px 40px;
+    min-width: 420px;
+    background: $white;
+    transition: all 100ms ease;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        max-height: 100%;
+    }
+}
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    width: 346px;
+    text-align: center;
+    max-height: 0;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        max-height: 100%;
+    }
+    .header {
+        border-bottom: 1px solid $gray;
+        padding: 5px 10px;
+        text-align: left;
+        color: $gray;
+        font-size: $small;
+
+        h5 {
+            display: inline-block;;
+            margin: 0;
+            font-family: $open-sans-semibold;
+        }
+    }
+    .description {
+        background: $gray-light;
+        padding: 5px 10px;
+        font-size: $xsmall;
+        color: $gray;
+        text-align: left;
+    }
+    .main {
+        padding: 20px;
+    }
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 5px;
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.20);
+    border-radius: 10px;
+    min-width: 210px;
+    background: $white;
+    color: #313233;
+    line-height: 30px;
+
+    &.show {
+        display: block;
+    }
+    ul {
+        margin: 0;
+        padding: 10px 0px;
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            padding: 0 10px;
+
+            &:hover {
+                background: $blue;
+
+                button {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+.graph-labels {
+    color: $blue;
+    font-weight: bold;
+    background: white;
+    text-transform: uppercase;
+}

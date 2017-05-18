@@ -1,0 +1,93 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Silent Installation Procedure</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000005064.htm" title="Installing Stealth Endpoint Software on Windows"><link rel="prev" href="section-000019819.htm" title="Manual Installation Procedure (Non-Silent)"><link rel="next" href="section-000013092.htm" title="Configuring Server Mode Using a User Name"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000019818.htm" id="showframe">Show - Help Frame</a><a href="section-000019818.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000019818"></a><h4 class="title">Silent Installation Procedure</h4></div></div></div><p>If you want to silently install the Stealth endpoint software
+on Windows endpoints, enter the following command using a command
+prompt window on the endpoint, or programmatically distribute and
+install this software using a software distribution system, such as
+System Center Configuration Manager (SCCM). </p><div><p class="note"><b><i>Notes:
+                  </i></b><div class="itemizedlist"><ul class="disc"><li><p>By default, when silent installation is run, the executable
+file terminates without waiting for the installation to complete.
+To wait for the installation to complete before terminating the endpoint
+package executable file, preface the command with Windows command <span class="normal">start /wait</span>.</p><p>Alternatively, to
+run the endpoint package executable file with silent options from
+a Windows script (such as PowerShell or VBScript), use the command
+shell Run and specify the wait option.</p></li><li><p>Depending on the system settings and how the installer
+is run, silently installing the Stealth endpoint software might result
+in the appearance of a Windows User Account Control (UAC) pop-up message.
+For information on UAC and options to manage it for silent installations,
+see the following Microsoft TechNet article:</p><p><a class="ulink" href="https://technet.microsoft.com/en-us/library/cc709691" target="_blank">https://technet.microsoft.com/en-us/library/cc709691</a></p></li></ul></div></p></div><p><span class="bold"><strong>Silent Installation for a Server Using
+a User Name and Password for Server Mode</strong></span></p><p>For a server on which you want to configure Server Mode using
+a user name and password, enter the following command from an Administrator
+command prompt to install Stealth silently. This command configures
+Server Mode by assigning the service user credentials to the Unisys
+Stealth Logon service.</p><pre class="programlisting">&lt;<span class="italic"><i>directory\endpoint package name</i></span>&gt;.exe -ap "/qn
+     /serviceuser=&lt;<span class="italic"><i>domain</i></span>&gt;\&lt;<span class="italic"><i>user</i></span>&gt; /servicepw=&lt;<span class="italic"><i>password</i></span>&gt;"</pre><p>For example, enter C:\temp\Winpackage.exe -ap "/qn /serviceuser=Admin.loc\AdminUser
+/servicepw=resU*nimdA"</p><div><p class="note"><b><i>Notes:
+                  </i></b><div class="itemizedlist"><ul class="disc"><li><p>The user must belong to the local Administrators group.
+ </p></li><li><p>The user can be a local user or a domain user. If
+you do not enter a domain, the command assumes that the user is part
+of the local domain (.\user). If you do enter a domain, you can enter
+either the fully qualified domain name (FQDN) or the domain short
+name; for example, /serviceuser=[&lt;<span class="italic"><i>domain</i></span>&gt;\]&lt;<span class="italic"><i>user</i></span>&gt;.</p></li><li><p>If you use a domain user, either the Active Directory
+server must be Stealth-enabled and the endpoint package must be configured
+as Stealth Always On, or the endpoint package must include a clear
+text filter to the Active Directory server. (You cannot use a Stealth
+On Demand endpoint package if the Active Directory server is Stealth-enabled,
+because Stealth is not enabled on the endpoints at the time that the
+Stealth Logon Service starts, when authentication with the Stealth-enabled
+Active Directory server is required.)</p></li></ul></div></p></div><p><span class="bold"><strong>Additional Options</strong></span></p><p>Additionally, you can add the following options to the command:</p><div class="itemizedlist"><ul class="disc"><li><p>/nomsu &#8211; Add this option to skip the check
+for required Windows updates for Windows 7 and Windows Server 2008
+R2, if you know that all updates are installed on the endpoint.</p></li><li><p>/nodiag &#8211; Add this option to skip the diagnostic
+collection that occurs, in the event of a failed installation and
+roll back. </p></li></ul></div><p>If there are any problems encountered during installation on
+the endpoints, they are listed in the log file C:\Stealth\StealthEP_Install.log
+and in the Windows Application Event log. </p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

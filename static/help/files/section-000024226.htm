@@ -1,0 +1,87 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Optionally Configuring SSL to Work with the Authorization Service</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029792.htm" title="Configuring the Authorization Service"><link rel="prev" href="section-000029826.htm" title="Configuring the AuthService.config File"><link rel="next" href="section-000029791.htm" title="Configuring a New Password and Configuring Licensing in Enterprise Manager"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000024226.htm" id="showframe">Show - Help Frame</a><a href="section-000024226.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000024226"></a><h3 class="title">Optionally Configuring SSL to Work with the Authorization Service</h3></div></div></div><p>If the Management Server is running SSL, and if
+you want to use SSL with the Authorization Service, do the following:</p><div class="orderedlist"><ol type="1"><li><p>Obtain an Authorization Service SSL certificate for
+your server. </p><div><p class="note"><b><i>Note:
+                  </i></b>This certificate common name <span class="bold"><strong>must</strong></span> match the fully qualified domain name, IP address, or host name
+that you entered for the Url in <a class="xref" href="section-000029826.htm" title="Configuring the AuthService.config File">Configuring the AuthService.config File</a>, which endpoints use to connect to the
+Authorization Service.</p></div><p>You can do any of the following: </p><div class="itemizedlist"><ul class="disc"><li><p>Purchase certificate-management software and use the
+provided documentation to create and install the certificate.</p></li><li><p>Create and install your own self-signed certificate
+using a program such as MakeCert.</p></li><li><p>Contact a certificate authority, purchase a certificate,
+and then install it.</p></li></ul></div></li><li><p>Install the Authorization Service SSL certificate
+in the Local Computer Personal key store. </p></li><li><p>Ensure that the trust chain for the certificate (including
+the trusted root certificate and any intermediate certificates) is
+installed in the Local Computer Trusted Root Certification Authorities
+key store. </p></li><li><p>Do the following to locate the certificate thumbprint
+for the SSL certificate on the MMC snap-in window:</p><div class="orderedlist"><ol type="a"><li><p>Access the MMC utility, and run the Certificates snap-in.</p><p>To run the Certificates snap-in, select <span class="bold"><strong>Add/Remove Snap-in</strong></span> from the <span class="bold"><strong>File</strong></span> menu. Click <span class="bold"><strong>Add</strong></span>, select <span class="bold"><strong>Certificates</strong></span> and then click <span class="bold"><strong>Add</strong></span>. </p><p>On the Certificates snap-in dialog box, verify that <span class="bold"><strong>Computer account</strong></span> is selected, and then click <span class="bold"><strong>Next</strong></span>.</p><p>Select <span class="bold"><strong>Local computer</strong></span>, and
+then click <span class="bold"><strong>Finish</strong></span>. Click <span class="bold"><strong>Close</strong></span> on the Add Standalone Snap-in dialog
+box. Click <span class="bold"><strong>OK</strong></span> on the Add/Remove Snap-in
+dialog box.</p></li><li><p>In the Certificates MMC snap-in window, in the left
+pane, expand <span class="bold"><strong>Certificates (Local Computer)</strong></span>, expand <span class="bold"><strong>Personal</strong></span>, and then click <span class="bold"><strong>Certificates</strong></span>. </p></li><li><p>In the right pane, double-click the SSL certificate. </p></li><li><p>Verify that the trust chain is valid. To do so, double-click
+the certificate, and then click the <span class="bold"><strong>Certification
+Path</strong></span> tab. You should not see any errors stating that the
+trust chain could not be verified, and the Certificate status should
+read OK.</p></li><li><p>On the Certificate dialog box, click the <span class="bold"><strong>Details</strong></span> tab, and scroll down to view the thumbprint.</p></li><li><p>Select the thumbprint value and copy it to the clipboard
+(press <span class="bold"><strong>Ctrl</strong></span>+<span class="bold"><strong>C</strong></span>).</p></li></ol></div></li><li><p>Enter the following at a command prompt that is run
+as administrator.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>In the following command, the &lt;<span class="normal">AuthGroup URL</span>&gt; and &lt;<span class="normal">port number</span>&gt; should be the same values you entered for
+the first AuthGroup in the AuthService.config file. However, note
+that in the AuthService.config file, you can enter either the server
+IP address or fully qualified domain name; for this command, you <span class="bold"><strong>must</strong></span> enter the IP address. </p></li><li><p>Right-click and select Paste to paste all of the alphanumeric
+characters for the &lt;<span class="normal">certificate thumbprint</span>&gt;, and then delete the spaces.</p></li><li><p>In the following command, the appid value is <span class="bold"><strong>not</strong></span> a variable; enter it exactly as specified.</p></li></ul></div></div><p>Enter</p><pre class="programlisting">netsh http add sslcert ipport=&lt;<span class="italic"><i>AuthGroup URL</i></span>&gt;:&lt;<span class="italic"><i>port number</i></span>&gt;
+     certhash=&lt;<span class="italic"><i>certificate thumbprint</i></span>&gt;
+     appid={350ad21e-58b2-4f19-aa0a-5e49e1d64de2}</pre><p>For example, enter</p><pre class="programlisting">netsh http add sslcert ipport=192.168.233.34:9000 
+     certhash=beda74645d906bd7e639e8c1ge99d774264cg1g9
+     appid={350ad21e-58b2-4f19-aa0a-5e49e1d64de2}</pre></li><li><p>Verify your SSL certificate by entering the following
+command: </p><pre class="programlisting">netsh http show sslcert</pre></li><li><p>For each additional AuthGroup that uses SSL, repeat
+the previous steps using the appropriate AuthGroup &lt;<span class="italic"><i>Url</i></span>&gt; and &lt;<span class="italic"><i>port
+number</i></span>&gt; in the netsh command.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

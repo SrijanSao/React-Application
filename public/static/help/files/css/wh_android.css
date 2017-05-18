@@ -1,0 +1,696 @@
+/*=(===============================================================
+    Unisys Information Development
+  ================================================================)*/
+body {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	background-color: #ffffff;
+	color: #000000;
+	margin-left: 20px;
+	margin-right: 25px;
+}
+
+.highlight {
+    /*background-color: #FFFF88;*/
+	background-color: #b2b4bf;
+}
+
+
+.intro {
+ 	border: 1px ridge #000000;	
+	-moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+	border-radius: 7px 7px 7px 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color:#FCFDFE;
+	
+}
+
+.underline
+{
+    padding-top: 7px;
+	padding-bottom: 1px;
+    display:table-cell;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;        
+}
+
+.video_conditional_content {
+	margin-top:5px;
+	display:none;
+	color:red;
+}
+.video-title {
+	padding-top:10px;
+	font-size:small;
+	color: #2c5d88;
+	
+}
+
+.video.description {
+	
+}
+
+
+.blockquote {
+	padding-top: 10px;	
+}
+
+.block {
+	
+}
+
+.block_title
+{
+    font-family:arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    color: #FFFFFF;
+    background-color: #999999;
+ 	border: 1px ridge #000000;	
+	z-index:100;
+	padding-top: 8px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 0px;
+					
+	-moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.block_content {
+ 	border: 1px ridge #000000;	
+	border-top: 2px ridge #000000;	
+	-moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+	margin-bottom: 5px;
+	background-color:#FCFDFE;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.column_left {
+	float: left;
+	position:relative;
+	width: 45%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.column_right {
+	float: right;
+	position:relative;
+	width: 40%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.block_content div.itemizedlist ul li 
+{
+    margin-top: 6pt;
+	margin-bottom: 0pt;
+}
+
+.block_content div.itemizedlist ul {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.intro h2 {
+    font-family:arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    text-transform: capitalize;
+    color: #2c5d88;
+	margin-left: 5px;
+}
+
+.productmedia {
+	margin-bottom:10px;
+}
+
+
+
+
+
+
+/*=(================ Headings ===================================)*/
+
+/*=(added by Basu on July 2011)=*/
+h1.title {
+	font-family: arial, sans-serif;
+	font-size: x-large;
+	text-align: left;
+	color: #2c5d88;
+	margin-bottom: 0px;
+}
+
+h1 {
+	font-family: arial, sans-serif;
+	font-size: x-large;
+	text-align: left;
+	color: #2c5d88;
+}
+
+h2 {
+	font-family: arial, sans-serif;
+	font-size: large;
+	color: #2c5d88;
+}
+
+
+h3 {
+	font-family: arial, sans-serif;
+	font-size: medium;
+	color: #2c5d88;
+}
+
+
+h4 {
+	font-family: arial, sans-serif;
+	font-size: small;
+	color: #2c5d88;
+}
+
+
+h5 {
+	font-family: arial, sans-serif;
+	font-size: small;
+	color: #2c5d88;
+}
+
+
+h6 {
+	font-family: arial, sans-serif;
+	font-size: small;
+	color: #2c5d88;
+}
+
+/*=(================ paragraphs ===================================)*/
+
+/*Begin: (added by Basu on June 2015)
+To allow multiple bullet list content of a note in Italic)
+*/
+p.note ~ p
+{
+	font-style: italic;
+}
+
+p.note ~ div
+{
+	font-style: italic;
+}
+/*End: (added by Basu on June 2015)*/
+
+p {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	text-align: left;
+}
+
+/*=(added by Basu on July 2011)=*/
+/*=(Modified by Sukesh on July 2012-TR289)=*/
+p.copyright {
+	font-family: Verdana, arial, sans-serif;
+	font-size: x-small;
+}
+
+p.TableHeading {
+	font-weight: bold;
+}
+
+
+p.TableText {
+}
+
+
+p.GlossTerm {
+	font-family: Verdana, arial, sans-serif;
+	font-weight: bold;
+	font-size: small;
+	margin-top: 1.0em;
+	margin-bottom: 0.0em;
+}
+
+
+p.GlossDef {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	color: #000000;
+	margin-left: 1.5em;
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+}
+
+p.indent {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	text-align: left;
+}
+
+p.indent60 {
+    margin-left: 25px;
+}
+
+p.indent72 {
+    margin-left: 40px;
+}
+
+p.releaseinfo {
+	font-family: Verdana, arial, sans-serif;
+	font-size: 10pt;
+	text-align: left;
+	font-weight: bold;
+	margin: 10px 0px 0px 0px;
+}
+
+
+p.bold {
+	font-weight: bold;
+}
+
+p.italics {
+	font-style: italic;
+}
+
+/* Formalpara title element */
+/* Inserted by T.pedersen December 2013 */
+p.blocklabel {
+	font-family: arial, sans-serif;
+	font-size: medium;
+	color: #2c5d88;
+	font-weight: bold;
+}
+p.note {
+	font-style: italic;
+}
+
+
+
+/*=(================ anchors ===================================)*/
+
+
+a.expandspot {
+	cursor: pointer;
+	color: #008000;
+	font-style: normal;
+}
+
+
+a.dropspot {
+	font-style: italic;
+	color: #008000;
+	cursor: pointer;
+}
+
+a.glossterm {
+	cursor: pointer;
+	color: #800000;
+	font-style: normal;
+}
+/*=(Modified by Sukesh on July 2012-TR289)=*/
+a.legalnotice
+{
+	font-size: x-small;
+	cursor: pointer;
+	font-family: Verdana, arial, sans-serif;
+}
+
+
+/*=(================ Spans ===================================)*/
+span.italic
+{
+	font-style: italic;
+}
+span.normal
+{
+	font-style: normal;
+}
+
+span.glosstext {
+	color: #0000ff;
+	font-weight: normal;
+	font-style: italic;
+}
+
+span.expandtext {
+	color: #ff0000;
+	font-weight: normal;
+	font-style: italic;
+}
+
+span.notetip {
+	font-weight: bold;
+	font-style: italic;
+	margin-right: 8pt;
+}
+
+span.caution {
+	font-weight: bold;
+	margin-left: 8pt;
+	margin-bottom: 0pt;
+}
+
+span.warning {
+	font-weight: bold;
+	color: #ff0000;
+	margin-left: 8pt;
+	margin-bottom: 0pt;
+}
+
+/*=(added by Tim on June 2013)=*/
+span.inlinemediaobject
+{
+    vertical-align: bottom;
+}
+
+/*=(================ Divisions ===================================)*/
+
+/*=(added by Basu on July 2011)=*/
+div.authorgroup {
+	font-family: arial, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: left;
+	color: #2c5d88;
+}
+/*=(Modified by Basu on July 2012)=*/
+div.copyright {
+	font-family: Verdana, arial, sans-serif;
+	font-size: x-small;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+/*=(added by Basu on July 2012)=*/
+div.copyright_title {
+	font-family: Verdana, arial, sans-serif;
+	font-size: x-small;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+
+div.list {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	background-color: #ffffff;
+	color: #000000;
+	margin-left: -14px;
+}
+
+div.code {
+	font-family: Courier;
+	font-size: small;
+	background-color: #ffffff;
+	color: #000000;
+	margin-left: 20px;
+}
+
+div.note {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	background-color: #ffffff;
+	color: #000000;
+	margin-left: 20px;
+}
+
+div.solution_category {
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #2c5d88;
+	font-family: arial, sans-serif;
+	text-align: left;
+}
+
+div.hardware_model {
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #2c5d88;
+	font-family: arial, sans-serif;
+	text-align: left;
+}
+
+div.product_name {
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #2c5d88;
+	font-family: arial, sans-serif;
+	text-align: left;
+}
+
+div.universal_task {
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #2c5d88;
+	font-family: arial, sans-serif;
+	text-align: left;
+}
+
+div.document_type {
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #2c5d88;
+	font-family: arial, sans-serif;
+	text-align: left;
+}
+
+/* BEGIN table on title page */
+div.titlepage table 
+{
+	font-family: Verdana, arial, sans-serif;
+	border-color: transparent;
+	border-style: none;
+	border-width: 0px;	
+}
+
+div.titlepage table td
+{
+	border-color: transparent;
+	border-style: none;
+	border-width: 0px;	
+	padding: 0px;
+}
+
+/* END table on title page */
+
+/*Begin: Implemented breadcrumbs on WebHelp by Basu on 21st March 2016*/
+div.breadcrumbs>span.breadcrumb-link>a
+{
+    font-size: small;
+}
+
+div.breadcrumbs>span.breadcrumb-link
+{
+    font-size: small;
+}
+
+div.breadcrumbs 
+{
+    font-size: small;
+}
+/*End: breadcrumbs*/
+
+
+/*=(================ Tables ===================================)*/
+table {
+	font-family: Verdana, arial, sans-serif;
+	padding: 6.0px;
+	border-color: #cccccc;
+	border-width: 1px;
+	border-style: solid;
+	border-collapse:collapse;
+}
+
+th {
+	font-size: small;
+	padding: 6.0px;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse:collapse;
+}
+
+td {
+	font-size: small;
+	vertical-align: top;
+	padding: 6.0px;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse:collapse;
+}
+
+
+td.note {
+	font-size: small;
+	vertical-align: top;
+	padding: 6.0px;
+	border-style: none;
+}
+
+/* BEGIN table for caution & warning */
+
+table.caution tr td p 
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+table.warning tr td p 
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* END table for caution */
+
+
+/*=(================ Lists ===================================)*/
+ol>li {
+	margin-left: -7px;
+}
+
+ol {
+	clear:both;
+	list-style-position: outside;
+	font-size: small;
+}
+
+ul>li {
+	margin-left: -10px;
+}
+
+ul {
+	clear:both;
+	list-style-position: outside;
+	font-size: small;
+}
+
+
+li {
+	font-family: Verdana, arial, sans-serif;
+	font-size: small;
+	text-align: left;
+	margin-top: 14pt;
+	margin-bottom: 14pt;
+	margin-left: -10px;
+}
+
+
+/*=(================ preformatted ===================================)*/
+pre.programlisting  {
+	font-size: small; 
+	font-family: 'Courier New', Courier, monospace;	
+	line-height: normal;
+	margin-bottom: 14pt;
+	margin-top: 14pt;
+}
+
+/* Smart phone Layout with widths no greater than 320px */
+
+@media only screen and (max-width: 320px) {
+div.productmedia img {
+	clear:both;
+	width:100%;
+}
+div.corpnav_standard img {
+	clear:both;
+	width:100%;
+}
+
+div.mediaobject img, div.mediaobject object, div.mediaobject embed, div.mediaobject video {
+	max-width: 100%;
+	width: 100%;
+}
+.homepage {
+	width:100%;
+}
+
+.column_left {
+	clear:both;
+	width: 100%;
+	margin-left: 0px;
+	text-align:center;
+	padding-left:0px;
+}
+
+.column_right {
+	clear:both;
+	display:block;
+	width: 100%;
+	text-align:center;
+	margin-right: 0px;
+	padding-left:0px;
+}
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+
+div.productmedia img {
+	clear:both;
+	width:100%;
+}
+div.corpnav_standard img {
+	clear:both;
+	width:100%;
+}
+
+div.mediaobject img, div.mediaobject object, div.mediaobject embed, div.mediaobject video {
+	max-width: 100%;
+	width: 100%;
+}
+
+.column_left {
+	clear:both;
+	width: 100%;
+	margin-left: 0px;
+	text-align:center;
+	padding-left:0px;
+}
+
+.column_right {
+	clear:both;
+	display:block;
+	width: 100%;
+	text-align:center;
+	margin-right: 0px;
+	padding-left:0px;
+}
+
+}
+
+/* tablet portrait layout */
+
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+.column_left {
+	clear:both;
+	width: 100%;
+	margin-left: 0px;
+	text-align:center;
+}
+
+.column_right {
+	clear:both;
+	display:block;
+	width: 100%;
+	text-align:center;
+	margin-right: 0px;
+}
+
+}
+
+
+/* Desktop Layout */
+
+@media only screen and (max-width: 1024px) {
+
+
+
+
+}

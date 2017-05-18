@@ -1,0 +1,110 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Configuring a New Password and Configuring Licensing in Enterprise Manager</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002315.htm" title="Initially Configuring the Stealth(core) Environment for Stealth(aware)"><link rel="prev" href="section-000024226.htm" title="Optionally Configuring SSL to Work with the Authorization Service"><link rel="next" href="section-000005032.htm" title="Configuring Enterprise Manager User Accounts"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029791.htm" id="showframe">Show - Help Frame</a><a href="section-000029791.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029791"></a><h2 class="title">Configuring a New Password and Configuring Licensing in Enterprise
+Manager</h2></div></div></div><p>Do the following to configure a new password for the portaladmin
+account and to configure Stealth licensing in Enterprise Manager:</p><div class="orderedlist"><ol type="1"><li><p>If you have not already done so, launch Enterprise
+Manager by double-clicking the <span class="bold"><strong>Unisys Stealth
+Enterprise Management Portal</strong></span> shortcut on the Management
+Server desktop.</p></li><li><p>Sign in to Enterprise Manager with the Portal Administrator
+account credentials. (The default user name is <span class="italic"><i>portaladmin</i></span> and the default password is <span class="italic"><i>AdminPortal1#</i></span>.)</p></li><li><p>Change the default portaladmin user account password
+by doing the following.</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>You must record this new password. It cannot be recovered.</p></td></tr></table></div><div class="orderedlist"><ol type="a"><li><p>Click <span class="bold"><strong>Change Password</strong></span> in the upper-right corner of the page. </p></li><li><p>On the Change Password dialog box, enter the default
+password (<span class="italic"><i>AdminPortal1#</i></span>) in the <span class="bold"><strong>Old Password</strong></span> box.</p></li><li><p>Enter the new password in the <span class="bold"><strong>New Password</strong></span> and <span class="bold"><strong>Confirm New Password</strong></span> boxes.</p><div><p class="note"><b><i>Note:
+                  </i></b>The password must be between six and 50 characters, and it must
+include all of the following:</p><div class="itemizedlist"><ul class="disc"><li><p>At least one uppercase letter</p></li><li><p>At least one lowercase letter</p></li><li><p>At least one number</p></li><li><p>At least one of the following special characters: </p><p>! @ # $ % ^ &amp; * ( ) _ + = </p></li></ul></div></div></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Sign Out</strong></span> to
+sign out of Enterprise Manager, and then sign back in using the new
+password.</p></li></ol></div></li><li><p>Install the local license file by doing the following. </p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p><span>The Management Server</span> can
+have only one license file installed. See <span>the <span class="normal">Unisys Stealth Solution Information Center</span></span> for more information on licensing.</p></li><li><p>Ensure that you have the <span class="normal">Welcome
+Letter</span> that you received with your order; you are instructed
+to enter the SCN that is provided in the <span class="normal">Welcome
+Letter</span>. (If you do not have the Welcome Letter, you can
+install temporary licenses.)</p></li><li><p>You can install temporary licenses in order to test
+your configuration. This temporary licenses provide 25 Client licenses,
+25 Server licenses, 25 Mobile licenses (for remote users using SRA
+clients), and 25 VGD licenses (Virtual Gateway Device licenses for
+Clear Text endpoints that use the Secure Virtual Gateway) for 90 days. <span>(However, note that Mobile licenses and VDG
+licenses cannot be used in conjunction with an environment configured
+using Stealth(aware).</span>If you want to use these temporary licenses, <span>perform the steps for temporary
+licenses in the following procedure</span>.</p></li></ul></div></div><div class="orderedlist"><ol type="a"><li><p>Select <span class="bold"><strong>Manage</strong></span> from
+the menu bar. </p></li><li><p>Select the <span class="bold"><strong>License</strong></span> tab. </p></li><li><p>Click <span class="bold"><strong>Install SCN</strong></span> at the bottom of the page.</p></li><li><p>On the Install SCN dialog box, enter the SCN that
+was provided in your <span class="italic"><i>Welcome Letter</i></span> in the <span class="bold"><strong>SCN</strong></span> box.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you want to use temporary licenses, you can enter the SCN
+from the Welcome Letter, or you can enter any numeric string in the <span class="bold"><strong>SCN </strong></span> box (for example, 1234567890). You can
+enter any number, but it must be unique within the configuration,
+and it cannot match another temporary SCN.</p></div></li><li><p>Ensure that the Management Server is selected in the <span class="bold"><strong>System</strong></span> list. </p></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p><p>Enterprise Manager installs the SCN. This process can take several
+minutes to complete.</p></li><li><p>Click the Refresh icon at the bottom of the License
+table to refresh the table and display the SCN that you installed.</p><p>After you install the SCN, a file with an encrypted license
+certificate is generated on the Management Server as a .blo file.
+The .blo file is located in the C:\Stealth Files\Certificates\ directory
+and is named according to your SCN. </p></li></ol></div></li><li><p>To install temporary licenses do the following. </p><div><p class="note"><b><i>Note:
+                  </i></b>To install permanent licenses, skip to the next step.</p></div><div class="orderedlist"><ol type="a"><li><p>Select the SCN row in the table.</p></li><li><p>Click <span class="bold"><strong>Update License</strong></span>.</p></li><li><p>Enter <span class="bold"><strong>Test</strong></span> in the
+License Key box and enter <span class="bold"><strong>Licenses</strong></span> in the Verification Key box.</p></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p><p>Skip to the final step in this procedure.</p></li></ol></div></li><li><p>To install permanent licenses, do the following: </p><div class="orderedlist"><ol type="a"><li><p>Log on to the Unisys Download Center as described
+in your <span class="italic"><i>Welcome Letter</i></span>.</p><p>The Download Center Home page appears and displays your corporate
+contact information.</p></li><li><p>Select <span class="bold"><strong>Download Management</strong></span> in the left pane.</p></li><li><p>In the <span class="bold"><strong>Order Number</strong></span> box, enter the order number provided in your <span class="italic"><i>Welcome Letter</i></span>, and click <span class="bold"><strong>Submit</strong></span>.</p></li><li><p>On the Download Management page, under the <span class="bold"><strong>Product Management</strong></span> heading, click the <span class="bold"><strong>Stealth Software Licensing</strong></span> link that corresponds
+to your order number.</p></li><li><p>On the Stealth Software Licensing page, select the
+SCN that you installed on the Management Server from the <span class="bold"><strong>SCN Number</strong></span> list and click <span class="bold"><strong>Submit</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Browse</strong></span> next
+to the Encryption Certificate box, and browse to the .blo file that
+was generated by Enterprise Manager. This file was created in the
+C:\Stealth Files\Certificates\ directory and is named according to
+your SCN.</p></li><li><p>Click <span class="bold"><strong>Update</strong></span>.</p><p>The Download Center provides a license file, which is an encrypted
+text file that contains your license keys.</p></li><li><p>Save and open the license file.</p></li><li><p>On the Enterprise Manager License tab, select the
+SCN for the license you are installing and click <span class="bold"><strong>Update License</strong></span>.</p></li><li><p>On the Update License dialog box, copy the strings
+from the license file in the <span class="bold"><strong>License Key</strong></span> box and <span class="bold"><strong>Verification Key</strong></span> box.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you open the text file in Notepad, it is recommended that
+you enable Word Wrap (by clicking Format and selecting Word Wrap)
+to ensure that you copy the full text of each string.</p></div></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p><p>Enterprise Manager installs the licenses. This process can take
+several minutes. </p></li></ol></div></li><li><p>Click the Refresh icon at the bottom of the License
+table to refresh the display with the updated license information.
+The Total License column displays the updated license count and the
+Status displays Installed Locally.</p><p>The licenses are installed
+and ready for use.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

@@ -1,0 +1,107 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Configuring Enterprise Manager User Accounts</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002315.htm" title="Initially Configuring the Stealth(core) Environment for Stealth(aware)"><link rel="prev" href="section-000029791.htm" title="Configuring a New Password and Configuring Licensing in Enterprise Manager"><link rel="next" href="section-000029823.htm" title="Using the StealthConfiguration Utility to Create Required Configurations"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000005032.htm" id="showframe">Show - Help Frame</a><a href="section-000005032.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000005032"></a><h2 class="title">Configuring Enterprise Manager User Accounts</h2></div></div></div><p><span class="bold"><strong>Best practice:</strong></span> It is a best
+practice to create at least one additional Enterprise Manager user
+account that is a Local User, and to assign it to the Portal Administrator
+role. You can use this account to complete the remaining configuration
+steps if you choose. At this time, you can also create as many additional
+accounts as are needed for Enterprise Manager users in your environment
+and assign them to the appropriate Enterprise Manager roles.</p><p>For example, you can assign one or more Enterprise Manager users
+to the Portal Administrator role to grant administrator privileges
+to those users and enable them to see all Enterprise Manager pages.
+In contrast, assigning users to the Audit Administrator role grants
+access only to the Monitor and Logs pages. You can add as many Enterprise
+Manager users as you want to your environment, assigned to whichever
+roles are appropriate for each user.</p><p>Enterprise Manager users (who are responsible for administering
+and operating the Stealth environment) and Stealth endpoint users
+(who are usually authenticated using Active Directory/LDAP and are
+assigned to roles) exist in the same Stealth database, and so each
+user name must be unique. If a person in your environment acts as
+both an Enterprise Manager user and a Stealth endpoint user, he or
+she requires two distinct user accounts: an Enterprise Manager user
+account and an endpoint user account.</p><p class="blocklabel">Adding Enterprise Manager
+Users</p><p>To add a new Enterprise Manager user, do the following:</p><div class="orderedlist"><ol type="1"><li><p>Select <span class="bold"><strong>Administration</strong></span> in the menu bar.</p></li><li><p>Select the <span class="bold"><strong>User</strong></span> tab.</p></li><li><p>Click <span class="bold"><strong>Add</strong></span> at the
+bottom of the page.</p></li><li><p>In the Add User dialog box, enter a unique display
+name for the new user in the <span class="bold"><strong>Name</strong></span> box.</p></li><li><p>Enter a unique user ID in the <span class="bold"><strong>User ID</strong></span> box.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>For a list of supported characters in user IDs, see <a class="xref" href="section-000005615.htm" title="Supported Characters and Length Restrictions in Enterprise Manager and Stealth(aware)">Supported Characters and Length Restrictions in Enterprise
+Manager and Stealth(aware)</a>.</p></li><li><p>It is recommended that you add a prefix to each Enterprise
+Manager user name (in the User ID box) to ensure that there are no
+conflicts between Enterprise Manager users and endpoint users. For
+example, you could preface each Enterprise Manager user name with <span class="normal">EM</span>, such as <span class="normal">EMOperator</span>, <span class="normal">EMAuditor</span>, <span class="normal">EMCrypto</span>, and so on.</p></li></ul></div></div></li><li><p>Optionally, enter a description for the user in the <span class="bold"><strong>Description</strong></span> box.</p></li><li><p>Enter a password for the user in the <span class="bold"><strong>Default Password</strong></span> box, and then reenter the
+password in the <span class="bold"><strong>Confirm Password</strong></span> box.</p><p>The password must be between six and 50 characters, and it must
+include all of the following.</p><div class="itemizedlist"><ul class="disc"><li><p>At least one uppercase letter</p></li><li><p>At least one lowercase letter</p></li><li><p>At least one number</p></li><li><p>At least one of the following special characters: </p><p>! @ # $ % ^ &amp; * ( ) _ + = </p></li></ul></div></li><li><p>Select the <span class="bold"><strong>Local User </strong></span>check box.</p></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p></li><li><p>When you are finished adding users, click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div><p class="blocklabel">Assigning Enterprise Manager Users to Roles</p><p>The Administration page, Role tab includes a list of roles to
+which you can assign to Enterprise Manager users. Assigning an Enterprise
+Manager user to a role determines which Enterprise Manager pages the
+user can access and tasks the user can perform. Available roles include
+the following:</p><div class="itemizedlist"><ul class="disc"><li><p>Audit Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages logs and monitors the systems
+added to Enterprise Manager</p></li><li><p>Access &#8211; Monitoring page and Logs page only</p></li></ul></div></li><li><p>Cryptographic Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages Stealth roles, COIs, and
+filters</p></li><li><p>Access &#8211; All pages, except the Administration
+page; however, users in this role are restricted from the following: </p><div class="itemizedlist"><ul class="square"><li><p>Users have read-only access to the Monitoring page
+and all subtabs</p></li><li><p>Users cannot view the License subtab on the Manage
+page, and cannot install or delete license files</p></li></ul></div></li></ul></div></li><li><p>Portal Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Performs all administration functions
+in Enterprise Manager</p></li><li><p>Access &#8211; All pages and functions</p></li></ul></div></li><li><p>Portal Operator </p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Monitors systems</p></li><li><p>Access &#8211; Monitoring page only</p></li></ul></div></li><li><p>Service Administration</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Provides for automatic updates performed
+by services in the environment</p></li><li><p>Access &#8211; All pages and functions</p></li></ul></div></li><li><p>Stealth Administrator</p><div class="itemizedlist"><ul class="circle"><li><p>Purpose &#8211; Manages the settings for systems
+in the Stealth network </p></li><li><p>Access &#8211; Full access to the Monitoring and
+Logs pages and the System subtab on the Configure page</p><p>Read-only access to the Provision page and all other subtabs (except
+System) on the Configure page</p></li></ul></div></li></ul></div><p>Click the plus sign (<span class="bold"><strong>+</strong></span>) to
+the left of a role to display the users that have been assigned to
+the role. </p><p>To assign one or more Enterprise Manager users to a role, do
+the following.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>You cannot modify an Enterprise Manager user&#8217;s
+roles or delete the user while you are logged on as that user. You
+must sign in with another Enterprise Manager user account with the
+necessary privileges (for example, portaladmin).</p></li><li><p>You cannot modify the portaladmin user&#8217;s roles
+or delete the user.</p></li></ul></div></div><div class="orderedlist"><ol type="1"><li><p>If you have not already done so, on the Administration
+page, select the <span class="bold"><strong>Role</strong></span> tab.</p></li><li><p>Select the check box next to the role or roles that
+you want to assign to a user.</p></li><li><p>Click <span class="bold"><strong>Show Users</strong></span> at
+the bottom of the page.</p></li><li><p>In the Add/Remove User dialog box, select the check
+box next to each user that you want to assign to the selected roles.</p></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

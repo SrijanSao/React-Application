@@ -1,0 +1,102 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Modifying Node Details (Node Details Panel)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="prev" href="st_aw_prof_det.htm" title="Modifying Profile Details (Profile Details Panel)"><link rel="next" href="st_aw_chan_det.htm" title="Modifying Channel Details (Channel Details Panel)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=st_aw_node_det.htm" id="showframe">Show - Help Frame</a><a href="st_aw_node_det.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="st_aw_node_det"></a><h2 class="title">Modifying Node Details (Node Details Panel)</h2></div></div></div><p>Use the Node Details panel to view (and modify, if necessary)
+details for a specific Node, including the classification of the Node
+and the Node name.</p><p>To view the Node Details panel and modify details of a Node,
+do the following:</p><div class="orderedlist"><ol type="1"><li><p>Select a Profile, and then click a Node under the
+Nodes heading.</p><div><p class="note"><b><i>Note:
+                  </i></b>You might need to expand the Nodes list to see all Nodes that
+are members of the Profile.</p></div><p>The Node Details panel appears.</p></li><li><p>If necessary, click the classification icon at the
+top-center of the panel and select a new classification from the menu.
+The following table provides a description of each classification.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>If the classification icon is a question mark (?),
+the Node is unclassified. If you select a classification for an unclassified
+Node, you cannot change the Node back to unclassified.</p></li><li><p>Stealth(aware) does not automatically classify any
+Nodes as Admin Users. You can manually classify Nodes as Admin Users,
+as required.</p></li></ul></div></div><div class="table"><a name="table-000003618"></a><p class="title"><b>Table&nbsp;5.&nbsp;Node Classifications</b></p><div class="table-contents"><table summary="Node Classifications" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Icon</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Description</th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_DatabaseServerProxy.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Database Proxy</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_DatabaseServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Database Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_WebServerProxy.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Web Proxy</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_WebServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Web Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_AdminUser.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Admin User</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_ApplicationServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Application Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_AdministrativeWorkstation.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Admin Workstation</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_Workstation.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Workstation</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_User.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>User</p></td></tr></tbody></table></div></div><br class="table-break"><div><p class="note"><b><i>Note:
+                  </i></b>The Stealth Management Server, Stealth Standalone Authorization
+Server, and Stealth Service Mode classifications also appear in this
+list. Ignore these classifications; they are not supported in this
+release.</p></div></li><li><p>If necessary, in the <span class="bold"><strong>Node Name</strong></span> field, modify the name of the Node. If the Node is running the Discovery
+Agent or if the DNS Resolution is set to On in the Project Details
+panel, the Node Name field is set to the Node host name by default. </p><p>If the Node is not running the Discovery Agent, or if the DNS
+Resolution is set to Off, or if DNS Resolution is Set to On but the
+host name cannot be resolved, the Node Name field is set to the Node
+IP address by default.</p><p>If you want to change the name, it can be a maximum length of
+45 characters and must meet the requirements in <a class="xref" href="section-000005615.htm" title="Supported Characters and Length Restrictions in Enterprise Manager and Stealth(aware)">Supported Characters and Length Restrictions in Enterprise
+Manager and Stealth(aware)</a>.</p></li></ol></div><p>The following additional information appears on the Node Details
+panel, which cannot be changed. You can review the following settings:</p><div class="itemizedlist"><ul class="disc"><li><p>The <span class="bold"><strong>Host Name </strong></span>field,
+includes the Node host name, if the host name is known. If the host
+name is not known, this field is blank.</p></li><li><p>The <span class="bold"><strong>IP Address</strong></span> field
+includes the Node IP address. </p></li><li><p>The <span class="bold"><strong>Parent</strong></span> field
+includes the name of the Profile that the Node is included in. If
+you want to view the details of the parent Profile, click the Profile
+name. See <a class="xref" href="st_aw_prof_det.htm" title="Modifying Profile Details (Profile Details Panel)">Modifying Profile Details (Profile Details Panel)</a> for more information.</p><div><p class="note"><b><i>Note:
+                  </i></b>The icon next to the Profile name indicates the Profile classification.</p></div></li><li><p>The <span class="bold"><strong>Flows</strong></span> diagram
+provides a visual representation of the Channels (and their associated
+flows) between the current Node and all other Nodes with which it
+communicates, and includes the following information:</p><div class="itemizedlist"><ul class="circle"><li><p>The classification and name of the current node.</p></li><li><p>For each flow, either the name of the IANA service
+or the word Unassigned, a colon, and then the protocol and port.</p><div><p class="note"><b><i>Note:
+                  </i></b>If the ports and protocols are not listed on the Internet Assigned
+Numbers Authority (IANA) registry, they are prefaced by <span class="normal">Unassigned</span>. (This includes ports and protocols
+used by Stealth.)</p></div></li><li><p>One of the following policies is shown on each flow:</p><div class="itemizedlist"><ul class="square"><li><p>Stealth Allow</p></li><li><p>Clear Text Allow</p></li><li><p>Block Clear Text and Stealth </p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>See <a class="xref" href="st_aw_prof_det.htm#table-000003212" title="Table&nbsp;4.&nbsp;Policies">Policies</a> for more information.</p></div></li><li><p>Information about the other Node (with which the selected
+Node is communicating), including:</p><div class="itemizedlist"><ul class="square"><li><p>The IP address, host name, or name of the other Node</p></li><li><p>The classification of the other Node</p></li><li><p>Whether the other Node is providing services to the
+current Node (the arrow above the classification is pointed up), or
+the other Node is consuming services from the current Node (the arrow
+above the classification is pointed down)</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>To access the Node Details panel of the other Node, you can
+click its IP address, host name, or name (depending on what values
+are defined for the other Node).</p></div></li></ul></div></li></ul></div><p>Click the <span class="bold"><strong>X</strong></span> in the upper-right
+corner or click anywhere on the map to close the Node Details panel.</p><div><p class="note"><b><i>Note:
+                  </i></b>When you make a change to the Node Details panel, the change
+is automatically saved.</p></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

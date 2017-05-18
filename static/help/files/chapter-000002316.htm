@@ -1,0 +1,96 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Installing Stealth Endpoint Software</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="prev" href="section-000037260.htm" title="Continuing After Deployment"><link rel="next" href="section-000029821.htm" title="Configuring Windows Endpoints to Use Stealth"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=chapter-000002316.htm" id="showframe">Show - Help Frame</a><a href="chapter-000002316.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="chapter" lang="en"><div class="titlepage"><div><div><h1 class="title" id="chapter-000002316">Installing Stealth Endpoint Software</h1></div></div></div><p>When you run the StealthConfiguration Utility (as described
+in <a class="xref" href="section-000029823.htm" title="Using the StealthConfiguration Utility to Create Required Configurations">Using the StealthConfiguration Utility to Create Required Configurations</a>), the required Stealth endpoint
+packages are created in the C:\Stealth Files\Software Installs\Packages
+directory on the Management Server. When you use the Deploy tool in
+Stealth(aware), you provision the Stealth Management Server so that
+it can authorize endpoints and assign them to the appropriate roles
+and COIs.</p><p>You use the following endpoint packages to install the Stealth
+software on the workstations and servers that you want to Stealth-enable:</p><div class="itemizedlist"><ul class="disc"><li><p>&lt;<span class="italic"><i>Endpoint Configuration
+Name</i></span>&gt;AwareWinPkg32-SAO.exe</p><p>Windows 32-bit,
+Server Always On &#8211; Use this package to configure Windows 32-bit
+operating systems. </p><p>This mode is generally used for servers or any unattended system
+in the environment that need to run Windows Server Mode. Stealth is <span class="italic"><i>enabled </i></span>when the system boots and cannot
+be disabled using the Stealth Dashboard.</p></li><li><p>&lt;<span class="italic"><i>Endpoint Configuration
+Name</i></span>&gt;AwareWinPkg32-COD.exe</p><p>Windows 32-bit,
+Client On Demand &#8211;  Use this package to configure Windows 32-bit
+operating systems. </p><p>This mode is generally used for Windows workstations or any
+regularly attended Windows system in the environment. Stealth is <span class="italic"><i>disabled </i></span>when the system boots. Stealth remains
+disabled until the user specifically enables it using the Stealth
+Dashboard.</p></li><li><p>&lt;<span class="italic"><i>Endpoint Configuration
+Name</i></span>&gt;AwareWinPkg64-SAO.exe</p><p>Windows 64-bit,
+Server Always On &#8211; Use this package to configure Windows 64-bit
+operating systems. </p><p>This mode is generally used for servers or any unattended system
+in the environment that need to run Windows Server Mode. Stealth is <span class="italic"><i>enabled </i></span>when the system boots and cannot
+be disabled using the Stealth Dashboard.</p></li><li><p>&lt;<span class="italic"><i>Endpoint Configuration
+Name</i></span>&gt;AwareWinPkg64-COD.exe</p><p>Windows 64-bit,
+Client On Demand &#8211; Use this package to configure Windows 64-bit
+operating systems. This mode is generally used for Windows workstations
+or any regularly attended Windows system in the environment. Stealth
+is <span class="italic"><i>disabled </i></span>when the system boots.
+Stealth remains disabled until the user specifically enables it using
+the Stealth Dashboard.</p></li><li><p>&lt;<span class="italic"><i>Endpoint Configuration
+Name</i></span>&gt;AwareLinuxPkg-SAO.sh</p><p>Linux, Server Always
+On &#8211; Use this package to configure all Linux endpoints (32-bit
+or 64-bit). Stealth can be enabled or disabled using a command.</p></li></ul></div><p>Copy these endpoint packages to the workstations and servers
+on which you want to install Stealth, and use the appropriate endpoint
+package based on the operating system type, architecture, and behavior. </p><div><p class="note"><b><i>Note:
+                  </i></b>Do <span class="bold"><strong>not</strong></span> install the &lt;<span class="italic"><i>Admin Configuration Name</i></span>&gt;AwareWinPkg64-SAO.exe
+package on any system except the Management Server. </p></div><p><span class="bold"><strong>Best Practice:</strong></span> Before you begin
+the endpoint software installation, it is a best practice to do the
+following: </p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that the workstations and servers that you
+want to Stealth-enable have network connectivity and are on a network
+segment that would be able access the Management Server. </p></li><li><p>Ensure that there are no firewalls blocking Stealth
+communications. For details on configuring firewalls to enable Stealth
+communications, see the <span class="italic"><i>Unisys Stealth Solution
+Information Center</i></span>.</p></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

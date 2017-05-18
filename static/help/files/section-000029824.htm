@@ -1,0 +1,105 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Deleting the Administrative Configuration, the Endpoint Configuration, and Creating New Configurations</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029820.htm" title="Updating Configurations Using the StealthConfiguration Utility"><link rel="prev" href="section-000029825.htm" title="Deleting the Endpoint Configuration and Creating a New Endpoint Configuration"><link rel="next" href="section-000029334.htm" title="Monitoring the Stealth Environment Using Enterprise Manager"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029824.htm" id="showframe">Show - Help Frame</a><a href="section-000029824.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029824"></a><h3 class="title">Deleting the Administrative Configuration, the Endpoint Configuration,
+and Creating New Configurations</h3></div></div></div><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>This is an advanced topic that requires extensive use of Enterprise
+Manager. Refer to the <span class="italic"><i>Unisys Stealth Solution
+Information Center</i></span> for more information about performing
+any of the steps in this procedure.</p></td></tr></table></p></div><p>If you need to delete the Administrative configuration and endpoint
+configuration you created using the StealthConfiguration Utility,
+you can uninstall and reinstall the Enterprise Management software
+from the Management Server. Alternatively, you can perform the following
+procedure. </p><p>When you perform this procedure, you delete all of the components
+you created when you ran the StealthConfiguration Utility, including
+the Administrative configuration, the endpoint configuration, and
+the Stealth endpoint packages. After you perform this procedure, you
+must redeploy using Stealth(aware) and install new versions of the
+Stealth endpoint packages on the Management Server and on all endpoints. </p><p>Do the following: </p><div class="orderedlist"><ol type="1"><li><p>Ensure that you are logged on to the Management Server
+as a local administrator user.</p></li><li><p>Open a command prompt using the Run as administrator
+option.</p></li><li><p>Enter the following command to access the StealthConfiguration
+Utility directory:</p><pre class="programlisting">cd "C:\Program Files\Unisys\EnterpriseMgmt\Stealth Manager"</pre></li><li><p>Enter the following command to delete the endpoint
+configuration:</p><pre class="programlisting">StealthConfiguration.exe -v DeleteProject="&lt;<span class="italic"><i>Endpoint Configuration Name</i></span>&gt;"</pre><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that you spell and capitalize this command
+exactly as written.</p></li><li><p>The -v option enables verbose mode and provides additional
+feedback on the results of the command. You should see feedback as
+the project is deleted.</p></li></ul></div></div><p>For example, enter StealthConfiguration.exe -v DeleteProject="AwareEndpoints".</p></li><li><p>Launch Enterprise Manager, and log in using portaladministrator
+credentials.</p></li><li><p>Do the following to delete the existing endpoint packages:</p><div class="orderedlist"><ol type="a"><li><p>Select <span class="bold"><strong>Manage</strong></span> from
+the menu bar.</p></li><li><p>On the <span class="bold"><strong>Package</strong></span> tab,
+on the <span class="bold"><strong>Endpoint Package</strong></span> subtab, press <span class="bold"><strong>Ctrl</strong></span> and select all of the endpoint packages
+on the page.</p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Wait until the endpoint packages are deleted.</p></li></ol></div></li><li><p>Do the following to delete the Administrative configuration:</p><div class="orderedlist"><ol type="a"><li><p>Select <span class="bold"><strong>Configure</strong></span> from
+the menu bar, and then select the <span class="bold"><strong>Configuration</strong></span> tab.</p></li><li><p>Select the Administrative configuration (for example,
+AwareAdmin).</p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Wait until the configuration is deleted.</p></li></ol></div></li><li><p>Do the following to delete the associated COIs:</p><div class="orderedlist"><ol type="a"><li><p>On the Configure page, select the <span class="bold"><strong>COI</strong></span> tab.</p></li><li><p>Select the first COI associated with the Administrative
+configuration (for example, AwareAdminLicenseCOI).</p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Wait until the COI is deleted.</p></li><li><p>Select the second COI associated with the Administrative
+configuration (for example, AwareAdminServiceCOI).</p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Wait until the COI is deleted.</p></li></ol></div></li><li><p>Optionally, do the following to delete the clear text
+filters you created.</p><div><p class="note"><b><i>Note:
+                  </i></b>This step is optional, because you can create an unlimited number
+of clear text filters that use unique names. If you want to delete
+any clear text filters, be sure that you delete all associated filter
+sets, lists, and qualifiers.</p></div><div class="orderedlist"><ol type="a"><li><p>Select <span class="bold"><strong>Filters</strong></span> from
+the menu bar, and then select <span class="bold"><strong>Filter Set</strong></span> from the Filter tree.</p></li><li><p>Select the first filter set on the right side of the
+page. </p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Repeat the previous two steps to delete all additional
+filter sets.</p></li><li><p>Select <span class="bold"><strong>Filter List</strong></span> from the Filter tree.</p></li><li><p>Select the first filter list on the right side of
+the page. </p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Repeat the previous two steps to delete all additional
+filter lists.</p></li><li><p>Select <span class="bold"><strong>Qualifier</strong></span> from
+the Filter tree.</p></li><li><p>On the Protocol/Port tab on the right side of the
+page, select the first qualifier in the list. </p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Repeat the previous two steps to delete all additional
+qualifiers on the Protocol/Port tab.</p></li><li><p>On the IP on the right side of the page, select the
+first qualifier in the list. </p></li><li><p>At the bottom of the page, click <span class="bold"><strong>Delete</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Yes</strong></span> to confirm
+the deletion.</p></li><li><p>Repeat the previous two steps to delete all additional
+qualifiers on the IP tab.</p></li></ol></div></li><li><p>Close Enterprise Manager.</p></li><li><p>Perform the steps in <a class="xref" href="section-000029823.htm" title="Using the StealthConfiguration Utility to Create Required Configurations">Using the StealthConfiguration Utility to Create Required Configurations</a>.</p></li><li><p>Perform the steps in <a class="xref" href="section-000029817.htm" title="Installing the Stealth Endpoint Package on the Management Server">Installing the Stealth Endpoint Package on the Management Server</a>.</p></li><li><p>Perform the steps in <a class="xref" href="chapter-000002207.htm" title="Deploying the Stealth(aware) Model">Deploying the Stealth(aware) Model</a>.</p></li><li><p>Perform the steps in <a class="xref" href="chapter-000002316.htm" title="Installing Stealth Endpoint Software">Installing Stealth Endpoint Software</a>.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

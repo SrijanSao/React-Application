@@ -1,0 +1,86 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Optionally Disabling Stealth on Selected Network Adapters</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029821.htm" title="Configuring Windows Endpoints to Use Stealth"><link rel="prev" href="section-000014160.htm" title="Importing the Trust Chain for the Endpoint Package Signing Certificate on Windows Endpoints"><link rel="next" href="section-000005064.htm" title="Installing Stealth Endpoint Software on Windows"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000015196.htm" id="showframe">Show - Help Frame</a><a href="section-000015196.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000015196"></a><h3 class="title">Optionally Disabling Stealth on Selected Network Adapters</h3></div></div></div><p>Perform one of the following procedures to disable Stealth on
+network adapters.</p><p class="blocklabel">Disabling Stealth on Selected
+Network Adapters (Before Endpoint Software Installation or Upgrade)</p><p>By default, Stealth is enabled on all network adapters on the
+Windows endpoint when Stealth endpoint software is installed or upgraded
+(excepting known virtual adapters that Stealth does not bind to, such
+as VPN adapters). If the system has multiple network adapters, you
+can disable Stealth for selected adapters before the endpoint installation
+or upgrade using the Stealth Network Adapter Exclusion Utility.</p><p>When you run this utility, a new registry key is written to
+the Windows Endpoint Registry, and the changes are applied during
+the next Stealth endpoint software installation or upgrade to a later
+version of Stealth endpoint software. You can rerun this utility at
+any time to update the registry. </p><div><p class="note"><b><i>Note:
+                  </i></b>If you run this utility to make changes to the registry entry,
+and then install the same version of endpoint software again, your
+changes will not take effect. You must uninstall and reinstall the
+Stealth software or upgrade to a later version of endpoint software
+to apply the changes from the registry.</p></div><p>These changes persist when the endpoint is rebooted and if the
+endpoint software is upgraded or uninstalled.</p><p>Do the following: </p><div class="orderedlist"><ol type="1"><li><p>On Unisys Stealth Solution Release 3.<span class="italic"><i>x </i></span>ISO file, navigate to the support directory,
+and copy the Stealth Network Adapter Exclusion Utility file, which
+is named <span class="bold"><strong>ExcludeAdapters.exe</strong></span>.</p></li><li><p>Save this file to your endpoint, and run it on the
+endpoint by double-clicking <span class="bold"><strong>ExcludeAdapters.exe</strong></span>.</p></li><li><p>In the Network Adapters Available to Stealth list,
+select a network adapter that you want to exclude, and then click <span class="bold"><strong>Exclude</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>If any network adapters that you want to exclude do not appear
+in the list, close the utility, ensure that the network adapters are
+connected and enabled in Windows, and then reopen the utility.</p></div></li><li><p>Repeat the previous step to exclude as many network
+adapters as needed.</p></li><li><p>In the Stealth Adapter Exclusion List, ensure that
+all of the network adapters you want to exclude are listed. </p><p>If there are any network adapters that appear in this list that
+you want to be Stealth enabled, you can remove them. </p></li><li><p>Click <span class="bold"><strong>Save</strong></span>.</p><p>A new registry entry is written to HKEY_LOCAL_MACHINE\SOFTWARE\Unisys\MLSTPGW
+named ExcludeDeviceNames. </p></li></ol></div><p class="blocklabel">Updating Selected Network Adapters (After Endpoint
+Software Installation)</p><p>Alternatively, after the endpoint
+software is installed, you can disable Stealth for selected adapters
+by doing the following:</p><div class="orderedlist"><ol type="1"><li><p>Access Control Panel, and select <span class="bold"><strong>Network and Sharing Center</strong></span>.</p></li><li><p>Access the Local Area Connection Properties for the
+network adapter for which you want to disable Stealth.</p></li><li><p>On the properties dialog box, clear the "Unisys Stealth
+Solution" check box, and
+then click <span class="bold"><strong>OK</strong></span>.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

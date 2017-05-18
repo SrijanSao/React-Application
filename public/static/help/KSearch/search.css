@@ -1,0 +1,151 @@
+/* CSS for KSearch Client Side by KScripts */
+
+/* Search Top Frame */
+.top_frame { 
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #000000;
+	font-family: Verdana; 
+}
+
+/* Search Results */
+.results { 
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #000000;
+	font-family: Verdana; 
+}
+
+/* Search Help Page */
+.help { 
+	font-size:  x-small; 
+	text-decoration: none; 
+	font-family: Verdana; 
+}
+
+/* Copyright */
+.copyright
+{
+	font-size: 6pt;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+.tips {
+	font-size: x-small; 
+	font-family: Verdana; 
+	font-weight: normal; 
+	color: Yellow;
+	background-color : Silver;	
+}
+
+
+input.searchbtn {
+	font-size: x-small; 
+	font-family: Verdana; 
+	font-weight: normal;
+}
+
+body.searchtopframe {
+   	background-color : Silver;
+ 	margin-left : 0;
+ 	margin-right : 0;
+ 	margin-top : 5;
+ 	margin-bottom : 0;
+}
+
+dd.search_match_hits {
+	font-size:  x-small; 
+	text-decoration: none; 
+	font-weight: bold; 
+	font-family: Verdana; 
+	color: black;
+}
+
+dd.search_description {
+	font-size:  x-small; 
+	text-decoration: none; 
+	font-weight: normal; 
+	font-family: Verdana; 
+	color: black;
+}
+
+
+/* Search links */
+
+a.search_results:link { 
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: none;
+	color: #2c5d88;
+   	background-color : white;	
+	font-family: Verdana; 
+}
+
+a.search_results:visited { 
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: none;
+	color: #2c5d88;
+   	background-color : white;	
+	font-family: Verdana; 
+}
+
+a.search_results:active { 
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: underline;
+	color: black;
+   	background-color : paleturquoise;	
+	font-family: Verdana; 
+}
+
+a.search_results:hover {
+	font-size: x-small; 
+	font-weight: bold; 
+	text-decoration: underline;
+	color: black;
+   	background-color : paleturquoise;	
+	font-family: Verdana; 
+   }
+
+
+/* Regular links */
+a:link { 
+	font-size: x-small; 
+	font-weight: normal; 
+	text-decoration: none;
+	color: #2c5d88;
+   	background-color : white;	
+	font-family: Verdana; 
+}
+
+a:visited { 
+	font-size: x-small; 
+	font-weight: normal; 
+	text-decoration: none;
+	color: #2c5d88;
+   	background-color : white;	
+	font-family: Verdana; 
+}
+
+a:active { 
+	font-size: x-small; 
+	font-weight: normal; 
+	text-decoration: underline;
+	color: black;
+   	background-color : paleturquoise;	
+	font-family: Verdana; 
+}
+
+a:hover {
+	font-size: x-small; 
+	font-weight: normal; 
+	text-decoration: underline;
+	color: black;
+   	background-color : paleturquoise;	
+	font-family: Verdana; 
+   }
+

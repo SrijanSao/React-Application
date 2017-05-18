@@ -1,0 +1,87 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Importing Traffic Data (Import Traffic Data Tool)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="prev" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="next" href="st_aw_affin.htm" title="Setting the Affinity Level (Set Affinity Level Tool)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=st_aw_imp_pcap.htm" id="showframe">Show - Help Frame</a><a href="st_aw_imp_pcap.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="st_aw_imp_pcap"></a><h2 class="title">Importing Traffic Data (Import Traffic Data Tool)</h2></div></div></div><p>Using the Import Traffic Data tool, you can import network traffic
+data from standard network analyzer tools (such as Wireshark and tcpdump)
+or from the Stealth Discovery Agent running on Nodes in the network.</p><p><span class="bold"><strong>Best Practice:</strong></span> It can take
+some time to complete the process of importing network traffic data. <a class="xref" href="section-000034377.htm" title="Understanding Time to Import Network Traffic Data to Stealth(aware)">Understanding Time to Import Network Traffic Data to Stealth(aware)</a> provides guidelines on network traffic
+data file processing time. To start working with the traffic data
+in Stealth(aware) more quickly, it is a best practice to copy a smaller
+amount of traffic data or a limited number of traffic data files to
+import at one time. It is recommended that you limit each pcap file
+you import to less than 30 MB, either by limiting the time you spend
+capturing data, or dividing one large file into multiple smaller files
+using a program like Wireshark editcap. It is also recommended that
+you incrementally import pcap files (one at a time) and that you complete
+the pcap file import for each capture point before advancing to another
+capture point.</p><p>To use the Import Traffic Data tool, do the following in Stealth(aware):</p><div class="orderedlist"><ol type="1"><li><p>Click the <span class="bold"><strong>Import Traffic Data</strong></span> tool.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinemediaobject"><img src="images/Stealth_01.jpg"></span></p><p>The Import Traffic Data panel appears.</p></li><li><p>From the Import Traffic Data panel, do one of the
+following to import new pcap or cap files or select a folder that
+includes pcap or cap files.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>Only pcap or cap files can be imported (other file
+types, such as pcapng and NetFlow files in NFC format are not supported).</p></li><li><p>Files are not removed from the share when they are
+imported into Stealth(aware). Therefore, if you create a new project
+and browse to the same directory, all files that were previously imported
+into the old project can be imported into the new project.</p></li><li><p>When you import a new file, any empty Solutions in
+the model are deleted. To avoid this, add at least one Profile to
+the empty Solution.</p></li></ul></div></div><p>Click one of the following:</p><div class="itemizedlist"><ul class="disc"><li><p>Click <span class="bold"><strong>Browse to File</strong></span>, select a file to import, and then click <span class="bold"><strong>Open</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Live Feed</strong></span>,
+browse to the file share you created in <a class="xref" href="section-000027612.htm" title="Configuring a Windows File Share for the Discovery Agent Network Traffic Data Files">Configuring a Windows File Share for the Discovery Agent Network
+Traffic Data Files</a>, and then click <span class="bold"><strong>Select Folder</strong></span>.</p><p>If you want to continuously
+receive updated data from one or more Discovery Agents you installed
+on Nodes, ensure that the Live Feed switch is <span class="bold"><strong>On</strong></span>. The Live Feed automatically imports new pcap or cap
+files when they appear in the directory you have selected. </p></li></ul></div></li></ol></div><p>The Import Traffic Data panel closes, and a Processing message
+appears. The file or files are imported. </p><p>The Nodes are automatically classified and affinitized based
+on the affinity level set for the open project, as described in <a class="xref" href="st_aw_affin.htm" title="Setting the Affinity Level (Set Affinity Level Tool)">Setting the Affinity Level (Set Affinity Level Tool)</a>. The Processing message disappears when the
+data import process has been successfully completed. </p><p>You can import additional pcap or cap files to improve the information
+in the Stealth(aware) Model, and there is no limit to the number of
+files you can import. In addition, you can continuously update the
+model with new information from the Live Feed. </p><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Before updating the Stealth(aware) Model, ensure Live Feed is
+Off.</p></td></tr></table></p></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

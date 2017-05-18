@@ -1,0 +1,94 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Installing the Discovery Agent on Nodes Running Windows</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002214.htm" title="Importing Existing Data and Installing the Discovery Agent on Nodes"><link rel="prev" href="section-000027613.htm" title="Discovery Agent Supported Operating Systems"><link rel="next" href="section-000024672.htm" title="Installing the Discovery Agent on Nodes Running Linux"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000027611.htm" id="showframe">Show - Help Frame</a><a href="section-000027611.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000027611"></a><h2 class="title">Installing the Discovery Agent on Nodes Running Windows</h2></div></div></div><p>You can install the Discovery Agent on a Node running one of
+the Windows operating systems listed in <a class="xref" href="section-000027613.htm" title="Discovery Agent Supported Operating Systems">Discovery Agent Supported Operating Systems</a>.</p><p>As part the installation process, the following software is
+installed on the Windows Node, if it is not already installed: </p><div class="itemizedlist"><ul class="disc"><li><p>Microsoft Visual C++ 2015 Redistributable x86 or x64,
+depending on the system architecture</p></li><li><p>Win10Pcap</p></li></ul></div><p>Do the following to install the Discovery Agent on Nodes running
+Windows:</p><div class="orderedlist"><ol type="1"><li><p>Save the Discovery Agent executable file in a location
+that is accessible from your Windows Nodes. This file is named Stealth_Discovery_Installer_Release_&lt;<span class="italic"><i>x64 or x86</i></span>&gt; and is included with the Stealth(aware)
+ISO file in the discovery\windows folder.</p></li><li><p>From Windows Explorer, right-click the Discovery Agent
+executable file for your system type, and then select <span class="bold"><strong>Run as administrator</strong></span>.</p></li><li><p>If you are prompted to allow the program to make changes
+to your computer, click <span class="bold"><strong>Yes</strong></span>.</p></li><li><p>On the Unisys Stealth(aware) Auto Discovery window,
+click <span class="bold"><strong>Install</strong></span>.</p></li><li><p>If it is not already installed, wait while Microsoft
+Visual C++ 2015 Redistributable is installed.</p></li><li><p>If Win10Pcap is not already installed, wait while
+it is automatically installed. </p><p>When the installation
+is complete, the Unisys Stealth(aware) Auto Discovery Setup Wizard
+launches.</p></li><li><p>Click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>It is recommended that you retain the destination
+folder default location, and then click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>Enter the appropriate values on the Discovery Share
+Settings page, as follows: </p><div class="itemizedlist"><ul class="disc"><li><p>Remote Share &#8211; Enter the network address of
+the share you configured in <a class="xref" href="section-000027612.htm" title="Configuring a Windows File Share for the Discovery Agent Network Traffic Data Files">Configuring a Windows File Share for the Discovery Agent Network
+Traffic Data Files</a>.</p></li><li><p>Remote Share User &#8211; Enter a user name that
+has privileges to write to this share.</p></li><li><p>Remote Share Password &#8211; Enter the password
+for the user.</p><div><p class="note"><b><i>Note:
+                  </i></b>This password cannot be updated unless you reinstall the Discovery
+Agent software. Therefore, you should enter credentials for a user
+whose password does not expire.</p></div></li></ul></div><p>Click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>Enter the appropriate values on the Discovery Collection
+Settings page, as follows: </p><div class="itemizedlist"><ul class="disc"><li><p>When you are asked how often (in seconds) you would
+like to start a capture, enter a new value or retain the default value
+of 840 seconds (14 minutes). </p></li><li><p>When you are asked how long (in seconds) you would
+like each capture to last, enter a new value or retain the default
+value of 65 seconds (1 minute, 5 seconds). </p></li><li><p>When you are asked how often (in seconds) you would
+like to move completed capture files to the remote directory, enter
+a new value or retain the default value of 1800 seconds (30 minutes).</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>The value for <span class="bold"><strong>The length of time (in seconds)
+that each capture sessions lasts</strong></span> should be equal to or
+less than the value for <span class="bold"><strong>The time interval (in
+seconds) that a new capture is started</strong></span>. If these values
+are the same, this means that data is continuously captured.</p></div></li><li><p>Click <span class="bold"><strong>Next</strong></span>.</p></li><li><p>Click <span class="bold"><strong>Install</strong></span>.</p></li><li><p>When the installation is complete, click <span class="bold"><strong>Finish</strong></span>.</p></li><li><p>When you see a message that reads &#8220;Installation
+Successfully Completed,&#8221; click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>If the remote share, user name, and password are <span class="bold"><strong>not</strong></span> correct, the installation will <span class="bold"><strong>fail</strong></span>. If the installation fails, do the following:</p><div class="orderedlist"><ol type="1"><li><p>Perform this procedure again, and verify that the
+Discovery Share Settings page includes the correct information.</p></li><li><p>For more information, see the Discovery.txt log file,
+which is located in C:\ProgramData\Unisys\Stealth.</p></li></ol></div></td></tr></table></div><p>The process of discovering data begins automatically. </p><p>If you want to stop the discovery process, do the following
+to stop the Unisys Stealth Discovery service:</p><div class="orderedlist"><ol type="1"><li><p>From the Start menu, enter <span class="bold"><strong>Services</strong></span> in the <span class="bold"><strong>Search</strong></span> box, right-click
+Services, and select <span class="bold"><strong>Run as administrator</strong></span>.</p></li><li><p>Locate the Unisys Stealth Discovery service in the
+list of Services.</p></li><li><p>Right-click the <span class="bold"><strong>Unisys Stealth
+Discovery </strong></span>service and select <span class="bold"><strong>Stop</strong></span>.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

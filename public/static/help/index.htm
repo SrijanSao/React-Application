@@ -1,0 +1,59 @@
+<html><meta http-equiv="X-UA-Compatible" content="IE=EDGE"><link id="layout" rel="stylesheet" href="files/css/wh_default.css" type="text/css"><title>Unisys Stealth(aware) Installation and Administration Guide</title><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if (userAgent.indexOf("Android") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_android.css");
+
+                } else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "files/css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "files/css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "files/css/wh_default.css");
+                }
+
+		        function loadMain()
+                {
+                    var queryStr = window.location.search.slice(1);
+                    var topic = "";	
+                    /* get nav parameter query string value */
+                    x = queryStr.toLowerCase().indexOf("topic=");
+                    if (x >= 0) {
+                        topic = queryStr.substring(x + 6);
+                        x = topic.indexOf("&");
+                        if (x >= 0) {
+                            topic = topic.substring(0, x);
+                        }
+                        document.getElementsByName("main").item(0).src = "files/" + topic;
+                        document.getElementsByName("nav_display").item(0).src = "contents_frame.htm?topic=" + topic;
+
+                    }
+                }		
+            </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><frameset rows="50,*,50" cols="*">
+		    <frame name="navagation" src="navframe.htm" marginwidth="10" marginheight="15" scrolling="No" frameborder="no" noresize>
+		<frameset onLoad="loadMain()" rows="*" cols="300,*"><frame src="contents_frame.htm" name="nav_display" frameborder="yes" scrolling="auto" marginwidth="10" marginheight="10"><frame src="files/index.htm" name="main" frameborder="yes" scrolling="auto" marginwidth="10" marginheight="10"></frameset><frame name="footer" src="files/footer.htm" marginwidth="10" marginheight="15" scrolling="No" frameborder="no" noresize=""><noframes><body><p>This page uses frames, but your browser doesn't support them.</p></body></noframes></frameset></html>

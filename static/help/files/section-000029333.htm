@@ -1,0 +1,87 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Stealth(aware) Overview</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000024670.htm" title="Understanding Stealth(aware)"><link rel="prev" href="section-000024670.htm" title="Understanding Stealth(aware)"><link rel="next" href="section-000026947.htm" title="Stealth(aware) Map and Components"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029333.htm" id="showframe">Show - Help Frame</a><a href="section-000029333.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029333"></a><h3 class="title">Stealth(aware) Overview</h3></div></div></div><p>Stealth(aware) helps you to visualize the network traffic and
+the <span class="italic"><i>Nodes</i></span> in your computing environment.
+(Nodes are any devices or user identities included in your network.)
+To use Stealth(aware), you install the Stealth(aware) software on
+one system in your environment, and you install the Stealth Discovery
+Agent on selected Windows and Linux systems. Installing this software
+is not disruptive and can be performed at any time. </p><p>The Stealth Discovery Agent collects network traffic data that
+enables you to identify the Nodes in your environment and their communication
+paths.</p><div><p class="note"><b><i>Note:
+                  </i></b>The Stealth Discovery Agent only captures 5-tuple values (source
+IPv4 address and port number, destination IPv4 address and port number,
+and the protocol in use).</p></div><p>You are then directed to import the network traffic data into
+Stealth(aware), and this is used to build a <span class="italic"><i>Stealth(aware) Model</i></span>, which is a visual representation
+of your network. Based on the affinity level you select, you can see
+traffic flows and Nodes that have connections to one another in Stealth(aware).</p><p>Based on the network traffic data, Nodes are classified based
+on their role in the environment using a known set of characteristics.
+For example, Nodes can be identified as Database Servers, Web Servers,
+Application Servers, or Workstations based on the known differences
+in the way those applications communicate. After the network topology
+map is created, you can interact with the map to refine the model.
+Stealth(aware) can display up to 4,000 nodes and 8,000 traffic flow
+channels.</p><p>Stealth(aware) uses the Internet Assigned Numbers Authority
+(IANA) Allocation Guidelines for TCP and UDP port number assignments
+for classification. If your environment does not use the standard
+IANA port assignments, you have the flexibility to manually reclassify
+the Nodes based on their function in your environment. For example,
+you should reclassify your Database Server Nodes if they do not use
+the standard IANA port assignments for Database Servers.</p><p>When the map has been configured for your environment, you can
+click the Deploy button. Clicking Deploy translates the Stealth(aware)
+Model and creates the appropriate components to be imported into Stealth
+Enterprise Manager, including Stealth Communities of Interest (COIs),
+roles, users, groups, and filters. It creates the endpoint software
+packages that you can install on your Nodes to Stealth enable your
+environment. This ensures that each Stealth <span class="italic"><i>endpoint</i></span> (Node running Stealth endpoint software) communicates
+securely with other endpoints as determined by the Stealth(aware)
+Model you create using Stealth(aware).</p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

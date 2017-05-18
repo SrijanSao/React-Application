@@ -1,0 +1,129 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Deleting the Endpoint Configuration and Creating a New Endpoint Configuration</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029820.htm" title="Updating Configurations Using the StealthConfiguration Utility"><link rel="prev" href="section-000029820.htm" title="Updating Configurations Using the StealthConfiguration Utility"><link rel="next" href="section-000029824.htm" title="Deleting the Administrative Configuration, the Endpoint Configuration, and Creating New Configurations"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029825.htm" id="showframe">Show - Help Frame</a><a href="section-000029825.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029825"></a><h3 class="title">Deleting the Endpoint Configuration and Creating a New Endpoint
+Configuration</h3></div></div></div><p>If you want to delete the endpoint configuration and create
+a new one, do the following:</p><div class="orderedlist"><ol type="1"><li><p>Ensure that you are logged on to the Management Server
+as a local administrator.</p></li><li><p>Open a command prompt using the Run as administrator
+option.</p></li><li><p>Enter the following command to access the StealthConfiguration
+Utility directory:</p><pre class="programlisting">cd "C:\Program Files\Unisys\EnterpriseMgmt\Stealth Manager"</pre></li><li><p>Enter the following command to delete the endpoint
+configuration:</p><pre class="programlisting">StealthConfiguration.exe -v DeleteProject="&lt;<span class="italic"><i>Endpoint Configuration Name</i></span>&gt;"</pre><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that you spell and capitalize this command
+exactly as written.</p></li><li><p>The -v option enables verbose mode and provides additional
+feedback on the results of the command. You should see feedback as
+the project is deleted.</p></li></ul></div></div><p>For example, enter StealthConfiguration.exe -v DeleteProject="AwareEndpoints".</p></li><li><p>If you need to create any new clear text filters,
+do the following. For example, if the endpoints need to communicate
+with a Domain Name System (DNS) server that will not be Stealth-enabled,
+you can create a clear text filter.</p><div><p class="note"><b><i>Note:
+                  </i></b>Each clear text filter you create must have a unique name. You
+can create as many clear text filters as you choose, but you can only
+reference one clear text filter from the new endpoint configuration. </p></div><p>Each clear text filter can include one or more of the following,
+in a comma-separated list:</p><div class="itemizedlist"><ul class="disc"><li><p>IP address &#8211; Enter one or more IPv4 addresses</p></li><li><p>IPv4 address range &#8211; Enter one or more IPv4
+address ranges, separated by hyphen or using CIDR notation. For example,
+enter 192.0.2.8-192.0.2.16 or enter 192.0.2.0/24.</p></li><li><p>IP address with specific ports or protocols &#8211;
+Enter one or more IPv4 addresses or address ranges with port or protocol
+filters, using the syntax &lt;<span class="italic"><i>IP address</i></span>&gt;:&lt;<span class="italic"><i>protocol from 0 to 254</i></span>&gt;
+or &lt;<span class="italic"><i>IP address</i></span>&gt;:&lt;<span class="italic"><i>UDP or TCP</i></span>&gt;[&lt;<span class="italic"><i>wild
+card or local port</i></span>&gt;:&lt;<span class="italic"><i>wild card
+or remote port</i></span>&gt;]. For example, enter 198.51.100.3:20 or
+198.51.100.3:TCP[*:53].</p></li></ul></div><p>To create one or more clear text filters, do the following:</p><div class="orderedlist"><ol type="a"><li><p>Enter the following command:</p><pre class="programlisting">StealthConfiguration.exe -v
+     ClearTextFilterName="&lt;<span class="italic"><i>Filter Name</i></span>&gt;" 
+     ClearTextFilter="&lt;<span class="italic"><i>IP address or addresses</i></span>&gt;"
+</pre><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that you spell and capitalize these commands
+exactly as written.</p></li><li><p>The -v option enables verbose mode and provides additional
+feedback on the results of the command. You should see feedback as
+the filter is created.</p></li></ul></div></div></li><li><p>Wait a brief time while the command is processed and
+the filter is created. When the processing is complete, you receive
+the command prompt.</p></li><li><p>If you need to create additional clear text filters,
+reenter the command using a unique filter name and an updated list
+of IP addresses.</p></li></ol></div><p>For example, if you want to configure one filter set to communicate
+with a DNS server that will be used by both the Management Server
+and the endpoints, you could enter the following command:</p><pre class="programlisting">StealthConfiguration.exe 
+     ClearTextFilterName="DNS" ClearTextFilter="192.0.2.8"</pre><p>In another example, if you want to configure one filter set
+for an Active Directory server for the Management Server, and configure
+a second filter set for the endpoints to communicate with the Active
+Directory server and with DNS servers on an IP address range using
+TCP port 53, you could enter the following command:</p><pre class="programlisting">StealthConfiguration.exe 
+     ClearTextFilterName="MS_AD" ClearTextFilter="192.0.2.10"
+
+StealthConfiguration.exe 
+     ClearTextFilterName="EP_DNS" 
+     ClearTextFilter=
+          "192.0.2.10,198.51.100.1-198.51.100.5:TCP[*:53]"</pre></li><li><p>To create a new endpoint configuration, enter the
+following command:</p><pre class="programlisting">StealthConfiguration.exe -v
+     StealthConfigName="&lt;<span class="italic"><i>Admin Configuration Name</i></span>&gt;"
+     UserAuthorizationPort=10300 
+     IPAddress="&lt;<span class="italic"><i>Management Server IP Address</i></span>&gt;"
+     ProjectName=&#8221;&lt;<span class="italic"><i>Endpoint Configuration Name</i></span>&gt;&#8221;
+     ProjectClearTextFilterName=
+          "&lt;<span class="italic"><i>Optional endpoint filter</i></span>&gt;"
+</pre><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>Ensure that you spell and capitalize these commands
+exactly as written.</p></li><li><p>The -v option enables verbose mode and provides additional
+feedback on the results of the command. You should see feedback as
+the configurations are created.</p></li></ul></div></div><p>The following is a description of each of these values:</p><div class="wide"><table style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Value</p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Required/ Optional</p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Explanation</p></th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>StealthConfigName=&#8220;&lt;<span class="italic"><i>Admin Configuration Name</i></span>&gt;&#8221;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Required</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Enter the name for the Administrative configuration used
+by the Management Server. This <span class="bold"><strong>must</strong></span> be the name you entered in <a class="xref" href="section-000029823.htm" title="Using the StealthConfiguration Utility to Create Required Configurations">Using the StealthConfiguration Utility to Create Required Configurations</a>.
+For example, enter StealthConfigName=&#8220;AwareAdmin&#8221;.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>UserAuthorizationPort=10300 </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Required</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>This is <span class="bold"><strong>not</strong></span> a variable.
+Enter this value exactly as specified. </p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>IPAddress=&#8220;&lt;<span class="italic"><i>Management
+Server IP Address</i></span>&gt;&#8221;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Required</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Enter the static IPv4 address of the Management Server.
+This <span class="bold"><strong>must</strong></span> be the name you entered
+in <a class="xref" href="section-000029823.htm" title="Using the StealthConfiguration Utility to Create Required Configurations">Using the StealthConfiguration Utility to Create Required Configurations</a>. For example, enter IPAddress=&#8220;198.51.100.10&#8221;.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>ProjectName=&#8220;&lt;<span class="italic"><i>Endpoint
+Configuration Name</i></span>&gt;&#8221; </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Required</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Enter a new name for the for the endpoint configuration.
+For example, enter ProjectName=&#8221;AwareEndpoints1&#8221;.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>ProjectClearTextFilterName= &#8221;&lt;<span class="italic"><i>Optional endpoint filter</i></span>&gt;&#8221; </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Optional</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>If you created a clear text filter you want to use on
+the endpoint configuration, enter the name of a filter you configured
+in the previous step. For example, if you created a filter named EP_DNS,
+enter ProjectClearTextFilterName=&#8221;EP_DNS&#8221;.</p></td></tr></tbody></table></div><p>If you receive any errors that updated endpoint packages could
+not be created, ignore those errors.</p></li><li><p>Perform the steps in <a class="xref" href="chapter-000002207.htm" title="Deploying the Stealth(aware) Model">Deploying the Stealth(aware) Model</a> to redeploy from Stealth(aware).</p><div><p class="note"><b><i>Note:
+                  </i></b>When you update the endpoint configuration, you do <span class="bold"><strong>not</strong></span> have to install a new version of Stealth
+endpoint software. When you deploy from Stealth(aware), you configuration
+is reprovisioned, and the Stealth endpoints automatically use the
+updated endpoint configuration information.</p></div></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

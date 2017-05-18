@@ -1,0 +1,69 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Installing Stealth(aware)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002081.htm" title="Installing and Creating a New Project in Stealth(aware)"><link rel="prev" href="section-000028143.htm" title="Stealth(aware) System Requirements"><link rel="next" href="section-000024673.htm" title="Creating a New Project"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000024676.htm" id="showframe">Show - Help Frame</a><a href="section-000024676.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000024676"></a><h2 class="title">Installing Stealth(aware)</h2></div></div></div><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Do&nbsp;<span class="bold"><strong>not</strong></span>&nbsp;use this procedure
+to reinstall or upgrade Stealth(aware) on a system that it is already
+installed on. Depending on the currently installed version of Stealth(aware),
+using this procedure might remove all data from the database and delete
+any projects that you previously created. </p><p>If you need to upgrade to a new version of Stealth(aware), see <a class="xref" href="section-000036570.htm" title="Upgrading Stealth(Aware)">Upgrading Stealth(Aware)</a>.</p></td></tr></table></p></div><p>To install Stealth(aware), do the following:</p><div class="orderedlist"><ol type="1"><li><p>Download the Unisys Stealth(aware) Release ISO as
+directed in the <span class="italic"><i>Welcome Letter </i></span>you received from Unisys.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you are an existing Stealth customer, you can access the
+Stealth(aware) software from the Unisys Product Support website, on
+the Stealth Solution webpage. However, note that using Stealth(aware)
+in an existing Stealth environment is <span class="bold"><strong>not</strong></span> supported in this release, and there is no upgrade path that includes
+use of Stealth(aware). See <a class="xref" href="section-000024671.htm" title="Configuration Requirements for Integrating with Stealth(core)">Configuration Requirements for Integrating with Stealth(core)</a> for
+more information.</p></div></li><li><p>Save the ISO file on the system on which you want
+to run Stealth(aware).</p></li><li><p>Mount the ISO file or extract the ISO file.</p></li><li><p>Double-click the <span class="bold"><strong>Stealth-aware_Installer.exe</strong></span> file from the ISO file to launch the installer.</p></li></ol></div><p>The software is installed to the C:\Users\&lt;<span class="italic"><i>user name</i></span>&gt;\AppData\Local\Stealth\app-&lt;<span class="italic"><i>version</i></span>&gt; directory. In addition, a new item
+is added to the Start menu, and a new shortcut named <span class="bold"><strong>Stealth</strong></span> is created on the desktop to enable
+you to access Stealth(aware).</p><p>Stealth(aware) is automatically launched, and the Stealth(aware)
+Start screen appears like the following:</p><div class="figure"><a name="figure-000002964"></a><p class="title"><b>Figure&nbsp;2.&nbsp;Stealth(aware) Start Screen</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/008281.jpg" alt="Stealth(aware) Start Screen"></div></div></div><br class="figure-break"><p>From the Start screen, you see the following options:</p><div class="itemizedlist"><ul class="disc"><li><p>New Project </p></li><li><p><span class="bold"><strong>?</strong></span> icon (in the upper
+right) for the online version of this document</p></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

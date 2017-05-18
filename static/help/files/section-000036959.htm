@@ -1,0 +1,107 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Troubleshooting Stealth(aware) Errors</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002212.htm" title="Administering and Troubleshooting the Environment"><link rel="prev" href="section-000036571.htm" title="Modeling New Environments"><link rel="next" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000036959.htm" id="showframe">Show - Help Frame</a><a href="section-000036959.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000036959"></a><h2 class="title">Troubleshooting Stealth(aware) Errors</h2></div></div></div><p>If Stealth(aware) encounters any errors, use the information
+in this topic to understand and troubleshoot those errors. </p><div class="wide"><a name="table-000003820"></a><p class="title"><b>Table&nbsp;8.&nbsp;Stealth(aware) Errors</b></p><div class="wide-contents"><table summary="Stealth(aware) Errors" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Error</p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Explanation</p></th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top"><p>Troubleshooting Steps</p></th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 001: There was an unexpected error and Stealth(aware)
+is not usable. </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Due to a critical failure, Stealth(aware) is not usable. </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>Uninstall and reinstall Stealth(aware).</p></li><li><p>See <a class="xref" href="section-000036569.htm" title="Restoring a Previous Version of Stealth(aware)">Restoring a Previous Version of Stealth(aware)</a> for information
+on restoring your previous environment.</p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 101: There was an unsupported upgrade or downgrade
+attempt.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>There was an attempt to upgrade Stealth(aware) from a
+version that is not supported, or there was an attempt to downgrade
+Stealth(aware). </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>See <a class="xref" href="section-000036569.htm" title="Restoring a Previous Version of Stealth(aware)">Restoring a Previous Version of Stealth(aware)</a> for information
+on restoring your previous environment.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 102: There was a template mismatch during an upgrade.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>During a supported upgrade, an unexpected error condition
+occurred, and the upgrade process was compromised.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000036569.htm" title="Restoring a Previous Version of Stealth(aware)">Restoring a Previous Version of Stealth(aware)</a> for information
+on restoring your previous environment.</p></li><li><p>Obtain a new version of the ISO file, and then attempt
+the upgrade again.</p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 103: The database could not be successfully migrated
+during an upgrade.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>During a supported upgrade, an unexpected error condition
+occurred, and the database migration could not be completed.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000036569.htm" title="Restoring a Previous Version of Stealth(aware)">Restoring a Previous Version of Stealth(aware)</a> for information
+on restoring your previous environment.</p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 201: The database could not be opened and might
+be corrupted.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Due to an attempted manual change to the database or
+a critical system failure, the database could not be opened. </p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 301: A rooting error occurred.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>There was an unexpected error when running the Create
+Solutions tool, if you used the Default (All Databases) option.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000039618.htm" title="Backing Up the Stealth(aware) Database">Backing Up the Stealth(aware) Database</a> for information
+on restoring your database from a previously backed up version. </p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 302: An auto-modeling error occurred.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>There was an unexpected error when running the Create
+Solutions tool, if you used the Manually Select Profiles option.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000039618.htm" title="Backing Up the Stealth(aware) Database">Backing Up the Stealth(aware) Database</a> for information
+on restoring your database from a previously backed up version. </p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 303: An affinitization error occurred.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>There was an unexpected error when running the Set Affinity
+Level tool.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000039618.htm" title="Backing Up the Stealth(aware) Database">Backing Up the Stealth(aware) Database</a> for information
+on restoring your database from a previously backed up version. </p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 304: There was an affinitization error after processing
+the following pcap file:&nbsp;&lt;<span class="italic"><i>file name</i></span>&gt;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>After the traffic data file was imported, the software
+attempted to affinitize the new data based on the value in the Set
+Affinity Level tool. An unexpected error then occurred.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000039618.htm" title="Backing Up the Stealth(aware) Database">Backing Up the Stealth(aware) Database</a> for information
+on restoring your database from a previously backed up version. </p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 305: There was an affinitization error after processing
+the pcap files imported using Live Feed.&nbsp;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>After the traffic data file was imported using the Live
+Feed option, the software attempted to affinitize the new data based
+on the value in the Set Affinity Level tool. An unexpected error then
+occurred.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>Close Stealth(aware) and then attempt to relaunch
+it.</p></li><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys.</p></li><li><p>See <a class="xref" href="section-000039618.htm" title="Backing Up the Stealth(aware) Database">Backing Up the Stealth(aware) Database</a> for information
+on restoring your database from a previously backed up version. </p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 401: There was an error reading the following pcap
+file: &lt;<span class="italic"><i>file name</i></span>&gt;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>An error occurred when reading the traffic data file.
+The file is likely corrupted.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys, including the file.</p></li><li><p>Attempt to import a different traffic data file.</p></li></ol></div></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Error 402: There was a error reading the following pcap
+file imported using Live Feed:&nbsp;&lt;<span class="italic"><i>file
+name</i></span>&gt;</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>An error occurred when reading the traffic data file
+using Live Feed. The file is likely corrupted.</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="orderedlist"><ol type="1"><li><p>See <a class="xref" href="section-000031104.htm" title="Collecting Diagnostics for Stealth(aware)">Collecting Diagnostics for Stealth(aware)</a> for information
+on sending diagnostics to Unisys, including the file.</p></li><li><p>Access the directory you configured in <a class="xref" href="section-000027612.htm" title="Configuring a Windows File Share for the Discovery Agent Network Traffic Data Files">Configuring a Windows File Share for the Discovery Agent Network
+Traffic Data Files</a>, and remove the corrupted file from
+the share.</p></li><li><p>Turn Live Feed on (it was automatically disabled when
+the error occurred).</p></li></ol></div></td></tr></tbody></table></div></div><br class="wide-break"></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

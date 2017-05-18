@@ -1,0 +1,60 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Understanding How Long the Stealth Discovery Agent Should Run</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002214.htm" title="Importing Existing Data and Installing the Discovery Agent on Nodes"><link rel="prev" href="section-000031106.htm" title="Understanding Where to Install the Stealth Discovery Agent"><link rel="next" href="section-000027613.htm" title="Discovery Agent Supported Operating Systems"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000040212.htm" id="showframe">Show - Help Frame</a><a href="section-000040212.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000040212"></a><h2 class="title">Understanding How Long the Stealth Discovery Agent Should Run</h2></div></div></div><p>Allowing the Discovery Agent to collect too much data can cause
+significant delays when the data is imported and analyzed; therefore,
+it is important to deploy the Agent strategically and for short periods
+of time, as follows:</p><div class="itemizedlist"><ul class="disc"><li><p>Recommended short-term capture period values (12 hours
+or less)</p><div><p class="note"><b><i>Note:
+                  </i></b>The following are the default values when you install the Discovery
+Agent.</p></div><div class="itemizedlist"><ul class="circle"><li><p>How often to start a capture: 840 seconds (14 minutes)</p></li><li><p>How long to capture data: 65 seconds (1 minute, 5
+seconds)</p></li><li><p>How often to move files: 1,800 seconds (30 minutes)</p></li></ul></div></li><li><p>Recommended long-term capture period values (several
+days)</p><div class="itemizedlist"><ul class="circle"><li><p>How often to start a capture: 3,240 seconds (54 minutes)</p></li><li><p>How long to capture data: 120 seconds (2 minutes)</p></li><li><p>How often to move files: 3,600 seconds (60 minutes)</p></li></ul></div></li></ul></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

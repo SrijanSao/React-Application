@@ -1,0 +1,134 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Modifying Profile Details (Profile Details Panel)</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002086.htm" title="Using Stealth(aware) to Create a Model"><link rel="prev" href="st_aw_sol_det.htm" title="Modifying Solution Details (Solution Details Panel)"><link rel="next" href="st_aw_node_det.htm" title="Modifying Node Details (Node Details Panel)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=st_aw_prof_det.htm" id="showframe">Show - Help Frame</a><a href="st_aw_prof_det.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="st_aw_prof_det"></a><h2 class="title">Modifying Profile Details (Profile Details Panel)</h2></div></div></div><p>Use the Profile Details panel to view (and modify, if necessary)
+details for a specific Profile, including the classification of the
+Profile, the Profile name, and default policies, as described in the
+following procedure.</p><p class="blocklabel">Viewing and Modifying a Profile</p><p>To
+view the Profile Details panel and modify details of a Profile, do
+the following:</p><div class="orderedlist"><ol type="1"><li><p>Select a Profile directly from the map, or select
+a Profile by first selecting a Solution and then selecting a Profile
+from the expanded Solution or from the Solution Details panel. </p><p>A Profile has a blue background if it is Stealth-enabled and
+a white background if it is not Stealth-enabled.</p><p>The Profile Details panel appears.</p></li><li><p>If necessary, click the classification icon at the
+top of the panel and select a new classification from the list. </p><p>The classification of the Profile is based on the classification
+of all of the Nodes included in the Profile. </p><p>The following table provides a description of each classification.</p><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>If the classification icon is a question mark (?),
+the Profile is unclassified, either because it could not be automatically
+classified or because you created it manually using the Add Objects
+tool. If you select a classification for an unclassified Profile,
+you cannot change the Profile back to unclassified.</p></li><li><p>Stealth(aware) does not automatically classify any
+Profiles as Admin Users. You can manually classify Profiles as Admin
+Users, as required.</p></li></ul></div></div><div class="table"><a name="table-000003213"></a><p class="title"><b>Table&nbsp;3.&nbsp;Profile Classifications</b></p><div class="table-contents"><table summary="Profile Classifications" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Icon</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Description</th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_DatabaseServerProxy.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Database Proxy</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_DatabaseServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Database Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_WebServerProxy.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Web Proxy</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_WebServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Web Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_AdminUser.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Admin User</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_ApplicationServer.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Application Server</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_ApplicationServerProxy.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Application Proxy</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_AdministrativeWorkstation.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Admin Workstation</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_Workstation.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Workstation</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_User.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Users</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_Mixed.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Mixed</p><div><p class="note"><b><i>Note:
+                  </i></b>This indicates that Nodes of different classifications are included
+in the same Profile.</p></div></td></tr></tbody></table></div></div><br class="table-break"><div><p class="note"><b><i>Note:
+                  </i></b>The Stealth Management Server, Stealth Standalone Authorization
+Server, and Stealth Service Mode classifications also appear in this
+list. Ignore these classifications; they are not supported in this
+release.</p></div></li><li><p>If necessary, in the <span class="bold"><strong>Profile
+Name</strong></span> field, modify the name of the Profile. This name can
+be a maximum length of 45 characters and must meet the requirements
+in <a class="xref" href="section-000005615.htm" title="Supported Characters and Length Restrictions in Enterprise Manager and Stealth(aware)">Supported Characters and Length Restrictions in Enterprise
+Manager and Stealth(aware)</a>.</p></li><li><p>If necessary, click the policy icon to the right of
+the Profile Name field and select a new policy from the list to change
+the Inter-Profile Policy, which sets the default for all traffic flows
+that connect to this Profile.</p><div><p class="note"><b><i>Note:
+                  </i></b>The Inter-Profile Policy is only visible when the Stealth Enabled
+setting is set to On.</p></div><p>The following table provides a description of each policy:</p><div class="table"><a name="table-000003212"></a><p class="title"><b>Table&nbsp;4.&nbsp;Policies</b></p><div class="table-contents"><table summary="Policies" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Icon</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Description</th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_Allow.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Stealth Allow &#8211; Allow Stealth traffic.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_ClearTextAllow.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Clear Text Allow &#8211; Allow clear text traffic.</p></td></tr><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><div class="mediaobject"><img src="images/Stealth_Block_All.jpg"></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Block Clear Text and Stealth &#8211; Block clear text
+and Stealth traffic.</p></td></tr></tbody></table></div></div><br class="table-break"></li><li><p>In the <span class="bold"><strong>Group Name</strong></span> field, specify the name of the Active Directory group that the Profile
+is associated with. (That is the name of the Active Directory group
+in which the users of the member Nodes are included.) This name can
+be a maximum length of 45 characters and must meet the requirements
+that are described in <a class="xref" href="section-000005615.htm" title="Supported Characters and Length Restrictions in Enterprise Manager and Stealth(aware)">Supported Characters and Length Restrictions in Enterprise
+Manager and Stealth(aware)</a>. </p><p>Entering information in this field is <span class="bold"><strong>required</strong></span> so that your endpoints can be authorized. This becomes the Active
+Directory Group that identifies your Stealth endpoint users. </p><p>If you have not already done so, use your Active Directory server
+to create a group and then configure users to be members of that Active
+Directory group. For example, if you are configuring a Database Server
+Profile, and if your Database Server users are located in an Active
+Directory group named DB_Server_Admins, then you would enter DB_Server_Admins
+in the Group Name field in Stealth(aware).</p><div><p class="note"><b><i>Note:
+                  </i></b>If the Profile is part of a Solution, you see the <span class="bold"><strong>Solution</strong></span> field under the Group Name field.
+If necessary, you can click the name of the parent Solution to access
+the Solution Details panel. See <a class="xref" href="st_aw_sol_det.htm" title="Modifying Solution Details (Solution Details Panel)">Modifying Solution Details (Solution Details Panel)</a> for
+more information. (If the Profile is not part of a Solution, you do
+not see the Solution field.) </p></div></li><li><p>Use the <span class="bold"><strong>Stealth Enabled</strong></span> switch to determine if the Profile should be Stealth-enabled by
+selecting one of the following:</p><div class="itemizedlist"><ul class="disc"><li><p>On &#8211; The Profile will be Stealth-enabled. The
+background color of the Profile is blue.</p></li><li><p>Off &#8211; The Profile will <span class="bold"><strong>not</strong></span> be Stealth-enabled. The background color of the Profile
+is white.</p></li></ul></div><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Be very careful when changing the Stealth Enabled setting. If
+you turn this setting to Off and deploy the associated Solution, the
+Profile and its Nodes will <span class="bold"><strong>not</strong></span> be
+Stealth enabled. Even if you install the Stealth endpoint software
+on an associated Node, that Node will not be able to use Stealth communications
+if Stealth is not enabled on its Profile.</p></td></tr></table></div><div><p class="note"><b><i>Notes:
+                  </i></b></p><div class="itemizedlist"><ul class="disc"><li><p>If you set the Stealth Enabled switch to On, you should
+ensure that the Policy is set to Stealth Allow.</p></li><li><p>By default, the Profile is set to Stealth-enabled
+or not Stealth-enabled based on whether the Solution switch Stealth
+Enabled Added Profiles is set to On or Off. However, if you modify
+the Profile before adding it to a Solution, the Profile will <span class="bold"><strong>not</strong></span> use the default Stealth value of the Solution.</p></li></ul></div></div></li><li><p>If necessary, from the <span class="bold"><strong>Nodes</strong></span> list, do the following:</p><div class="itemizedlist"><ul class="disc"><li><p>To remove a Node from the Profile, drag-and-drop the
+Node onto the map. The Node is moved onto the map into a new Profile,
+where it is the only member.</p></li><li><p>To view or update details for a member Node using
+the Node Details panel, click a Node from the list. Nodes are listed
+by IP address, host name, or name (depending on what values are defined).</p></li></ul></div></li><li><p>If the Profile includes an Internal Channel, you can
+review the flows and if necessary, update the policy on each flow,
+as follows:</p><div class="itemizedlist"><ul class="disc"><li><p>If the Profile is Stealth enabled, set a Stealth policy,
+either <span class="bold"><strong>Stealth Allow</strong></span> or <span class="bold"><strong>Block Clear Text and Stealth</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>Although you can set Clear Text Allow as an option, this is
+not recommended for traffic flows that connect two Stealth-enabled
+Profiles.</p></div></li><li><p>If the Profile is not Stealth enabled, the <span class="bold"><strong>Clear Text Allow</strong></span> policy is set by default and
+cannot be changed, but no policy is visible.</p></li></ul></div></li><li><p>Click the <span class="bold"><strong>X</strong></span> in the
+upper-right corner to close the Profile Details panel.</p><div><p class="note"><b><i>Note:
+                  </i></b>When you make a change to the Profile Details panel, the change
+is automatically saved.</p></div></li></ol></div><p class="blocklabel">Deleting a Profile</p><p>To delete a Profile,
+do the following: </p><div class="orderedlist"><ol type="1"><li><p>Select the Menu icon in the upper-right corner of
+the Profile Details panel.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinemediaobject"><img src="images/Stealth_ContextualMenu.jpg"></span></p></li><li><p>Click <span class="bold"><strong>Delete Profile</strong></span>. </p></li><li><p>When prompted, click <span class="bold"><strong>Yes, Delete</strong></span>.</p></li></ol></div><p>If the Profile you are deleting includes any Nodes, those Nodes
+are each returned to the map in a new Profile.</p><p class="blocklabel">Viewing External Channels for the Profile</p><p>To view details of the External Channels for this Profile, click
+the line going from the selected Profile to a different Profile or
+a Solution.</p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

@@ -1,0 +1,70 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>System and ISO Requirements</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000005813.htm" title="Management Server Requirements"><link rel="prev" href="section-000005813.htm" title="Management Server Requirements"><link rel="next" href="section-000027369.htm" title="Domain Participation"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029336.htm" id="showframe">Show - Help Frame</a><a href="section-000029336.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029336"></a><h3 class="title">System and ISO Requirements</h3></div></div></div><p>You can install the Management Server software on the same system
+that you used to install Stealth(aware), as long as that system meets
+the requirements for the Management Server software. Alternatively,
+you can install the Management Server software on a separate system
+in your environment. </p><p>The Management Server software can be installed on a virtual
+machine or a physical server. The following are the system requirements: </p><div class="itemizedlist"><ul class="disc"><li><p>The software must be installed on a server that is
+dedicated to running the Management Server software and, optionally,
+Stealth(aware). The server should not be used for any other purpose
+in the datacenter.</p></li><li><p>The Management Server must run Windows Server 2012
+R2 x64 (any version).</p><p>Be sure to configure Server with
+a GUI mode. See <a class="ulink" href="https://technet.microsoft.com/en-us/library/hh831786(v=ws.11).aspx" target="_blank">https://technet.microsoft.com/en-us/library/hh831786(v=ws.11).aspx</a> for more information.</p></li><li><p>Apply all available cumulative and security updates
+provided for your Microsoft operating system.</p></li><li><p>The Management Server host name must <span class="bold"><strong>not</strong></span> include an underscore. (All other Windows
+special characters are supported.)</p></li><li><p>The Management Server must have a static IPv4 address.</p></li><li><p>The Management Server must meet the following hardware
+requirements: </p><div class="table"><a name="table-000003424"></a><p class="title"><b>Table&nbsp;6.&nbsp;Management Server Hardware Requirements</b></p><div class="table-contents"><table summary="Management Server Hardware Requirements" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><colgroup><col><col><col></colgroup><thead><tr valign="top"><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Memory</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Multicore Processor</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " valign="top">Disk Space</th></tr></thead><tbody><tr valign="top"><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>6 GB or greater</p></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>3-4 cores (minimum)</p><div><p class="note"><b><i>Note:
+                  </i></b>Adding additional processor cores can increase your ability
+to handle multiple authorization functions simultaneously.</p></div></td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>30 GB </p></td></tr></tbody></table></div></div><p><br class="table-break"></p></li></ul></div><p>In addition, ensure that you have the Unisys Stealth Solution
+Release ISO file, which contains the software required for the Management
+Server installation. You can download this file as directed in the <span class="italic"><i>Welcome Letter </i></span>you receive from Unisys. Save
+the ISO file on the system you want to act as the Management Server.</p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

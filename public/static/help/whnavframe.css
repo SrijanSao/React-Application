@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+body {
+}
+
+.btn img {
+	border:none;
+	vertical-align:middle; 
+}
+.btn:hover {
+	cursor:pointer; 
+    border: thin solid #2c5d88;
+	border-collapse:collapse;
+	border-radius: 5px;
+}
+.btn {
+	font-size: 9pt; 
+	font-weight: normal; 
+	text-decoration: none;
+	color: #2c5d88;
+	background-color: #e7ecf2;
+	font-family: Arial, sans-serif;	
+	vertical-align:middle;
+	text-align:center;
+	padding:3px;
+
+}
+
+
+a.index  {
+   	font-size : small;
+   	font-family : Verdana;
+   	font-weight : normal;
+   	text-decoration : none;
+   	color : Black;
+}
+a.contents {
+	font-weight: normal;
+	font-size: small;
+	color: black;
+	font-family: Arial, sans-serif;	
+	background-color: white;
+	text-decoration: none;
+}
+
+a:visited { 
+	font-size: small; 
+	font-weight: normal; 
+	text-decoration: none;
+	color: black;
+   	background-color : white;	
+	font-family: Arial, sans-serif;	
+}
+a:active { 
+	font-size: small; 
+	font-weight: normal; 
+	text-decoration: underline;
+	color: black;
+   	background-color : white;	
+	font-family: Arial, sans-serif;	
+}
+a:hover {
+	font-weight: normal;
+	font-size: small;
+	color: black;
+	font-family: Arial, sans-serif;	
+	background-color: paleturquoise;
+	text-decoration: underline;
+}
+a.active{
+         font-size: small;
+         color: #000;
+         font-family: Arial,sans-serif;
+         background-color: paleturquoise;
+         text-decoration: none;
+}
+
+ 
+	 

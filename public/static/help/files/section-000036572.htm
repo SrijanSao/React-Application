@@ -1,0 +1,67 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and 3.2.010</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000036570.htm" title="Upgrading Stealth(Aware)"><link rel="prev" href="section-000036570.htm" title="Upgrading Stealth(Aware)"><link rel="next" href="section-000031992.htm" title="Upgrade Procedure"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000036572.htm" id="showframe">Show - Help Frame</a><a href="section-000036572.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000036572"></a><h3 class="title">Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and
+3.2.010</h3></div></div></div><p>If you are currently running Stealth(aware) version 3.2.004
+or 3.2.010, perform the following prerequisite steps <span class="italic"><i>before</i></span> performing the upgrade procedure.
+The Stealth(aware) software version is listed on the bottom of the
+Start Screen when you initially launch Stealth(aware). </p><p>If you are running a later version of Stealth(aware) software,
+skip to <a class="xref" href="section-000031992.htm" title="Upgrade Procedure">Upgrade Procedure</a>. </p><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>If you do not perform these steps, upgrading from Stealth(aware)
+version 3.2.004 or 3.2.010 will remove all data from the database
+and permanently delete any projects that you previously created.</p></td></tr></table></p></div><p>Do the following: </p><div class="orderedlist"><ol type="1"><li><p>Save the new version of the Unisys Stealth(aware)
+Release ISO to the system running Stealth(aware).</p></li><li><p>Mount the ISO file or extract the ISO file.</p></li><li><p>On the ISO file, navigate to the upgrade directory.</p></li><li><p>Copy the Run_Stealth-aware_upgrade.ps1 file from the
+ISO upgrade directory to any location on your system; for example,
+save it to C:\Windows\temp.</p></li><li><p>Open a PowerShell window and enter the following command:</p><pre class="programlisting">cd "&lt;<span class="italic"><i>directory</i></span>&gt;"</pre><p>For example, enter cd &#8220;C:\Windows\temp&#8221;.</p></li><li><p>Enter the following command:</p><pre class="programlisting">.\Run_Stealth-aware_upgrade.ps1</pre><p>You receive a message that the database has been successfully
+saved and you must install the new version of Stealth(aware).</p></li><li><p>Close the PowerShell window.</p></li><li><p>Navigate to C:\Users\&lt;<span class="italic"><i>user
+name</i></span>&gt;\AppData\Local\Stealth-&lt;<span class="italic"><i>mm</i></span>&gt;-&lt;<span class="italic"><i>dd</i></span>&gt;-&lt;<span class="italic"><i>yyyy</i></span>&gt;_&lt;<span class="italic"><i>hh</i></span>&gt;_&lt;<span class="italic"><i>mm</i></span>&gt;_&lt;<span class="italic"><i>ss</i></span>&gt;\app-3.2.0, and locate the insight.db
+database file.</p></li><li><p>Copy the insight.db database file from this folder,
+and paste it into the C:\Users\&lt;<span class="italic"><i>user name</i></span>&gt;\AppData\Roaming\Stealth folder. </p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

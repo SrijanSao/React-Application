@@ -1,0 +1,83 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Updating the Discovery Agent Settings on a Windows Node</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000027614.htm" title="Updating the Discovery Agent Settings"><link rel="prev" href="section-000027614.htm" title="Updating the Discovery Agent Settings"><link rel="next" href="section-000031341.htm" title="Updating the Discover Agent Settings on a Linux Node"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000031342.htm" id="showframe">Show - Help Frame</a><a href="section-000031342.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000031342"></a><h3 class="title">Updating the Discovery Agent Settings on a Windows Node</h3></div></div></div><p>To update the Discover Agent, do the following on a Windows
+Node:</p><div class="orderedlist"><ol type="1"><li><p>From the Start menu, enter <span class="bold"><strong>Notepad</strong></span> in the Search box.</p></li><li><p>Right-click <span class="bold"><strong>Notepad</strong></span>, and select <span class="bold"><strong>Run as administrator</strong></span>.</p></li><li><p>If you are asked if you want to allow Notepad to make
+changes to this computer, click <span class="bold"><strong>Yes</strong></span>.</p></li><li><p>In Notepad, select the <span class="bold"><strong>File</strong></span> menu, and then click <span class="bold"><strong>Open</strong></span>.</p></li><li><p>On the Open dialog box, change the file type from
+Text Documents (*.txt) to <span class="bold"><strong>All Files</strong></span>.</p></li><li><p>Browse to the C:\Program Files\Unisys\Stealth Solution\Discovery
+directory and open settings.xml.</p><div><p class="note"><b><i>Note:
+                  </i></b>Be sure to open the settings.xml file in the Discovery directory.
+Your Node might include other settings.xml files that must <span class="bold"><strong>not</strong></span> be changed.</p></div></li><li><p>As required, update the values as follows. </p><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Be very careful when updating these settings. If you make an
+error, you might prevent the Discovery Agent from operating on the
+Node. In this case, you must uninstall the Discovery Agent using the
+standard Windows method and reinstall it using the directions in <a class="xref" href="section-000027611.htm" title="Installing the Discovery Agent on Nodes Running Windows">Installing the Discovery Agent on Nodes Running Windows</a>.</p></td></tr></table></p></div><div class="itemizedlist"><ul class="disc"><li><p>If you want to update the Windows file share you configured
+in <a class="xref" href="section-000027612.htm" title="Configuring a Windows File Share for the Discovery Agent Network Traffic Data Files">Configuring a Windows File Share for the Discovery Agent Network
+Traffic Data Files</a> to use a new Windows file share
+with the <span class="bold"><strong>same</strong></span> password, you can update
+the following line. </p><div><p class="note"><b><i>Note:
+                  </i></b>The password you enter for the Windows file share is encrypted
+and cannot be changed. You can only update the file share if the new
+file share includes a user with the same password that you entered
+when you installed the Discovery Agent. If you want to change the
+Windows file share and use different credentials, you must reinstall
+the Discovery Agent software.</p></div><pre class="programlisting">&lt;remote method="FILE" user="<span class="italic"><i>user name</i></span>" 
+     pass="<span class="italic"><i>encrypted password</i></span>"&gt;\\<span class="italic"><i>share</i></span>\<span class="italic"><i>folder</i></span>&lt;/remote&gt;</pre></li><li><p>If you want to update how often (in seconds) you would
+like to start a capture, update the following value (where the default
+is 840):</p><pre class="programlisting">collect start="840"</pre></li><li><p>If you want to update how long (in seconds) you would
+like each capture to last, update the following value (where the default
+is 65):</p><pre class="programlisting">length="65" </pre></li><li><p>If you want to update how often (in seconds) you would
+like to move completed capture files to the remote directory, update
+the following value (where the default is 1800):</p><pre class="programlisting">push="1800"</pre></li></ul></div></li><li><p>From the <span class="bold"><strong>File</strong></span> menu,
+select <span class="bold"><strong>Save As</strong></span>.</p></li><li><p>In the Save As dialog box, set the Save as type to <span class="bold"><strong>All Files</strong></span>, enter the file name <span class="bold"><strong>settings.xml</strong></span>, and then click <span class="bold"><strong>Save</strong></span>.</p></li><li><p>If you are prompted for encoding, accept the default.</p></li><li><p>Close Notepad.</p></li><li><p>Do the following to restart the Unisys Stealth Discovery
+service:</p><div class="orderedlist"><ol type="a"><li><p>From the Start menu, enter <span class="bold"><strong>Services</strong></span> in the <span class="bold"><strong>Search</strong></span> box, right-click <span class="bold"><strong>Services</strong></span>, and select <span class="bold"><strong>Run as administrator</strong></span>.</p></li><li><p>Locate the Unisys Stealth Discovery service in the
+list of Services.</p></li><li><p>Right-click the <span class="bold"><strong>Unisys Stealth
+Discovery</strong></span> service and select <span class="bold"><strong>Restart</strong></span>.</p></li></ol></div></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

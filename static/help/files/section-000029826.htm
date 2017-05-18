@@ -1,0 +1,103 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Configuring the AuthService.config File</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000029792.htm" title="Configuring the Authorization Service"><link rel="prev" href="section-000029792.htm" title="Configuring the Authorization Service"><link rel="next" href="section-000024226.htm" title="Optionally Configuring SSL to Work with the Authorization Service"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000029826.htm" id="showframe">Show - Help Frame</a><a href="section-000029826.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000029826"></a><h3 class="title">Configuring the AuthService.config File</h3></div></div></div><p>The AuthService.config file is used to configure the Authorization
+Service running on the Management Server. For Stealth(aware), you
+must configure two AuthGroups as described in this topic. One AuthGroup
+is used to authorize the Management Server, and the second AuthGroup
+is used to authorize all other endpoints in the environment.</p><p>Do the following to configure the AuthService.config file for
+Stealth(aware):</p><div class="orderedlist"><ol type="1"><li><p>From the Start menu, enter <span class="bold"><strong>Notepad</strong></span> in the Search box. </p></li><li><p>Right-click <span class="bold"><strong>Notepad</strong></span>, and select <span class="bold"><strong>Run as administrator</strong></span>. </p></li><li><p>If you are asked if you want to allow Notepad to make
+changes to this computer, click <span class="bold"><strong>Yes</strong></span>.</p></li><li><p>In Notepad, select the <span class="bold"><strong>File</strong></span> menu, and then click <span class="bold"><strong>Open</strong></span>.</p></li><li><p>On the Open dialog box, change the file type from
+Text Documents (*.txt) to <span class="bold"><strong>All Files</strong></span>.</p></li><li><p>Browse to the C:\Program Files\Unisys\Stealth Solution\USS-AuthServer
+directory and open <span class="bold"><strong>Sample(aware)AuthService.config</strong></span>. </p><p>The Sample(aware)AuthService.config file includes
+two AuthGroups that are configured specifically for Stealth(aware).</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Be sure to open the Sample(aware)AuthService.config file rather
+than the SampleAuthService.config file. </p><p>The SampleAuthService.config file applies to Stealth(core) and
+includes additional AuthGroups and Authorization Schemes that are <span class="bold"><strong>not</strong></span> supported in Stealth(aware).</p></td></tr></table></div></li><li><p>Open a new Notepad file using the Run as administrator
+option.</p></li><li><p>Copy the first line in the sample file (&lt;AuthService
+version="3.<span class="italic"><i>x</i></span>"&gt; into the new Notepad
+file.</p><p>From the end of the sample file, copy the &lt;AuthGroup&gt;
+lines and the &lt;/AuthService&gt; line into the new Notepad file.</p><p>The new file should look like the following:</p><pre class="programlisting">&lt;AuthService version="3.2"&gt;
+  &lt;AuthGroup name="Aware-Administration"&gt;
+    &lt;Url&gt;http://192.168.36.20:10200/&lt;/Url&gt;
+    &lt;AdminUrl&gt;http://127.0.0.1:10210/&lt;/AdminUrl&gt;
+    &lt;AuthenticationScheme&gt;IntegratedWindowsAuthentication
+       &lt;/AuthenticationScheme&gt;
+    &lt;CertAge&gt;1825&lt;/CertAge&gt;
+  &lt;/AuthGroup&gt;
+
+  &lt;AuthGroup name="Aware-Project"&gt;
+    &lt;Url&gt;http://192.168.36.20:10300/&lt;/Url&gt;
+    &lt;AdminUrl&gt;http://127.0.0.1:10310/&lt;/AdminUrl&gt;
+    &lt;AuthenticationScheme&gt;IntegratedWindowsAuthentication
+       &lt;/AuthenticationScheme&gt;
+    &lt;CertAge&gt;1825&lt;/CertAge&gt;
+&lt;/AuthGroup&gt;
+
+&lt;/AuthService&gt;</pre></li><li><p>For each AuthGroup, do the following in the <span class="bold"><strong>&lt;Url&gt;</strong></span> line: </p><div class="itemizedlist"><ul class="disc"><li><p>If the Management Server uses SSL, update the http://
+value to https://.</p></li><li><p>Change the example IP address (192.168.36.20) to the
+static IPv4 address of your Management Server.</p></li></ul></div><div><p class="note"><b><i>Note:
+                  </i></b>Do <span class="bold"><strong>not</strong></span> change the port numbers.
+Do <span class="bold"><strong>not</strong></span> change the &lt;AuthGroup name&gt;,
+&lt;AdminURL&gt;, or &lt;AuthenticationScheme&gt;.</p></div></li><li><p>Optionally, for each AuthGroup, in the <span class="bold"><strong>&lt;CertAge&gt;</strong></span> line, leave the default value
+or enter a new age (in days) for the certificate for the AuthGroup.
+(The certificate for the AuthGroup is created when you restart the
+Authorization Service as directed at the end of this procedure.) </p><div><p class="note"><b><i>Note:
+                  </i></b>The default value of 1825 days (or five years) is a standard
+for some self-signed certificates. Enter a value that is appropriate
+for your environment and security policies.</p></div></li><li><p>From the <span class="bold"><strong>File</strong></span> menu,
+select <span class="bold"><strong>Save As</strong></span> in the new Notepad
+file. </p></li><li><p>In the Save As dialog box, set the Save as type to <span class="bold"><strong>All Files</strong></span>, enter the file name <span class="bold"><strong>AuthService.config</strong></span>, and then click <span class="bold"><strong>Save</strong></span>.</p></li><li><p>If you are prompted for encoding, accept the default.</p></li><li><p>Close the AuthService.config file, and close Notepad.</p></li><li><p>Using Windows Explorer, browse to C:\Program Files\Unisys\Stealth
+Solution\USS-AuthServer, and verify that the AuthService.config file
+is located in this directory and that it does <span class="bold"><strong>not</strong></span> have an extension of .txt.</p></li><li><p>Open the file using Notepad, verify that your changes
+were saved, and then close Notepad.</p></li><li><p>From the Start menu, enter <span class="bold"><strong>services.msc</strong></span> in the Search box to access the Services console.</p></li><li><p>Restart the <span class="bold"><strong>Unisys Stealth Authorization
+Service</strong></span> so that the Authorization Service uses the AuthService.config
+file you saved.</p></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

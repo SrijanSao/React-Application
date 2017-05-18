@@ -1,0 +1,92 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Copying and Deploying the Project File to Enterprise Manager</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002207.htm" title="Deploying the Stealth(aware) Model"><link rel="prev" href="st_aw_deploy.htm" title="Deploying Solutions to Enterprise Manager"><link rel="next" href="section-000037260.htm" title="Continuing After Deployment"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000027576.htm" id="showframe">Show - Help Frame</a><a href="section-000027576.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000027576"></a><h2 class="title">Copying and Deploying the Project File to Enterprise Manager</h2></div></div></div><div><p class="note"><b><i>Note:
+                  </i></b>If Stealth(aware) is running on the Management Server, skip
+this topic.</p></div><p>If Stealth(aware) is running on a system <span class="italic"><i>other than</i></span> the Management Server, you must transfer the
+project file you created to the Management Server. You must then run
+a PowerShell script to populate Enterprise Manager, and then&#8212;depending
+on whether you selected the Create Objects Only or the Create and
+Deploy option from the Deploy tool&#8212;either automatically or
+manually deploy the model onto your network. Do the following:</p><div class="orderedlist"><ol type="1"><li><p>If you have not already done so, copy the project
+file that you deployed from Stealth(aware) to any location on the
+Management Server.</p><p>By default, this file is named Deployment&lt;<span class="italic"><i>Year</i></span>&gt;-&lt;<span class="italic"><i>Month</i></span>&gt;-&lt;<span class="italic"><i>Day</i></span>&gt;_&lt;<span class="italic"><i>Hours</i></span>&gt;-&lt;<span class="italic"><i>Minutes</i></span>&gt;-&lt;<span class="italic"><i>Seconds</i></span>&gt;_GMT.xml.</p></li><li><p>On the Management Server, open a PowerShell window
+and enter the following command:</p><pre class="programlisting">cd "C:\Program Files\Unisys\EnterpriseMgmt\
+     EcoAPI\discovery\bin"</pre></li><li><p>Enter the following command to execute the deploy
+project script:</p><pre class="programlisting">.\Deploy-Project.ps1 -xml &lt;<span class="italic"><i>directory\project file name</i></span>&gt;.xml </pre><p>Where &lt;<span class="italic"><i>directory\project
+file name</i></span>&gt; is the full path to the project file that you
+want to deploy. For example, C:\Windows\temp\Deployment2017-2-17_22-25-20_GMT.xml. </p></li><li><p>When prompted, reenter the user name and enter the
+password for the Enterprise Manager Portal Administrator, Cryptographic
+Administrator, or Service Administration user. </p></li><li><p>Wait while the script executes. You can monitor the
+progress of the script execution from one of the following:</p><div class="itemizedlist"><ul class="disc"><li><p>The PowerShell console</p></li><li><p>The log file, which is located in the directory where
+you saved the project using the project name. By default, this file
+is named Deployment&lt;<span class="italic"><i>Year</i></span>&gt;-&lt;<span class="italic"><i>Month</i></span>&gt;-&lt;<span class="italic"><i>Day</i></span>&gt;_&lt;<span class="italic"><i>Hours</i></span>&gt;-&lt;<span class="italic"><i>Minutes</i></span>&gt;-&lt;<span class="italic"><i>Seconds</i></span>&gt;_GMT.log.</p></li></ul></div><p>When the execution of the PowerShell script
+is successful, the following message appears:</p><p>Deploy Project &lt;<span class="italic"><i>name of the project
+file</i></span>&gt; successfully completed.</p><div><p class="note"><b><i>Note:
+                  </i></b>If there are errors and the execution of the script is not successful,
+refer to the log file and retry the deployment if necessary with corrected
+input.</p></div><p>The configuration is visible in Enterprise Manager. </p></li><li><p>If you selected <span class="bold"><strong>Create Objects
+Only</strong></span> from the Deploy tool, do the following. </p><div><p class="note"><b><i>Note:
+                  </i></b>If you selected <span class="bold"><strong>Create and Deploy</strong></span>, the Stealth(aware) Model has been provisioned to the network, and
+you are ready to install the Stealth endpoint software on any system
+that you want to use Stealth for secure communications. See <a class="xref" href="chapter-000002316.htm" title="Installing Stealth Endpoint Software">Installing Stealth Endpoint Software</a>.</p></div><div class="orderedlist"><ol type="a"><li><p>Sign in to Enterprise Manager.</p></li><li><p>View the created objects in Enterprise Manager.</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>You should use Enterprise Manager to view objects and provision
+only; you must <span class="bold"><strong>not</strong></span> make any changes
+to the objects using Enterprise Manager. If you make any changes using
+Enterprise Manager, those changes will <span class="bold"><strong>not</strong></span> be reflected in Stealth(aware); this means that your configuration
+and Stealth(aware) map will not be synchronized and a new deployment
+from Stealth(aware) could disable Stealth communications that you
+configured using Enterprise Manager. </p><p>Therefore, if you see any objects that you want to change while
+reviewing the configuration in Enterprise Manager, return to Stealth(aware)
+to make the changes, and then select the Deploy tool again.</p></td></tr></table></div></li><li><p>Do either of the following to provision the environment: </p><div class="itemizedlist"><ul class="disc"><li><p>Return to Stealth(aware), select the Deploy tool,
+and select the <span class="bold"><strong>Create and Deploy</strong></span> option.</p></li><li><p>In Enterprise Manager, use the standard method to
+provision. See the <span class="italic"><i>Unisys Stealth Solution
+Information Center </i></span>for more information.</p></li></ul></div></li></ol></div></li></ol></div></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

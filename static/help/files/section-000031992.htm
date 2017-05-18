@@ -1,0 +1,71 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Upgrade Procedure</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="section-000036570.htm" title="Upgrading Stealth(Aware)"><link rel="prev" href="section-000036572.htm" title="Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and 3.2.010"><link rel="next" href="section-000036569.htm" title="Restoring a Previous Version of Stealth(aware)"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000031992.htm" id="showframe">Show - Help Frame</a><a href="section-000031992.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000031992"></a><h3 class="title">Upgrade Procedure</h3></div></div></div><div><p class="caution"><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>If you are upgrading from Stealth(aware) version 3.2.004 or
+3.2.010, perform the steps in <a class="xref" href="section-000036572.htm" title="Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and 3.2.010">Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and
+3.2.010</a> before
+performing this procedure; otherwise, all data will be removed from
+the database and any projects you previously created projects will
+be deleted. </p><p>For Stealth(aware) version 3.2.0.11 or later, no prerequisite
+steps are required.</p></td></tr></table></p></div><p>To upgrade from your current version of Stealth(aware) to a
+new version, do the following:</p><div class="orderedlist"><ol type="1"><li><p>If you have not already done so, do the following: </p><div class="orderedlist"><ol type="a"><li><p>Save the new version of the Unisys Stealth(aware)
+Release ISO to the system running Stealth(aware).</p></li><li><p>Mount the ISO file or extract the ISO file.</p></li></ol></div></li><li><p>On the new ISO file, double-click the <span class="bold"><strong>Stealth-aware_Installer.exe</strong></span> file.</p><p>The new version of Stealth(aware) is installed
+and automatically launched.</p></li><li><p>Close Stealth(aware).</p></li><li><p>Launch Stealth(aware) from the icon on the desktop
+or by using the Start menu.</p></li><li><p>On the Stealth(aware) Start Screen, verify that the
+software version on the bottom of the screen has been updated, and
+verify that the Last Opened Project option includes the name of your
+most recently opened project. This indicates that Stealth(aware) version
+has been upgraded and your database has been successfully migrated.</p></li></ol></div><p>Note the following:</p><div class="itemizedlist"><ul class="disc"><li><p>If you upgraded from Stealth(aware) version 3.2.004
+or 3.2.010, the previous version of the database is saved as described
+in <a class="xref" href="section-000036572.htm" title="Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and 3.2.010">Upgrade Prerequisite for Stealth(aware) Version 3.2.004 and
+3.2.010</a>.</p></li><li><p>If you upgraded from Stealth(aware) 3.2.011 or later,
+the previous version of the database is saved as insight_&lt;<span class="italic"><i>revision</i></span>&gt;_&lt;<span class="italic"><i>yyyymmdd</i></span>&gt;_&lt;<span class="italic"><i>hhmmss</i></span>&gt;.db in the C:\Users\&lt;<span class="italic"><i>user name</i></span>&gt;\AppData\Roaming\Stealth folder.</p></li></ul></div><p> </p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>

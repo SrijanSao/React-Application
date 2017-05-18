@@ -1,0 +1,176 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>Installing the Management Server Software</title><link id="layout" rel="stylesheet" href="css/wh_default.css" type="text/css"><script src="../jquery.js"></script><script type="text/javascript" src="../jquery.replacetext.js"></script><script type="text/javascript" src="../highlight.js"></script><script type="text/javascript">
+                /* Test for browser to load stylesheet */
+                var userAgent = navigator.userAgent.toString();
+
+                if(userAgent.indexOf("Android") > 0) {
+				document.getElementById("layout").setAttribute("href", "css/wh_android.css");
+                
+				} else if (userAgent.indexOf("iPad") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ipad.css");
+
+                } else if (userAgent.indexOf("MSIE 7") > 0) {
+                   if (userAgent.indexOf("Trident/4.") > 0) {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+                   } else {
+                   document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+                   }
+
+                } else if (userAgent.indexOf("MSIE 8") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_8.css");
+
+                } else if (userAgent.indexOf("MSIE 9") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_9.css");
+
+                } else if (userAgent.indexOf("MSIE 10") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_10.css");
+
+                } else if (userAgent.indexOf("Trident/7.") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_11.css");
+
+                } else if (userAgent.indexOf("MSIE") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_ie_7.css");
+
+                } else if (userAgent.indexOf("Chrome") > 0) {
+                document.getElementById("layout").setAttribute("href", "css/wh_chrome.css");
+
+                } else {
+                document.getElementById("layout").setAttribute("href", "css/wh_default.css");
+                }
+                </script><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"><link rel="start" href="index.htm" title="Unisys Stealth(aware) Installation and Administration Guide"><link rel="up" href="chapter-000002315.htm" title="Initially Configuring the Stealth(core) Environment for Stealth(aware)"><link rel="prev" href="section-000006620.htm" title="Disabling NetBIOS on the Enabled Network Adapter"><link rel="next" href="section-000029792.htm" title="Configuring the Authorization Service"><link rel="copyright" href="ln-d0e29.htm" title="Warranty Disclaimer"></head><body><span id="showhideframe"><a href="../index.htm?topic=section-000004304.htm" id="showframe">Show - Help Frame</a><a href="section-000004304.htm" id="hideframe" target="_top" style="display:none">Hide - Help Frame</a></span><span id="backbutton" style="float:right;">&lt;<a href="#" onclick="window.history.go(-1); return false;">Back</a></span><div class="section" lang="en"><div class="titlepage"><div><div><a name="section-000004304"></a><h2 class="title">Installing the Management Server Software</h2></div></div></div><p>You install the Management Server software using the Unisys
+Stealth Solution Release 3.<span class="italic"><i>x</i></span> ISO
+file. The ISO file includes two separate software installation packages:
+one for installing the Management Server software and one for installing
+the standalone Authorization Server software.</p><div><p class="note"><b><i>Note:
+                  </i></b>Standalone Authorization Servers are not supported for Stealth(aware).
+Do <span class="bold"><strong>not</strong></span> install a standalone Authorization
+Server in your environment.</p></div><p>The installer checks that the prerequisite Management Server
+software (and correct software versions) are installed. If any prerequisite
+software is not yet installed, or if the wrong software level is installed,
+the installer launches various windows to guide you through that software
+installation. Once all of the prerequisite software packages are installed,
+the Enterprise Manager software is installed and launched.</p><div><p class="note"><b><i>Note:
+                  </i></b>Two logs are created in the C:\Stealth directory during the
+installation process: EMLiferayTomcatInstall.log and EMPortalInstall.log.
+If you experience any issues with the installation, you can refer
+to these logs.</p></div><p>Complete the following steps to install the software on your
+Management Server:</p><div class="orderedlist"><ol type="1"><li><p>Ensure that you met the Management Server requirements
+in <a class="xref" href="section-000005813.htm" title="Management Server Requirements">Management Server Requirements</a>.</p><div><table cellspacing="0" cellpadding="4" class="caution" style="border-collapse: collapse;border-top: 2px solid #999999; border-bottom: 2px solid #999999; border-left: 2px solid #999999; border-right: 2px solid #999999; "><tr><td align="left" valign="top"><p><img src="images/ucausoft.gif">
+                    &nbsp;<b>Caution</b></p><p>Do not proceed with the installation until you meet the Management
+Server requirements. If you do not meet these requirements, the installation
+will fail.</p></td></tr></table></div></li><li><p>Log on to the Management Server using the user name
+and password that the Stealth Enterprise Manager services should run
+under. </p><div><p class="note"><b><i>Note:
+                  </i></b>It is a best practice to use a local user rather than a domain
+user. You must be sure that the user is included in the Local Administrator
+Group for the Management Server and is assigned user rights to Log
+on as a service.</p></div></li><li><p>Ensure that the ISO file you downloaded is mounted to a local drive or extracted to a local drive. </p><div><p class="note"><b><i>Note:
+                  </i></b>You cannot install the Management Server software from a remote
+or shared drive.</p></div></li><li><p>If it does not run automatically, double-click the <span class="bold"><strong>Autorun.exe</strong></span> file from the ISO file to launch
+the installer.</p><div><p class="note"><b><i>Note:
+                  </i></b>Be sure to select the Autorun Application (.exe), rather than
+the Autorun Setup Information file.</p></div></li><li><p>Click <span class="bold"><strong>Yes</strong></span> if you
+are prompted to allow the installer to make changes to the computer.</p><p>The Unisys Stealth Solution Software CD screen appears.</p></li><li><p>Click the <span class="bold"><strong>Install</strong></span> button next to <span class="bold"><strong>Stealth Management Server software</strong></span>.</p><p>The open-source license for the Enterprise Manager
+Liferay Portal and Tomcat Server components appear. </p></li><li><p>Read the license terms that apply to Liferay Portal,
+Tomcat Server, as well as to MySQL Server, and then click <span class="bold"><strong>Accept Terms</strong></span>.</p><p>The installer checks
+for prerequisite software that is not already installed and displays
+the first software installer. (Subsequent installers start automatically.)</p></li><li><p>If .NET Framework 4.6.1 is not already installed,
+click <span class="bold"><strong>Upgrade</strong></span> to upgrade to the required
+version of .NET Framework.</p><div><p class="note"><b><i>Note:
+                  </i></b>If .NET Framework 4.6.1 is already installed (and you see a
+prompt to install Microsoft Visual C++ 2015 x86 Redistributable),
+skip to the next step.</p></div><p>Do the following to install .NET Framework if the installation
+screens for this software appear: </p><div class="orderedlist"><ol type="a"><li><p>Wait while the software is extracted.</p></li><li><p>On the .NET Framework 4.6.1 Setup screen, read the
+license terms, select the <span class="bold"><strong>I have read and accept
+the license terms</strong></span> check box, and then click <span class="bold"><strong>Install</strong></span>.</p></li><li><p>Wait while the software is installed, which can take
+several minutes.</p></li><li><p>When the Installation Is Complete screen appears,
+click <span class="bold"><strong>Finish</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>If you are prompted to reboot your system, do so. Then, log
+back on using the user name and password that you want the Stealth
+Enterprise Manager services to run under, and relaunch the installation
+process by following the steps at the beginning of this procedure.</p></div></li></ol></div></li><li><p>Wait while the Microsoft Visual C++ installation is
+launched. </p><p><span>Wait </span>while the following software
+packages are automatically installed (if they are not already installed): </p><div class="itemizedlist"><ul class="disc"><li><p>Microsoft Visual C++ 2015 x86 Redistributable</p></li><li><p>Microsoft Visual C++ 2015 x64 Redistributable</p></li><li><p>Microsoft Visual C++ 2010 x86 Redistributable</p></li><li><p>Microsoft Visual C++ 2010 x64 Redistributable</p></li></ul></div><p><span>The</span> Installer
+launches the Java Setup wizard, if Java version 8 is not already installed.</p></li><li><p>If Java version 8 is not already installed, do the
+following. </p><div><p class="note"><b><i>Note:
+                  </i></b>If Java version 8 is already installed, skip to the next step.</p></div><div class="orderedlist"><ol type="a"><li><p>On the Java Setup &#8211; Welcome page, click <span class="bold"><strong>Install</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>Do not change the destination folder.</p></div></li><li><p>When you see the &#8220;You have successfully installed
+Java&#8221; screen, click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></li><li><p>When prompted, enter a password for the MySQL root
+account, confirm the password, and then click <span class="bold"><strong>Next</strong></span>.</p><p>Make a note of this password and record
+it in a safe location; it is required if you update the Management
+Server software.</p><div><p class="note"><b><i>Note:
+                  </i></b>If this is a new MySQL installation, you can use the same password
+that you used to log on to the Management Server, or you can enter
+a unique password for MySQL.</p></div><p>The MySQL Installer launches. Wait while the software is installed.</p></li><li><p>When prompted, enter the password and confirm the
+password for the user name that you used to log on to the Management
+Server, and then click <span class="bold"><strong>Next</strong></span>.</p><div><p class="note"><b><i>Note:
+                  </i></b>As described in <a class="xref" href="section-000005813.htm" title="Management Server Requirements">Management Server Requirements</a>, this user
+name <span class="bold"><strong>must</strong></span> be included in the Administrator
+Group for the Management Server and <span class="bold"><strong>must</strong></span> be assigned user rights to Log on as a service. This is the user
+name that the Enterprise Manager services will run under.</p></div></li><li><p>Wait until the Stealth Enterprise Manager prompt appears
+and asks: &#8220;Do you want to restore a previously saved Stealth
+configuration to the database for Stealth Enterprise Management?&#8221;</p></li><li><p>Click <span class="bold"><strong>No</strong></span> (nothing
+to restore) for a new installation.</p></li><li><p>Wait for the Enterprise Manager software to be installed.</p></li><li><p>When you are prompted to configure the user account
+to be created for Tomcat Server, do the following: </p><div class="orderedlist"><ol type="a"><li><p>Accept the default user name <span class="italic"><i>Tomcatuser</i></span>, or enter a new user name in the<span class="bold"><strong> Account name </strong></span>box.</p><p>If you enter
+a new user name, it must be unique in your environment.</p></li><li><p>Enter and confirm a password for Tomcat Server. </p><p>The password must be at least eight characters long, and it
+must include at least three of the following: uppercase letters, lowercase
+letters, numbers, and symbols. In addition, the user name <span class="bold"><strong>cannot </strong></span>be included as part of the password.</p><p>You can use a password that you used previously, or you can
+enter a unique password.</p></li><li><p>Accept the default Tomcat Server port number of 29080,
+or enter a new port number. </p><p>This is the port that will
+be used to access Enterprise Manager.</p></li><li><p>Click <span class="bold"><strong>Next</strong></span></p></li><li><p>Wait while the Liferay Portal and Tomcat Server software
+is installed. It can take more than five minutes to install the Liferay
+Portal and Tomcat Server software.</p><div><p class="note"><b><i>Note:
+                  </i></b>The Tomcat Server user is configured with a password that never
+expires. Do <span class="bold"><strong>not</strong></span> change this setting.
+If this password expires, you will be unable to log into Enterprise
+Manager.</p></div></li></ol></div><p> </p></li><li><p>When you are prompted to configure the user account
+to be created for the Stealth Ecosystem API (EcoAPI), do the following: </p><div class="orderedlist"><ol type="a"><li><p>Accept the default user name <span class="italic"><i>ecoapiUser</i></span>, or enter a new user name in the <span class="bold"><strong>Account name</strong></span> box.</p><p>If you enter
+a new user name, it must be unique in your environment.</p></li><li><p>Enter and confirm a password for the EcoAPI. </p><p>The password must be at least eight characters long, and it
+must include at least three of the following: uppercase letters, lowercase
+letters, numbers, and symbols. In addition, the user name <span class="bold"><strong>cannot </strong></span>be included as part of the password.</p><p>You can use a password that you used previously, or you can
+enter a unique password.</p></li><li><p>Accept the default EcoAPI port number of 8448, or
+enter a new port number. </p><p>This is the port that will be
+used to access the EcoAPI.</p></li><li><p>Click <span class="bold"><strong>Next</strong></span></p></li><li><p>Wait while the associated software is installed. </p></li></ol></div><p> </p></li><li><p>After the EcoAPI is installed, wait while the base
+Enterprise Manager software is installed and Stealth Enterprise Management
+Portal software is installed. This software installation can take
+several additional minutes to complete.</p><p>During the installation
+process, two icons are created on the Management Server desktop that
+enable you to </p><div class="itemizedlist"><ul class="disc"><li><p>Uninstall the Unisys Stealth Enterprise Manager software
+(the icon is named &#8220;Uninstall Unisys Stealth Enterprise Management&#8221;)</p></li><li><p>Launch Enterprise Manager (the icon is named &#8220;Unisys
+Stealth Enterprise Management Portal&#8221;)</p></li></ul></div><p>In addition, a shortcut is added to the Start menu that enables
+you to easily collect diagnostic information for the Management Server. To access the shortcut, from the Start
+menu, enter <span class="bold"><strong>Collect Diagnostics</strong></span> in
+the Search box, right-click, and select <span class="bold"><strong>Run
+as administrator</strong></span>. See <span>the <span class="italic"><i>Unisys Stealth Solution Information Center</i></span></span> for more information on collecting diagnostics.</p><p>When the installation is complete, on the Unisys Stealth Solution
+Software CD screen, you see &#8220;Status: Stealth Enterprise Management
+Portal [&lt;<span class="italic"><i>version</i></span>&gt;] installed.
+Portal deployment successful.&#8221;</p><div><p class="note"><b><i>Note:
+                  </i></b>If the initial Enterprise Manager deployment fails, the installer
+automatically retries the deployment. Wait for Enterprise Manager
+to deploy successfully; the retry process can take several minutes
+to complete.</p></div></li><li><p>If you want to use your default browser, click <span class="bold"><strong>Launch</strong></span>, and then wait while Enterprise Manager
+is configured and launched.</p><p>If you want to use another
+browser, click Close to close the installer, and then enter the following
+URL in a browser window: </p><p>https://&lt;<span class="italic"><i>computer name</i></span>&gt;:&lt;<span class="italic"><i>port number (by default, 29080)</i></span>&gt;/</p><div><p class="note"><b><i>Note:
+                  </i></b>The Management Server computer name must be able to be resolved
+by a Domain Name System (DNS) server or other name resolution mechanism.
+If the Management Server is in a domain, the shortcut created to launch
+Enterprise Manager uses the fully qualified domain name (FQDN) of
+the Management Server, and therefore the FQDN must be resolvable.
+If the computer name is not resolvable, you might have to manually
+update the shortcut to use the computer name (without the domain)
+or <span class="normal">localhost</span>.</p></div></li><li><p>After launching Enterprise Manager, enter the portal
+administrator user name and password, and then click <span class="bold"><strong>Sign In</strong></span>.</p><p>For a new installation,
+the default user name is <span class="bold"><strong>portaladmin</strong></span> and the default password is <span class="bold"><strong>AdminPortal1#</strong></span>. </p></li></ol></div><p>After you sign in, you see a screen that looks like the following: </p><div class="figure"><a name="figure-000001044"></a><p class="title"><b>Figure&nbsp;4.&nbsp;Enterprise Manager </b></p><div class="figure-contents"><div class="mediaobject"><img src="images/007038_web.jpg" alt="Enterprise Manager"></div></div></div><p><br class="figure-break"></p></div></body><script type="text/javascript">
+                if (top.frames.length > 1) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="block";
+                    document.getElementById("backbutton").style.marginTop="-16px";
+                }
+                if (window.location.search.slice(1).toLowerCase().indexOf("print") >= 0) {
+                    document.getElementById("showframe").style.display="none";
+                    document.getElementById("hideframe").style.display="none";
+                    document.getElementById("backbutton").style.display="none";
+                }
+            </script></html>
