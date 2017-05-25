@@ -6,53 +6,49 @@
     bottom: 0;
     left: 0;
     padding-bottom: 102px;
-    background: grey
+    background-color: #3b5998;
     ;
 }
- .curtain {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: $white;
-        opacity: 1;
-        visibility: visible;
-        transition: all 500ms ease;
-        max-height: 99999px;
 
-        &.hide {
-            max-height: 0;
-            visibility: hidden;
-            opacity: 0;
-        }
-    }
-.banner{
-    padding: 200px 0 0;
-    height: 50%;
-    background-image: url('../../static/images/computer-networking.jpg');
-    background-size: cover;
-    text-align: center;
-    text-shadow: 0 0 7px $white;
-    .logo {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            img {
-                width: 308px;
-            }
-    }
-    h1 {
-            margin: 0 auto 20px;
-            width: 800px;
-            font-size: $xxxlarge;
-            color: $blue;
-            padding: 0 130px;
-        }
-        h2 {
-            font-size: $xxxlarge;
-            margin: 0 auto;
-            width: 800px;
-        }
+.textBox{
+    width: 300px;
+   	color : #747862;
+    height: 35px;
+    border:1px solid #d1c7ac;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    font-family: tahoma, arial, sans-serif;
+}
+
+.button1{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.button1:hover{
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+font-weight: bold;
+    color: #3b5998;
+}
+.inputBox{
+
+   position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+}
+.labelFont{
+    font-size: 34;
 }

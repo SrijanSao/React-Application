@@ -2,25 +2,54 @@ var React = require('react');
 //var Home = require('./Home/index')
 import Home from './Home/index'
 import Icon from './Icons/index'
-  var Main = React.createClass({
-    call: function(){
-   {this.props.children}
-   //alert("Hello");
-    },
-      render: function(){
-        return (
-          <div className="home-page">
-            <div className="curtain">
-            <div className="banner">
-                             <div className="logo"><img src="static/images/computer-networking.jpg" alt="Networking Logo" id="logo" /></div>
-                             <div><h1>It&#39;s we start networking in a secure way.</h1></div>
+import UserProfile from './UserProfile/index'
 
-          </div>
-          </div>
-          <button className="button-primary"> Click me</button>
-          </div>
-        )
-      }
-    });
+export default class Main extends React.Component{    
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
 
-module.exports = Main;
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+   // event.preventDefault();
+  }
+ callerFunction(){
+  {<UserProfile />} 
+   
+    
+  
+ }
+  render() {
+      
+    switch (2){
+
+    
+    case 1: return (
+      
+      <div className="home-page">
+
+     <div className="inputBox">
+       
+          <input className="textBox" type="text" placeholder="Username" value={this.state.value} onChange={this.handleChange} />
+       <br />
+        
+          <input className="textBox" type="password" placeholder="Password" value={this.state.value} onChange={this.handleChange} />
+      <br />
+        <button className="button1" onClick={this.callerFunction}>Submit</button>
+        
+     </div>
+      </div>
+    );
+    case 2: return (<div> <UserProfile /> </div>);
+  }
+    }
+}
+
