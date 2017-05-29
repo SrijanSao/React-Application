@@ -8,12 +8,13 @@ const nodeExternals = require('webpack-node-externals');
 
 
 module.exports = {
-  entry: "./renderer.js",
+  entry: ["babel-polyfill", "./renderer.js"],
   output: {
     filename: "./public/bundle.js"
   },
   module: {
     loaders: [
+      
       {
         test: /\.jsx?$/, 
         exclude: /(node_modules|bower_components)/,
@@ -21,6 +22,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
+      },
+      {
+            loader: 'babel-loader?babelrc=true',
+            test: /\.js$/
       },
       {
         test: /\.s?css$/, 

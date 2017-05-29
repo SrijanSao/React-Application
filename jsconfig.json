@@ -10,6 +10,7 @@
         "static"
     ],
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "src/store/ui/uiStore.js"
     ]
 }
